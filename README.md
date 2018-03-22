@@ -30,7 +30,9 @@ xiaolan:
     - ding.wav
     - dong.wav
     - welcome.mp3
-  - snowboy #snowboy唤醒引擎
+  - skills #技能
+    - xlonly.py #父母私人助理技能
+  - snowboy #snowboy唤醒引擎
     - demo.py
     - snowboydecoder.py #snowboy主要文件
     - xiaolanxiaolan.pmdl #小蓝小蓝唤醒词
