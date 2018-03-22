@@ -33,7 +33,7 @@ class baidu_stt(object):
         self.intent = intent
         self.json = json
 
-    def get_token():
+    def get_token(): #获取token
         try:
             pms = cache.readlines()
             if len(pms) > 0:
@@ -62,7 +62,7 @@ class baidu_stt(object):
             return tokenstates
             return token
 
-    def stt(self, fp):
+    def stt(self, fp): #开始
         if self.token == '':
             self.token = self.get_token()
         try:
@@ -116,10 +116,10 @@ class baidu_stt(object):
             transcribed = []
             if text:
                 transcribed.append(text.upper())
-            print (u'百度语音识别到了: %s' % text)
+            print (json)
             return transcribed
 
-    def nlp(self):
+    def nlp(self): #语义理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
         if intent == 'query':
             if self.domain == 'train':
                 arrival_city = r.json()['arrival_city']
@@ -136,4 +136,11 @@ class baidu_stt(object):
                 airline = r.json()['airline']
             elif self.domain == 'map':
                 start = r.json()['start']
+                arrival = r.json()['arrival']
+                drive_sort = r.json()['drive_sort']
+                route_type = r.json()[' route_type ']
+            elif slef.domain == 'telephone':
+                name = r.json()['name']
+                operator = r.json()['operator']
+                location = r.json()['location']
 
