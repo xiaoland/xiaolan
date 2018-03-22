@@ -38,8 +38,9 @@ xiaolan:
     - xiaolanxiaolan.pmdl #小蓝小蓝唤醒词
     - .....(不一一列举）
   
-各位的帮助我将感激不胜！！！
-有更新请写在xiaolanupdate.txt里面
-更新格式：
-日期：
-事件——谁做的
+五、
+  各位的帮助我将感激不胜！！！
+  有更新请写在xiaolanupdate.txt里面
+  更新格式：
+  日期：
+  事件  （谁做的）
