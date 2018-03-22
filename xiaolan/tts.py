@@ -51,8 +51,7 @@ class baidu_tts(object):
             self._logger.critical('Token request failed with response: %r',
                                   r.text,
                                   exc_info=True)
-            tokenstates = r.json()['erro_msg']
-            return tokenstates
+          
         
     def tts(self):
         if self.token == '':
