@@ -14,7 +14,7 @@ import snowboydecoder
 
 interrupted = False
 
-def start():
+def start(): # demo.py
 
     def signal_handler(signal, frame):
         global interrupted
@@ -34,15 +34,15 @@ def start():
     print('Listening... Press Ctrl+C to exit')
 
     # main loop
-    detector.start(detected_callback=xldo.convenstation,
+    detector.start(detected_callback=xldo.convenstation,# 侦测到唤醒词后的操作（这里还好，但是还有BUG）
                    interrupt_check=interrupt_callback,
                    sleep_time=0.03)
 
     detector.terminate()
-    
-    
+   
 def stop():
-    snowboydecoder.stop()
+    
+    sys.exit(-1)
 
 start()
             
