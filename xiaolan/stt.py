@@ -91,7 +91,7 @@ class baidu_stt(object):
                           headers={'content-type': 'application/json'})
         json = r.json()
         domain = r.json()['domain']
-        intent = r.json()['intent']
+        intent = 'yes'
         try:
             r.raise_for_status()
             text = ''
@@ -120,7 +120,7 @@ class baidu_stt(object):
             return transcribed
 
     def nlp(self): #语义理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
-        if intent == 'query':
+        if self.intent == 'yes':
             if self.domain == 'train':
                 arrival_city = r.json()['arrival_city']
                 start_city = r.json()['start_city']
@@ -139,8 +139,17 @@ class baidu_stt(object):
                 arrival = r.json()['arrival']
                 drive_sort = r.json()['drive_sort']
                 route_type = r.json()[' route_type ']
-            elif slef.domain == 'telephone':
+            elif self.domain == 'telephone':
                 name = r.json()['name']
                 operator = r.json()['operator']
                 location = r.json()['location']
+            elif self.domain == 'app':
+                appname = r.json()['appname']
+            elif self.domain == 'website':
+                sitename = r.json()['sitename']
+                browser = r.json()['browser']
+            elif self.domain == 'music':
+                name = r.json()['name']
+            elif self.domain == 'sence':
+                sence = r.json()['sence']
 
