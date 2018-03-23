@@ -62,10 +62,6 @@ def play_audio_file(fname=DETECT_DING):
     stream_out.stop_stream()
     stream_out.close()
     audio.terminate()
-    recorder.record()
-    speaker.dong()
-    baidu_stt.stt()
-
 
 class HotwordDetector(object):
     """
