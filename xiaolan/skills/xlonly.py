@@ -22,6 +22,5 @@ def xlonly():
     recorder.record()
     speaker.dong()
     baidu_stt.stt()
-    baidu_stt.nlp()
     
     
