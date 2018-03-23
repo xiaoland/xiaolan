@@ -119,37 +119,37 @@ class baidu_stt(object):
             print (json)
             return transcribed
 
-    def nlp(self): #语义理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
-        if self.intent == 'yes':
-            if self.domain == 'train':
-                arrival_city = r.json()['arrival_city']
-                start_city = r.json()['start_city']
-                start_station = r.json()['start_station']
-                train_type = r.json()['train_type']
-            elif self.domain == 'weather':
-                date = r.json()['date']
-                region = r.json()['region']
-            elif self.domain == 'flight':
-                start_date = r.json['start_date']
-                start_city = r.json()['start_city']
-                arrival_city = r.json()['arrival_city']
-                airline = r.json()['airline']
-            elif self.domain == 'map':
-                start = r.json()['start']
-                arrival = r.json()['arrival']
-                drive_sort = r.json()['drive_sort']
-                route_type = r.json()[' route_type ']
-            elif self.domain == 'telephone':
-                name = r.json()['name']
-                operator = r.json()['operator']
-                location = r.json()['location']
-            elif self.domain == 'app':
-                appname = r.json()['appname']
-            elif self.domain == 'website':
-                sitename = r.json()['sitename']
-                browser = r.json()['browser']
-            elif self.domain == 'music':
-                name = r.json()['name']
-            elif self.domain == 'sence':
-                sence = r.json()['sence']
+        def nlp(self): #语义理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
+            if self.intent == 'yes':
+                if self.domain == 'train':
+                    arrival_city = r.json()['arrival_city']
+                    start_city = r.json()['start_city']
+                    start_station = r.json()['start_station']
+                    train_type = r.json()['train_type']
+                elif self.domain == 'weather':
+                    date = r.json()['date']
+                    region = r.json()['region']
+                elif self.domain == 'flight':
+                    start_date = r.json['start_date']
+                    start_city = r.json()['start_city']
+                    arrival_city = r.json()['arrival_city']
+                    airline = r.json()['airline']
+                elif self.domain == 'map':
+                    start = r.json()['start']
+                    arrival = r.json()['arrival']
+                    drive_sort = r.json()['drive_sort']
+                    route_type = r.json()[' route_type ']
+                elif self.domain == 'telephone':
+                    name = r.json()['name']
+                    operator = r.json()['operator']
+                    location = r.json()['location']
+                elif self.domain == 'app':
+                    appname = r.json()['appname']
+                elif self.domain == 'website':
+                    sitename = r.json()['sitename']
+                    browser = r.json()['browser']
+                elif self.domain == 'music':
+                    name = r.json()['name']
+                elif self.domain == 'sence':
+                    sence = r.json()['sence']
 
