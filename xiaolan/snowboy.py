@@ -42,7 +42,7 @@ def start(): # demo.py
    
 def stop():
     
-    sys.exit(-1)
+    sys.exit(0)
 
 start()
             
