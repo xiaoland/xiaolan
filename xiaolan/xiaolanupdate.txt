@@ -1,3 +1,6 @@
 小蓝更新文件：
 2018.3.22
 上传项目，标明问题，添加备注 （xiaoland）
+
+2018.3.23
+更新xldo.py和snowboy.py、stt.py， 继续完善stt.py的nlp模块
