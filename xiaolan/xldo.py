@@ -37,7 +37,7 @@ def welcome():
     ''')
     
     print('Check xiaolan')
-    os.system('omxplayer /home/pi/xiaolan/musiclib/welcome.mp3')
+    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/welcome.mp3')
 
 def snowboystart():
     
