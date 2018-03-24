@@ -11,7 +11,7 @@ import sys
 import xldo
 import speaker
 import time
-sys.path.append('/home/pi/xiaolan/snowboy/')
+sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
 
 interrupted = False
