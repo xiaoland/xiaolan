@@ -5,7 +5,6 @@ import os
 import logging
 import pygame
 import hyper
-from xldo import xlmain
 
 def ding(): #开始录制指令提示音
     os.system('omxplayer /home/pi/xiaolan/musiclib/ding.wav')
