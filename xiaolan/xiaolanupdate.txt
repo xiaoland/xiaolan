@@ -3,7 +3,7 @@
 上传项目，标明问题，添加备注 （xiaoland）
 
 2018.3.23
-更新xldo.py和snowboy.py、stt.py， 继续完善stt.py的nlp模块
+更新xldo.py和snowboy.py、stt.py， 继续完善stt.py的nlp模块 (xiaoland)
 
 2018.3.24
-测试在github上下载回的xiaolan，现已修复从github上下载的xiaolan的错误，更新了xldo，snowboy,snowboydecorder,speaker,stt,tts
+测试在github上下载回的xiaolan，现已修复从github上下载的xiaolan的错误，更新了xldo，snowboy,snowboydecorder,speaker,stt,tts (xiaoland)
