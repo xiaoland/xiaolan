@@ -5,7 +5,7 @@ import os
 import pyaudio
 import json
 import pygame
-sys.path.append('/home/pi/xiaolan/')
+sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
 import snowboy
