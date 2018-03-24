@@ -9,11 +9,6 @@ import os
 import logging
 import sys
 import os
-sys.path.append('/home/pi/xiaolan/')
-import recorder
-import speaker
-import stt
-import tts
 
 logging.basicConfig()
 logger = logging.getLogger("snowboy")
