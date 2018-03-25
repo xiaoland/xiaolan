@@ -6,6 +6,7 @@ import numpy as np
 import requests, json
 import sys
 import os
+import snowboy
 
 
 CHUNK = 1024
@@ -16,6 +17,7 @@ RECORD_SECONDS = 10
 WAVE_OUTPUT_FILENAME = "voice.wav"
 
 def record(): # 录制指令（这里没有问题）
+    snowboy.stop()
     p = pyaudio.PyAudio()
     stream = p.open(format = FORMAT,
                     channels = CHANNELS,
