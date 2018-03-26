@@ -19,6 +19,8 @@ import wave
 import recorder
 import snowboy
 import speaker
+sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
+import snowboydecoder
 
 def welcome():
 
