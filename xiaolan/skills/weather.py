@@ -3,6 +3,7 @@ import os
 import logging
 import json
 import pygame
+import requests
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
@@ -16,20 +17,15 @@ def start():
 
 def main():
     
-    API: '9f4785b7a627c847408230423d34787b'
-    URL = 'https://api.darksky.net/forecast/'
-    long = '113.197281'
-    lati = '22.658797'
-    lang = 'zh'
-    r = requests.get(URL + '/' + API + '/' + long + ',' + lati)
-    summary = r.json()['summary']
-    temperature = r.json()['temperature']
-    temperatureHigh = r.json()['temperatureHigh']
-    icon = r.json()['icon']
-    humidity = r.json()['humidity']
-    temperatureLow = r.json()['temperatureLow']
-    if icon = 'rain':
-        icon = '下雨'
-    stext = ("今天最高温为", temperatureHigh, "最低温为：", temperatureLow, "天气状态是是：", icon)
-    baidu_tts.tts(stext)
-    speaker.say()
+    API = 'sxyi6ehxblxkqeto'
+    location = 'ip'
+    LANGUAGE = 'zh-Hans'
+    
+    result = requests.get(API, params={
+        'key': KEY,
+        'location': location,
+        'language': LANGUAGE,
+        'unit': UNIT
+    }, timeout=1)
+    weather = r.json()['text']
+    return result
