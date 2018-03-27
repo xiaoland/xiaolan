@@ -11,6 +11,7 @@ import json
 import pygame
 import hyper
 import time
+import signal
 from stt import baidu_stt
 from tts import baidu_tts
 import logging
@@ -21,6 +22,8 @@ import snowboy
 import speaker
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
+
+interrupted = False
 
 def welcome():
 
@@ -61,7 +64,7 @@ def snowboystart():
     print('Listening... Press Ctrl+C to exit')
 
     # main loop
-    detector.start(detected_callback=back,
+    detector.start(detected_callback=convenstation,
                    interrupt_check=interrupt_callback,
                    sleep_time=0.03)
 
