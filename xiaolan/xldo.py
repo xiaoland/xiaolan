@@ -76,12 +76,33 @@ def convenstation():
     speaker.dong()
     baidu_stt.stt()
 
+class skills(object):
+    
+    def __init__(self, witch):
+        self.witch = witch
+        
+    def getskills(witch):
+        if self.witch == 'clock':
+            skills.clock()
+        elif self.witch == 'xlonly':
+            skills.xlonly()
+        elif self.witch == 'cream':
+            skills.cream()
+        elif self.witch == 'smarthome':
+            skills.smarthome()
+        elif self.witch == 'weather':
+            skills.weather()
+        elif self.witch == 'music':
+            skills.music()
+        elif self.witch == 'ts':
+            skills.ts()
+        elif self.witch == 'email':
+            skills.email()
+        elif self.witch == 'call':
+
 welcome()
 snowboystart()
 
 
-
-
-    
 
 
