@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+'''天气'''
 import sys
 import os
 import logging
