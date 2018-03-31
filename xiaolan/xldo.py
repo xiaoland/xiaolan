@@ -110,11 +110,20 @@ class skills(object):
         clock.start(re, repeatday, d, h, m, music)
         
     def xlonly():
+        
         xlonly.start()
     
     def weather(loc):
+        
         weather.start(loc)
         
+    def cream():
+        
+        cream.start(tp)
+        
+    def music():
+        
+        music.start(name)
 
 welcome()
 snowboystart()
