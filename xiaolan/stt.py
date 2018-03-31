@@ -13,8 +13,9 @@ import logging
 import time
 import os.path
 import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
+sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
+import speech
+import nlp
 
 
 class baidu_stt(object):
@@ -61,7 +62,7 @@ class baidu_stt(object):
             tokenstates = r.states()
             return tokenstates
             return token
-
+        
     def stt(self, fp): #开始
         if self.token == '':
             self.token = self.get_token()
