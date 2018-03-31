@@ -22,6 +22,11 @@ import snowboy
 import speaker
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
+sys.path.append('/home/pi/xiaolan/xiaolan/skills/')
+import clock
+import xlonly
+import weather
+import music
 
 interrupted = False
 
@@ -81,7 +86,7 @@ class skills(object):
     def __init__(self, witch):
         self.witch = witch
         
-    def getskills(witch):
+    def getskills(self):
         if self.witch == 'clock':
             skills.clock()
         elif self.witch == 'xlonly':
@@ -99,6 +104,17 @@ class skills(object):
         elif self.witch == 'email':
             skills.email()
         elif self.witch == 'call':
+            skills.call()
+    
+    def clock(re, repeatday, d, h, m, music):
+        clock.start(re, repeatday, d, h, m, music)
+        
+    def xlonly():
+        xlonly.start()
+    
+    def weather(loc):
+        weather.start(loc)
+        
 
 welcome()
 snowboystart()
