@@ -7,7 +7,7 @@ import json
 import numpy as np
 import wave
        
-def wav_to_pcm(self):
+def wav_to_pcm():
     f = open("voice.wav")
     f.seek(0)
     f.read(44)
