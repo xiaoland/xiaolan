@@ -15,7 +15,7 @@ from .base import json
 from .base import urlencode
 from .base import quote
 
-class AipNlp(AipBase):
+class nlp(AipBase):
 
     """
     自然语言处理
