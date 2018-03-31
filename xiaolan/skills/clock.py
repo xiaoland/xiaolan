@@ -12,9 +12,9 @@ import snowboy
 import recorder
 import speaker
 
-def start():
-    main()
+def start(d, re, redata, h, m):
+    main(d, re, redata, h, m)
   
-def main(d, re, redata, h, m, s):
+def main(d, re, redata, h, m):
     if re == 'True':
         
