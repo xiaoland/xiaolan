@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+'''图灵'''
 import sys
 import os
 import requests
