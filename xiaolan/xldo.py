@@ -29,6 +29,7 @@ import weather
 import music
 import tuling
 import story
+import joke
 
 interrupted = False
 
@@ -108,6 +109,8 @@ class skills(object):
             skills.email()
         elif self.witch == 'story':
             skills.story()
+        elif self.witch == 'joke':
+            skills.joke()
         else:
             skills.tling(text)
     
@@ -134,9 +137,13 @@ class skills(object):
         
         tuling.start(text)
     
-    def story(storyname, storytype):
+    def story():
         
-        story.start(storyname, storytype)
+        story.start()
+        
+    def joke():
+        
+        joke.start()
         
 welcome()
 snowboystart()
