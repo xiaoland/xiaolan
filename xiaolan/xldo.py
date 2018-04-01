@@ -112,7 +112,7 @@ class skills(object):
         elif self.witch == 'joke':
             skills.joke()
         else:
-            skills.tling(text)
+            skills.tuling(text)
     
     def clock(re, repeatday, d, h, m, music):
         clock.start(re, repeatday, d, h, m, music)
