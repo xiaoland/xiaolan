@@ -27,6 +27,8 @@ import clock
 import xlonly
 import weather
 import music
+import tuling
+import story
 
 interrupted = False
 
@@ -80,6 +82,7 @@ def convenstation():
     recorder.record()
     speaker.dong()
     baidu_stt.stt()
+    intent = witch
 
 class skills(object):
     
@@ -88,23 +91,25 @@ class skills(object):
         
     def getskills(self):
         if self.witch == 'clock':
-            skills.clock()
+            skills.clock(re, repeatday, d, h, m, music)
         elif self.witch == 'xlonly':
             skills.xlonly()
         elif self.witch == 'cream':
-            skills.cream()
+            skills.cream(tp)
         elif self.witch == 'smarthome':
             skills.smarthome()
         elif self.witch == 'weather':
-            skills.weather()
+            skills.weather(loc)
         elif self.witch == 'music':
-            skills.music()
+            skills.music(name)
         elif self.witch == 'ts':
             skills.ts()
         elif self.witch == 'email':
             skills.email()
-        elif self.witch == 'call':
-            skills.call()
+        elif self.witch == 'story':
+            skills.story()
+        else:
+            skills.tling(text)
     
     def clock(re, repeatday, d, h, m, music):
         clock.start(re, repeatday, d, h, m, music)
@@ -124,7 +129,15 @@ class skills(object):
     def music():
         
         music.start(name)
-
+        
+    def tuling(text):
+        
+        tuling.start(text)
+    
+    def story(storyname, storytype):
+        
+        story.start(storyname, storytype)
+        
 welcome()
 snowboystart()
 
