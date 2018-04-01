@@ -145,6 +145,10 @@ class skills(object):
         
         joke.start()
         
+    def news(newsservice):
+        
+        news.start(newsservice)
+        
 welcome()
 snowboystart()
 
