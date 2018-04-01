@@ -9,10 +9,29 @@ import snowboy
 import speaker
 import recorder
 
-def start(ser):
+def start(text):
   
-    main(ser)
+    main(text)
     
-def main(ser):
+def main(text):
     
+    ak = 'c380ed8f2880443c84892ace36ba6bad'
+    ui = '167031'
+    url = 'http://openapi.tuling123.com/openapi/api/v2'
+    data = {
+	              "reqType":0,
+                "perception": {
+                    "inputText": {
+                        "text": text
+                    },
+                },
+                "userInfo": {
+                    "apiKey": ak,
+                    "userId": ui
+                }
+    }
+    r = requests.post(url, data=data)
+    saytext = r.json()['text']
+    baidu_tts.tts(saytext)
+    speaker.speak()
     
