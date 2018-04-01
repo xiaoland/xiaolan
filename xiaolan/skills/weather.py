@@ -19,15 +19,15 @@ def start():
 
 def main():
     
-    API = 'sxyi6ehxblxkqeto'
-    location = 'ip'
-    LANGUAGE = 'zh-Hans'
+    APIKEY = '5fb31534ef0e4a43812ba3f881194afe'
+    location = '中山'
+    url = ' http://api.avatardata.cn/Weather/Query?key='
     
-    result = requests.get(API, params={
-        'key': KEY,
-        'location': location,
-        'language': LANGUAGE,
-        'unit': UNIT
-    }, timeout=1)
-    weather = r.json()['text']
-    return result
+    r = requests.post(url + APIKEY + '&cityname=' + location)
+    weather = r.json()['info']
+    temperature = r.json()['temperature']
+    humidity = r.json()['humidity']
+    city_name = r.json()['city_name']
+    saytext = (city_name + '的天气是' + weather + '，温度是' + temperature + '，湿度是' + humidity)
+    baidu_tts(saytext)
+    speaker.speak()
