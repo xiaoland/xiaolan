@@ -13,14 +13,14 @@ import snowboy
 import speaker
 import recorder
 
-def start():
+def start(loc):
 
-    main()
+    main(loc)
 
-def main():
+def main(loc):
     
     APIKEY = '5fb31534ef0e4a43812ba3f881194afe'
-    location = '中山'
+    location = loc
     url = ' http://api.avatardata.cn/Weather/Query?key='
     
     r = requests.post(url + APIKEY + '&cityname=' + location)
