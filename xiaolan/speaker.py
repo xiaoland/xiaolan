@@ -15,5 +15,5 @@ def dong(): #结束录制指令提示音
 def poweroff(): #关机提示音（太懒，mp3文件还没弄）
     os.system('omxplayer /home/pi/xiaolan/musiclib/xiaolan/poweroff.mp3')
 
-def say(): #说出的回话
+def speak(): #说出的回话
     os.system('omxplayer /home/pi/xiaolan/xiaolan/say.mp3')
