@@ -30,6 +30,7 @@ import music
 import tuling
 import story
 import joke
+import news
 
 interrupted = False
 
