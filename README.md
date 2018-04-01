@@ -26,6 +26,7 @@ xiaolan:
   - speaker.py #音响
   - recorder.py #录音
   - snowboy.py #snowboy主控
+  
   - musiclib #音乐库
     - ding.wav
     - dong.wav
