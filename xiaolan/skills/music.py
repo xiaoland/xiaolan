@@ -7,6 +7,9 @@ import json
 import base64
 import binascii
 import hashlib
+import json
+import re
+import urllib2
 from Crypto.Cipher import AES
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
@@ -16,59 +19,76 @@ import speaker
 import recorder
 
 def start(name):
-    
-  main(name)
-
-def main(name):
   
-  zh = '18680171381@163.com'
-  passwd = 'Y20050801056'
-  def aesEncrypt(text, secKey):
-    pad = 16 - len(text) % 16
-    text = text + pad * chr(pad)
-    encryptor = AES.new(secKey, 2, '0102030405060708')
-    ciphertext = encryptor.encrypt(text)
-    ciphertext = base64.b64encode(ciphertext)
-    return ciphertext.decode()
+    m = main()
+    m.ser(name)
+
+def (name):
   
-  
-  def rsaEncrypt(text, pubKey, modulus):
-    text = text[::-1].encode()
-    rs = int(binascii.hexlify(text), 16)**int(pubKey, 16) % int(modulus, 16)
-    return format(rs, 'x').zfill(256)
+    zh = '13415354654@163.com'
+    passwd = 'Y20050801056'
+    minimumsize = 1
+    url = "http://music.163.com/playlist?id=" + name
+    r = requests.get(url)
+    contents = r.text
+    res = r'<ul class="f-hide">(.*?)</ul>'
+    mm = re.findall(res, contents, re.S | re.M)
+    res = r'<li><a .*?>(.*?)</a></li>'
+    mm = re.findall(res, contents, re.S | re.M)
 
+    for value in mm:
 
-  def createSecretKey(size):
-    return ''.join( [ hex(x)[2:] for x in os.urandom(size) ] )[0:16]
+    url = 'http://sug.music.baidu.com/info/suggestion'
+    payload = {'word': value, 'version': '2', 'from': '0'}
+    print "Song Name: " + value
 
+    r = requests.get(url, params=payload)
+    contents = r.text
+    d = json.loads(contents, encoding="utf-8")
+    if('data' not in d):
+    	print "do not have flac\n"
+        continue
+    if('song' not in d["data"]):
+    	print "do not have flac\n"
+    	continue
+    songid = d["data"]["song"][0]["songid"]
+    print "Song ID: " + songid 
 
-  def login(username,password):
-    url = 'http://music.163.com/weapi/login/'
-    headers = {
-        'Cookie': 'appver=2.7.1;',
-        'Referer': 'http://music.163.com/'
-    }
-    text = {
-        'username': username,
-        'password': hashlib.md5(password.encode()).hexdigest(),
-        'rememberLogin': 'true'
-    }
-    modulus = '00e0b509f6259df8642dbc35662901477df22677ec152b5ff68ace615bb7b725152b3ab17a876aea8a5aa76d2e417629ec4ee341f56135fccf695280104e0312ecbda92557c93870114af6c9d05c4f7f0c3685b7a46bee255932575cce10b424d813cfe4875d3e82047b97ddef52741d546b8e289dc6935b3ece0462db0a22b8e7'
-    nonce = '0CoJUm6Qyw8W8jud'
-    pubKey = '010001'
-    text = json.dumps(text)
-    secKey = createSecretKey(16)
-    encText = aesEncrypt(aesEncrypt(text, nonce), secKey)
-    encSecKey = rsaEncrypt(secKey, pubKey, modulus)
-    data = {
-        'params': encText,
-        'encSecKey': encSecKey
-    }
-    s = requests.session()
-    r = s.post(url, headers=headers, data=data)
-    cookies = dict(r.cookies)
-    return cookies
+    url = "http://music.baidu.com/data/music/fmlink"
+    payload = {'songIds': songid, 'type': 'mp3'}
+    r = requests.get(url, params=payload)
+    contents = r.text
+    d = json.loads(contents, encoding="utf-8")
+    if d is not None and 'data' not in d or d['data'] == '':
+        continue
+    songlink = d["data"]["songList"][0]["songLink"]
+    if(len(songlink) < 10):
+        print "do not have flac\n"
+        continue
+	print "Song Source: " + songlink + "\n";
 
-    cookies = api.login(zh, passwd)
+    songdir = "songs"
+    if not os.path.exists(songdir):
+        os.makedirs(songdir)
+
+    songname = d["data"]["songList"][0]["songName"]
+    artistName = d["data"]["songList"][0]["artistName"]
+    filename = "music.flac"
+
+    f = urllib2.urlopen(songlink)
+    headers = requests.head(songlink).headers
+    size = int(headers['Content-Length']) / (1024 ** 2)
+
+    if not os.path.isfile(filename) or os.path.getsize(filename) < minimumsize:
+        print "%s is downloading now ......\n" % songname
+        with open(filename, "wb") as code:
+                code.write(f.read())
+    else:
+        print "%s is already downloaded. Finding next song...\n\n" % songname
+    print "\n================================================================\n"
+    print "Download finish!"
+    os.sys('omxplayer /home/pi/xiaolan/xiaolan/skills/music.flac')
+        
     
     
+ 
