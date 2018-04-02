@@ -119,7 +119,7 @@ class baidu_stt(object):
                 transcribed.append(text.upper())
             print (json)
             return transcribed
-        #语义理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
+        def inent(self) #意图理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
             if self.intent == 'yes':
                 if self.domain == 'train':
                     arrival_city = r.json()['arrival_city']
@@ -153,4 +153,9 @@ class baidu_stt(object):
                 elif self.domain == 'joke':
                     sence = r.json()['sence']
                     audience = r.json()['audience']
-    
+    def nlplexer(text):
+        AipNlp.lexer(text)
+        return nlptext
+        
+        
+        
