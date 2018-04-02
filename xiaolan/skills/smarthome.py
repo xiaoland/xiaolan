@@ -80,7 +80,7 @@ class smartHome(object):
 		recorder.record()
 		speaker.dong()
 		baidu_stt.stt()
-		baidu_stt.nlpfc(text)
+		baidu_stt.nlplexer(text)
 		if nlptext == ' 
 		r = requests.post(url + data + command)
 		states = r.states()
