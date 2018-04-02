@@ -1,3 +1,14 @@
+import sys
+import os
+import requests
+import json
+import time
+
+import speaker
+import stt
+import tts
+import recorder
+
 import Adafruit_DHT,os,time,datetime,sqlite3
 conn,cursor=(None,None)
 
@@ -17,6 +28,20 @@ def executeDb(sql):
 	global conn,cursor
 	cursor.execute(sql)
 	conn.commit()	
+
+def start(cortolthings, platfrom):
+	h = smartHome()
+	if cortolthings == 'dht11':
+		h.readDth()
+	elif cortolthings == 'buzzer':
+		h.buzzer()
+	elif cortolthings == 'light':
+		h.light()
+	elif cortolthings == 'switch':
+		h.switch()
+	elif cortolthings == 'sensor':
+		h.sensor()
+	
 #主控包含传感器、蜂鸣器
 class smartHome(object):
 	sensor = Adafruit_DHT.DHT11
@@ -33,8 +58,29 @@ class smartHome(object):
 		os.system('gpio -g write %s 1' % self.__pbuzzer)
 		time.sleep(0.5)
 		os.system('gpio -g write %s 0' % self.__pbuzzer)
+		
 	def readDth(self):
 		humidity,temperature = Adafruit_DHT.read_retry(self.sensor,self.__pdht11)
 		if humidity is not None and temperature is not None:
 			print('temp:%s,humidity%d' % (humidity,temperature))
 			return (humidity,temperature)
+		
+	def light():
+		url = ''
+		apikey = ''
+		data = {
+		}
+		baidu_tts.tts('您想要控制什么灯?，请在滴一声之后说出，开，或，关，加上，名称')
+		speaker.speak()
+		speaker.ding()
+		recorder.record()
+		speaker.dong()
+		baidu_stt.stt()
+		baidu_stt.nlpfc(text)
+		if nlptext == ' 
+		r = requests.post(url + data + command)
+		states = r.states()
+		if states = 200:
+			baidu_tts.tts('执行成功')
+			speaker.speak()
+			
