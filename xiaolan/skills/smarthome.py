@@ -1,13 +1,17 @@
+# -*- coding: utf-8 -*-
+''' 智能家居技能（尚未完善，大家一起加油，用函数哦)  '''
+import json
 import sys
 import os
 import requests
-import json
+import pygame
 import time
-
-import speaker
+sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
+import snowboy
 import recorder
+import speaker
 
 import Adafruit_DHT,os,time,datetime,sqlite3
 conn,cursor=(None,None)
