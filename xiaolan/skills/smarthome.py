@@ -6,6 +6,7 @@ import os
 import requests
 import pygame
 import time
+import homeassistant.remote as remote
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
@@ -16,6 +17,8 @@ import speaker
 import Adafruit_DHT,os,time,datetime,sqlite3
 conn,cursor=(None,None)
 
+url = '192.168.2.110'
+password = 'y20050801056'
 #初始化数据库
 def initDb():
 	global conn,cursor
@@ -68,7 +71,13 @@ class smartHome(object):
 		if humidity is not None and temperature is not None:
 			print('temp:%s,humidity%d' % (humidity,temperature))
 			return (humidity,temperature)
-		
+	def main():
+		api = remote.API(url, password)
+		print('-- Available services:')
+		services = remote.get_services(api)
+		for service in services:
+			print(service['services'])
+    print(service['services'])
 	def light():
 		url = ''
 		apikey = ''
