@@ -1,10 +1,8 @@
 #coding=utf-8
-# This program is used to convert Flac files into MP3 without lossing original tags
-# Make sure the flac.exe, lame.exe and metaflac.exe are in your PATH directories.
-# Popup window will ask for the folder you store flac(s) and the same folder will be
-# used to store generated mp3
-
+import sys
 import os, tkFileDialog
+import pyaudio
+import time
 
 # Get Source Folder with Dialogue Window
 foldername = tkFileDialog.askdirectory(initialdir = 'C:\\')
@@ -19,7 +17,7 @@ def parseDirectory(dir_name):
             if os.path.isfile(f): parseFile(f) # pass the file to the corresponding function
         print "Completed: " + dir_name
 
-def parseFile(file_name):
+def chageFile(file_name):
     if file_name[-4:] == "flac":
         flac_command = "flac -d "
         tag_artist = gettag(file_name,"ARTIST")
