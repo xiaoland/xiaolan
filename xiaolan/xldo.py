@@ -31,7 +31,8 @@ import tuling
 import story
 import joke
 import news
-import dut11
+import smarthome
+import caream
 
 interrupted = False
 
@@ -115,8 +116,10 @@ class skills(object):
             skills.joke()
         elif self.witch == 'news':
             skills.news(newsservice)
-        elif self.witch == 'dht11':
-            skills.dht11()
+        elif self.witch == 'smarthome':
+            skills.smarthome()
+        elif self.witch == 'caream':
+            skills.caream()
         else:
             skills.tuling(text)
     
@@ -155,9 +158,10 @@ class skills(object):
         
         news.start(newsservice)
         
-    def dht11():
+    def smarthome():
         
-        dht11.start()
+        s = smartHome()
+        s.start()
         
 welcome()
 snowboystart()
