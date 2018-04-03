@@ -73,8 +73,10 @@ class AipNlp(AipBase):
         data['text'] = text
 
         data.update(options)
-
+        
+        parsed_text = 
         return self._request(self.__lexerUrl, data)
+        return parsed_text
     
     def lexerCustom(self, text, options=None):
         """
