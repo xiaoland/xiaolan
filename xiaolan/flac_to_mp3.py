@@ -5,7 +5,7 @@ import pyaudio
 import time
 
 # Get Source Folder with Dialogue Window
-foldername = tkFileDialog.askdirectory(initialdir = 'C:\\')
+foldername = tkFileDialog.askdirectory(initialdir = '/home/pi/xiaolan/xiaolan/musiclib/')
 fname = foldername.encode('gb2312')
 
 # Function to search in the folder and loop at all the files found
