@@ -87,7 +87,9 @@ def (name):
         print "%s is already downloaded. Finding next song...\n\n" % songname
     print "\n================================================================\n"
     print "Download finish!"
-    os.sys('omxplayer /home/pi/xiaolan/xiaolan/skills/music.flac')
+    filename = '/home/pi/xiaolan/xiaolan/musiclib/music.flac'
+    flac_to_mp3.chageFile(filename)
+    speaker.player()
         
     
     
