@@ -1,12 +1,32 @@
 #! /usr/bin/python
 # -*- coding: UTF-8 -*-
+import sys
+import os
+import requests
+import json
 
+import speaker
+import stt
+import tts
+import snowboy
+import recorder
 __author__ = 'Caibiy'
 
 import Adafruit_DHT,os,time,datetime,sqlite3,uuid
 conn,cursor=(None,None)
 #gpio
 @unique
+
+def start(service):
+	s = sth()
+	c = usbCamera()
+	if service == 'dht11':
+		s.readDht()
+	elif service == 'caream':
+		c.takePhoto()
+	elif service == 'buzzer':
+		s.buzzer()
+		
 class gpio(Enum):
 	pdht11=1
 	pmq2=2
@@ -49,7 +69,7 @@ def executeDb(sql):
 	cursor.execute(sql)
 	conn.commit()	
 #主控包含传感器、蜂鸣器
-class smartHome(object):
+class sth(object):
 	sensor = Adafruit_DHT.DHT11
 	@property
 	def sensor(self):
@@ -79,6 +99,7 @@ class usbCamera(object):
 	def __init__(self):
 		pass
 	def takePhoto(self):
+		speaker.kacha()
 		nowTime = datetime.datetime.now().strftime("%Y-%m-%d-%H:%M:%S")
 		os.system('fswebcam  -r 1280x720 --no-banner ../img/%s.jpg' % nowTime)
 		saveTime(nowTime)
