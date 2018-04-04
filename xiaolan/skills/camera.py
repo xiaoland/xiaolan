@@ -4,12 +4,13 @@ import sys
 import os
 import requests
 import json
-
+sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
 import stt
 import tts
 import snowboy
 import recorder
+
 __author__ = 'Caibiy'
 
 import Adafruit_DHT,os,time,datetime,sqlite3,uuid
