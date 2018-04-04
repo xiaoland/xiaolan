@@ -24,19 +24,19 @@ def main(newsservice):
     chinanewsurl = 'http://api.avatardata.cn/GuoNeiNews/Query?key='
     nationnewsurl = 'http://api.avatardata.cn/WorldNews/Query?key='
     kejinewsurl = 'http://api.avatardata.cn/TechNews/Query?key='
-    if newsservice = 'chinanews':
+    if newsservice == 'chinanews':
         r = requests.post(chinanewsurl + cAPIKEY + '&page=1&rows=1')
         saytext = r.json()['title']
         baidu_tts.tts(saytext)
         speaker.speak()
         
-    elif newsservice = 'nationnews':
+    elif newsservice == 'nationnews':
         r = requests.post(nationnewsurl + nAPIKEY + '&page=1&rows=1')
         saytext = r.json()['title']
         baidu_tts.tts(saytext)
         speaker.speak()
     
-    elif newsservice = 'kejinews':
+    elif newsservice == 'kejinews':
         r = requests.post(kejinewsurl + kAPIKEY + '&page=1&rows=1')
         saytext = r.json()['title']
         baidu_tts.tts(saytext)
