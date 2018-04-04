@@ -76,8 +76,8 @@ class skills(object):
             skills.clock(re, repeatday, d, h, m, music)
         elif self.witch == 'xlonly':
             skills.xlonly()
-        elif self.witch == 'cream':
-            skills.cream(tp)
+        elif self.witch == 'caream':
+            skills.cream(service)
         elif self.witch == 'smarthome':
             skills.smarthome()
         elif self.witch == 'weather':
@@ -112,9 +112,9 @@ class skills(object):
         
         weather.start(loc)
         
-    def cream():
+    def caream():
         
-        cream.start(tp)
+        caream.start(service)
         
     def music():
         
