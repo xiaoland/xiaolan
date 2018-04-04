@@ -18,12 +18,12 @@ def start(newsservice):
     main()
     
 def main(newsservice):
-  cAPIKEY = '549dfe30dba14d87bcbca16c86bc4d85'
-  nAPIKEY = 'e32ca74cc1ec40dba642f07ffc529447'
-  kAPIKEY = '37d6e1142ceb4cbe98b5cb2de55300d2'
-  chinanewsurl = 'http://api.avatardata.cn/GuoNeiNews/Query?key='
-  nationnewsurl = 'http://api.avatardata.cn/WorldNews/Query?key='
-  kejinewsurl = 'http://api.avatardata.cn/TechNews/Query?key='
+    cAPIKEY = '549dfe30dba14d87bcbca16c86bc4d85'
+    nAPIKEY = 'e32ca74cc1ec40dba642f07ffc529447'
+    kAPIKEY = '37d6e1142ceb4cbe98b5cb2de55300d2'
+    chinanewsurl = 'http://api.avatardata.cn/GuoNeiNews/Query?key='
+    nationnewsurl = 'http://api.avatardata.cn/WorldNews/Query?key='
+    kejinewsurl = 'http://api.avatardata.cn/TechNews/Query?key='
     if newsservice = 'chinanews':
         r = requests.post(chinanewsurl + cAPIKEY + '&page=1&rows=1')
         saytext = r.json()['title']
