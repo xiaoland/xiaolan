@@ -45,8 +45,13 @@ xiaolan:
     - snowboydecoder.py #snowboy主要文件
     - xiaolanxiaolan.pmdl #小蓝小蓝唤醒词
     - .....(不一一列举）
-  
+
 - 五、
+  - 写插件请放在skills下面
+  - 写插件请按照规则写插件，否则会调用失败
+  - 详细的插件规则和教程请看：
+
+- 六、
   各位的帮助我将感激不胜！！！
   有更新请写在xiaolanupdate.txt里面
   更新格式：
