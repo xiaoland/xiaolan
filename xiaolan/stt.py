@@ -123,7 +123,7 @@ class baidu_stt(object):
         #意图理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
         def inent(self):
             intent = 1
-            if intent == 1
+            if intent == 1:
                 if self.domain == 'train':
                     arrival_city = r.json()['arrival_city']
                     start_city = r.json()['start_city']
