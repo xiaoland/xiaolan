@@ -14,8 +14,7 @@ import time
 import os.path
 import sys
 sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
-import speech
-import nlp
+
 
 
 class baidu_stt(object):
@@ -177,8 +176,7 @@ class baidu_stt(object):
                     inent = r.json()['intent']
                     return inent
     def nlplexer(text):
-        AipNlp.lexer(text)
-        return nlptext
+        pass
         
         
         
