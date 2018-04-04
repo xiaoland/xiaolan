@@ -75,7 +75,7 @@ class smartHome(object):
 			elif "开关" in parsed_text:
 				back = cortolswitch
 				h.hassswitchs(cortolswitch)
-			elif "获取" in in parsed_text:
+			elif "获取" in parsed_text:
 				asks = "您要获取传感器的数据还是灯或插头的状态"
 				baidu_tts.tts(asks)
 				speaker.speak()
