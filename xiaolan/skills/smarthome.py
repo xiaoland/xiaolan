@@ -104,8 +104,8 @@ class smartHome(object):
 			entities = remote.get_states(api)
 			for entity in entities:
     				if entity.entity_id.startswith('sensor'):
-        			data = remote.get_state(api, entity.entity_id)
-        			sensors = ('{}: {}'.format(data.attributes['friendly_name'], data.state))
+        				data = remote.get_state(api, entity.entity_id)
+        				sensors = ('{}: {}'.format(data.attributes['friendly_name'], data.state))
 			
 			
 			
