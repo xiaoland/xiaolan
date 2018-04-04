@@ -55,12 +55,10 @@ def welcome():
 
 def snowboystart():
     
-    snowboy.start()
+    os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
 
 def convenstation():
 
-    snowboystop()
-    time.sleep(1)
     speaker.ding()
     recorder.record()
     speaker.dong()
