@@ -49,8 +49,13 @@ def back():
 
 def stop():
     
-    os._exit(-1)
-    
+    sys.exit(825)
+    except SystemExit,error:
+        
+        convenstation()
+        print 'LISTENING......STOP'
+        print 'Give cammand_service to xldo.py'
+        print '......Loading'
 
 start()
             
