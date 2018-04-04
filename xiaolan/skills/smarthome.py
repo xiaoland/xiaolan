@@ -140,7 +140,7 @@ class smartHome(object):
 			remote.set_state(api, cortollight, new_state=STATE_ON)
 		elif cortolinent == 'close':
 			remote.set_state(api, cortollight, new_state=STATE_OFF)
-		else cortolinent:
+		else:
 			remote.set_state(api, cortollight, new_state=STATE_ON)
 		pass
 	
