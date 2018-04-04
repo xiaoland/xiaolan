@@ -49,7 +49,10 @@ def back():
 
 def stop():
     
-    sys.exit(825)
+    try:
+        
+        sys.exit(825)
+        
     except SystemExit,error:
         
         convenstation()
