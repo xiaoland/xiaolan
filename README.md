@@ -17,6 +17,7 @@
     - pip install pyaudio
     - sudo apt-get install python3-dev python-dev libatlas-base-dev
   - 修改/测试(可以在github修改了再提交
+  - 使用wiki维基百科在这里： 
 
 - 三、文件体系：
 xiaolan:
