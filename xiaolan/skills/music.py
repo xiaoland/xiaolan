@@ -20,16 +20,15 @@ import recorder
 
 def start(name):
   
-    m = main()
-    m.ser(name)
+    main(name)
 
-def (name):
+def main(name):
   
     zh = '13415354654@163.com'
     passwd = 'Y20050801056'
     minimumsize = 1
-    url = "http://music.163.com/playlist?id=" + name
-    r = requests.get(url)
+    url2 = "http://music.163.com/playlist?id="
+    r = requests.get(url2 + name)
     contents = r.text
     res = r'<ul class="f-hide">(.*?)</ul>'
     mm = re.findall(res, contents, re.S | re.M)
