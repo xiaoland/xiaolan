@@ -81,7 +81,7 @@ def main(name):
     	if not os.path.isfile(filename) or os.path.getsize(filename) < minimumsize:
         	print "%s is downloading now ......\n" % songname
         	with open(filename, "wb") as code:
-                code.write(f.read())
+                	code.write(f.read())
     	else:
         	print "%s is already downloaded. Finding next song...\n\n" % songname
     		print "\n================================================================\n"
