@@ -15,7 +15,6 @@ import recorder
 import speaker
 
 password = 'y20050801056'
-api = remote.API(url, apikey)
 
 def start(cortolthings, platfrom):
 	h = smartHome()
@@ -35,7 +34,6 @@ class smartHome(object):
 	def main(self, platfrom):
 		if platfrom == '':
 			h = smartHome()
-			api = remote.API(url, password)
 			ask = "请在滴一声之后，说出指令"
 			baidu_tts.tts(ask)
 			speaker.speak()
@@ -102,9 +100,9 @@ class smartHome(object):
     		r_jsons = r.json()
 		entity_id = r_json['']
 		if cortolinent == 'open':
-			remote.call_service(api, domain, 'turn_on', {'entity_id': '{}'.format(entity_id)})
+			
 		elif cortolinent == 'close':
-			remote.call_service(api, domain, 'turn_off', {'entity_id': '{}'.format(entity_id)})
+			
 	
 	#开关控制（homeassistant)
 	def hassswitchs(cortolswitch):
@@ -121,9 +119,9 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 		if cortolinent == 'open':
-			remote.call_service(api, domain, 'turn_on', {'entity_id': '{}'.format(cortolswitch)})
+			
 		elif cortolinent == 'close':
-			remote.call_service(api, domain, 'turn_off', {'entity_id': '{}'.format(switch_name)})
+			
 
 	
 	#设备数据/状态获取(homeassistant)
@@ -139,7 +137,7 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = switch
-			switch_states = remote.get_state(api, switch)
+			
 			if switch_states == 'on':
 				saytext = "该插座为打开状态"
 				baidu_tts.tts(saytext)
@@ -157,7 +155,7 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = sensor
-			sensor_states = remote.get_state(api, sensor)
+			
 			saytext = "该传感器的数据为" + sensor_states
 			baidu_tts.tts(saytext)
 			speaker.speak()
@@ -170,7 +168,7 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = light
-			light_states = remote.get_state(api, light)
+			
 			if light_states == 'on':
 				saytext = "该灯为打开状态"
 				baidu_tts.tts(saytext)
