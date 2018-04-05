@@ -22,7 +22,6 @@ def start(cortolthings, platfrom):
 	
 #主控包含传感器、蜂鸣器
 class smartHome(object):
-	sensor = Adafruit_DHT.DHT11
 	def __init__(self,sensors,cortolswitch,cortollight,cortolinent):
 		self.sensors = sensors
 		self.cortollight = cortollight
