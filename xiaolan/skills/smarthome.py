@@ -100,9 +100,9 @@ class smartHome(object):
     		r_jsons = r.json()
 		entity_id = r_json['']
 		if cortolinent == 'open':
-			
+			pass
 		elif cortolinent == 'close':
-			
+			pass
 	
 	#开关控制（homeassistant)
 	def hassswitchs(cortolswitch):
@@ -119,9 +119,9 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 		if cortolinent == 'open':
-			
+			pass
 		elif cortolinent == 'close':
-			
+			pass
 
 	
 	#设备数据/状态获取(homeassistant)
