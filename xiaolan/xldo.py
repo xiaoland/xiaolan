@@ -17,7 +17,7 @@ from tts import baidu_tts
 import logging
 import tempfile
 import wave
-import recorder
+from recorder import recorder
 import snowboy
 import speaker
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
