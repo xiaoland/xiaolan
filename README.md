@@ -13,6 +13,7 @@
   - 安装一下东东：
     - sudo apt-get install cmake g++ gcc
     - sudo apt-get install python2.7 python3 python-pyaudio python3-pyaudio sox
+    - sudo apt-get install pulseaudio
     - su root(如果还没有启用root账户，输入sudo passwd root, sudo passwd --unlock root)
     - pip install pyaudio
     - sudo apt-get install python3-dev python-dev libatlas-base-dev
