@@ -6,7 +6,7 @@ import os
 import requests
 import pygame
 import time
-import homeassistant.remote as remote
+import remote
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
