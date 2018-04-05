@@ -46,8 +46,6 @@ class smartHome(object):
 			baidu_stt.nlp()
 			inent = cortolinent
 			if "灯" in parsed_text:
-				back = cortollightf
-				cortollight = 
 				h.hasslights(cortollight)
 			elif "开关" in parsed_text:
 				back = cortolswitch
