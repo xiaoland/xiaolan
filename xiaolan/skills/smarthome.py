@@ -105,9 +105,6 @@ class smartHome(object):
 			remote.call_service(api, domain, 'turn_on', {'entity_id': '{}'.format(entity_id)})
 		elif cortolinent == 'close':
 			remote.call_service(api, domain, 'turn_off', {'entity_id': '{}'.format(entity_id)})
-		else:
-
-		pass
 	
 	#开关控制（homeassistant)
 	def hassswitchs(cortolswitch):
@@ -127,7 +124,7 @@ class smartHome(object):
 			remote.call_service(api, domain, 'turn_on', {'entity_id': '{}'.format(cortolswitch)})
 		elif cortolinent == 'close':
 			remote.call_service(api, domain, 'turn_off', {'entity_id': '{}'.format(switch_name)})
-		pass
+
 	
 	#设备数据/状态获取(homeassistant)
 	def hasssensor(ty):
