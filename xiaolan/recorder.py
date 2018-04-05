@@ -19,7 +19,7 @@ class recorder(object):
         
         pass
     
-    def record(): # 录制指令（这里没有问题）
+    def record(wav): # 录制指令（这里没有问题）
         p = pyaudio.PyAudio()
         stream = p.open(format = FORMAT,
                         channels = CHANNELS,
