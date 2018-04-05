@@ -13,27 +13,8 @@ import snowboy
 import recorder
 import speaker
 
-import Adafruit_DHT,os,time,datetime,sqlite3
-conn,cursor=(None,None)
-
 url = '192.168.2.110'
 password = 'y20050801056'
-#初始化数据库
-def initDb():
-	global conn,cursor
-	conn = sqlite3.connect("./db/smarthome.db")
-	cursor = conn.cursor()
-	#图片表如果不存在则创建
-	cursor.execute('''CREATE TABLE IF NOT EXISTS pic (
-	 		picid  INT UNSIGNED AUTO_INCREMENT PRIMARY KEY ,
-	 		time  VARCHAR (100) NOT NULL
-			)''')
-	conn.commit()
-#执行sql
-def executeDb(sql):
-	global conn,cursor
-	cursor.execute(sql)
-	conn.commit()	
 
 def start(cortolthings, platfrom):
 	h = smartHome()
@@ -42,18 +23,13 @@ def start(cortolthings, platfrom):
 #主控包含传感器、蜂鸣器
 class smartHome(object):
 	sensor = Adafruit_DHT.DHT11
-	def __init__(self,pdht11,pmq2,pbuzzer,sensors,cortolswitch,cortollight,cortolinent):
-		self.__pdht11 = pdht11
-		self.__pmq2 = pmq2
-		self.__pbuzzer = pbuzzer
+	def __init__(self,sensors,cortolswitch,cortollight,cortolinent):
 		self.sensors = sensors
 		self.cortollight = cortollight
 		self.cortolswitch = cortolswitch
 		self.cortolinent = cortolinent
 		#初始化mode
-		os.system('gpio -g mode %s out' % pdht11)
-		os.system('gpio -g mode %s out' % pmq2)
-		os.system('gpio -g mode %s out' % pbuzzer)
+
 	
 	def main(self, platfrom):
 		if platfrom == '':
