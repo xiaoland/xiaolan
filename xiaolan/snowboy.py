@@ -51,7 +51,7 @@ def stop():
     
     try:
         
-        sys.exit(825)
+        sys.exit(-1)
         
     except SystemExit,error:
         
