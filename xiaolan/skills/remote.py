@@ -37,7 +37,7 @@ class APIStatus(enum.Enum):
     CANNOT_CONNECT = "cannot_connect"
     UNKNOWN = "unknown"
 
-    def __str__(self) -> str:
+    def __str__(self):
         """Return the state."""
         return self.value
 
@@ -45,7 +45,7 @@ class APIStatus(enum.Enum):
 class API(object):
     """Object to pass around Home Assistant API location and credentials."""
 
-    def __init__(self, host: str, api_password: Optional[str] = None,
+    def __init__(self, host = str, api_password = Optional[str] = None,
                  port: Optional[int] = SERVER_PORT,
                  use_ssl: bool = False) -> None:
         """Init the API."""
