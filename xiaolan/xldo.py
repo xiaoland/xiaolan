@@ -31,7 +31,7 @@ import tuling
 import joke
 import news
 import smarthome
-import caream
+import camera
 
 interrupted = False
 
@@ -75,8 +75,8 @@ class skills(object):
             skills.clock(re, repeatday, d, h, m, music)
         elif self.witch == 'xlonly':
             skills.xlonly()
-        elif self.witch == 'caream':
-            skills.cream(service)
+        elif self.witch == 'camera':
+            skills.camera(service)
         elif self.witch == 'smarthome':
             skills.smarthome()
         elif self.witch == 'weather':
@@ -111,9 +111,9 @@ class skills(object):
         
         weather.start(loc)
         
-    def caream():
+    def camera():
         
-        caream.start(service)
+        camera.start(service)
         
     def music():
         
