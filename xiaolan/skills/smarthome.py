@@ -85,7 +85,6 @@ class smartHome(object):
 	def hasslight(cortollight):
 		url = '192.168.2.110'
 		apikey = 'y20050801056'
-		api = remote.API(url, password)
 		if cortollight == '':
 			askf = "您想要控制什么灯?，请在滴一声之后说出，开，或，关，加上，名称"
 			baidu_tts.tts(askf)
@@ -94,10 +93,19 @@ class smartHome(object):
 			recorder.record()
 			speaker.dong()
 			baidu_stt.stt()
+			
 		headers = {'x-ha-access': password, 'content-type': 'application/json'}
     		r = requests.get("192.168.2.110:8123/api/services", headers=headers)
     		r_jsons = r.json()
 		entity_id = r_json['']
+		for r_json in r_json: 
+		    entity_id = r_json['entity_id']
+                    domain = entity_id.split(".")[0]
+        	    if domain not in ["group", "automation", "script"]:
+            	    url_entity = url + ":" + port + "/api/states/" + entity_id
+            	    entity = requests.get(url_entity, headers=headers).json()
+                    devices.append(entity)
+		
 		if cortolinent == 'open':
 			pass
 		elif cortolinent == 'close':
@@ -108,7 +116,6 @@ class smartHome(object):
 		domain = "switch"
 		url = '192.168.2.110'
 		apikey = 'y20050801056'
-		api = remote.API(url, password)
 		if cortolswitch == '':
 			askt = "您想要控制什么开关?，请在滴一声之后说出，开，或，关，加上，名称"
 			baidu_tts.tts(askt)
