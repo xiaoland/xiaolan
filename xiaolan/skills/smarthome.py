@@ -6,7 +6,6 @@ import os
 import requests
 import pygame
 import time
-import remote
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
