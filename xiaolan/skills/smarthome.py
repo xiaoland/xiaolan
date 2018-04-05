@@ -6,7 +6,6 @@ import os
 import requests
 import pygame
 import time
-import homeassistant.remote as remote
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import stt
 import tts
@@ -93,19 +92,6 @@ class smartHome(object):
 					ty = 3
 					h.hasssensor(ty)
 			
-			print('-- Available services:')
-			services = remote.get_services(api)
-			for service in services:
-				print(service['services'])
-			print('\n-- Available entities:')
-			entities = remote.get_states(api)
-			for entity in entities:
-    				print(entity)
-			entities = remote.get_states(api)
-			for entity in entities:
-    				if entity.entity_id.startswith('sensor'):
-        				data = remote.get_state(api, entity.entity_id)
-        				sensors = ('{}: {}'.format(data.attributes['friendly_name'], data.state))
 			
 			
 			
@@ -137,11 +123,11 @@ class smartHome(object):
 			baidu_stt.stt()
 		
 		if cortolinent == 'open':
-			remote.set_state(api, cortollight, new_state=STATE_ON)
+
 		elif cortolinent == 'close':
-			remote.set_state(api, cortollight, new_state=STATE_OFF)
+
 		else:
-			remote.set_state(api, cortollight, new_state=STATE_ON)
+
 		pass
 	
 	#开关控制（homeassistant)
@@ -159,16 +145,15 @@ class smartHome(object):
 			baidu_stt.stt()
 			
 		if cortolinent == 'open':
-			remote.set_state(api, cortolswitch, new_state=STATE_ON)
+
 		elif cortolinent == 'close':
-			remote.set_state(api, cortolswitch, new_state=STATE_OFF)
+
 		pass
 	
 	#设备数据/状态获取(homeassistant)
 	def hasssensor(ty):
 		url = '192.168.2.110'
 		apikey = 'y20050801056'
-		api = remote.API(url, password)
 		if ty == 1:
 			askf = "您想要获取哪个开关的状态？"
 			baidu_tts.tts(askf)
@@ -178,7 +163,7 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = switch
-			switch_states = remote.get_state(api, switch)
+			
 			if switch_states == 'on':
 				saytext = "该插座为打开状态"
 				baidu_tts.tts(saytext)
@@ -196,7 +181,7 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = sensor
-			sensor_states = remote.get_state(api, sensor)
+
 			saytext = "该传感器的数据为" + sensor_states
 			baidu_tts.tts(saytext)
 			speaker.speak()
@@ -209,7 +194,7 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = light
-			light_states = remote.get_state(api, light)
+
 			if light_states == 'on':
 				saytext = "该灯为打开状态"
 				baidu_tts.tts(saytext)
