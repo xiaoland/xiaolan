@@ -55,7 +55,7 @@ def stop():
         
     except SystemExit,error:
         
-        convenstation()
+        xldo.convenstation()
         print 'LISTENING......STOP'
         print 'Give cammand_service to xldo.py'
         print '......Loading'
