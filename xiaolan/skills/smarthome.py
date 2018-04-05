@@ -21,6 +21,7 @@ def start(cortolthings, platfrom):
 	h = smartHome()
 	h.start(platfrom)
 	
+	
 #主控包含传感器、蜂鸣器
 class smartHome(object):
 	def __init__(self,sensors,cortolswitch,cortollight,cortolinent,entyid):
@@ -28,8 +29,7 @@ class smartHome(object):
 		self.cortollight = cortollight
 		self.cortolswitch = cortolswitch
 		self.cortolinent = cortolinent
-		self.entyid = Nono
-		#初始化mode
+		self.entyid = entyid
 
 	
 	def main(self, platfrom):
