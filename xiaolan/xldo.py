@@ -57,9 +57,10 @@ def snowboystart():
     os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
 
 def convenstation():
-
+    
+    r = recorder()
     speaker.ding()
-    recorder.record()
+    r.record()
     speaker.dong()
     baidu_stt.stt()
     query = witch
