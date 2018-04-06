@@ -18,7 +18,7 @@ class baidu_tts(object):
         
         pass
         
-    def get_token(t):
+    def get_token(self, t):
         AK = 'M9jz0511Yfbb15d1BshqtC5g'
         SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
         try:
