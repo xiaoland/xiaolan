@@ -65,7 +65,8 @@ def convenstation():
     speaker.ding()
     r.record()
     speaker.dong()
-    text = b.stt('./voice.wav')
+    tok = b.get_token()
+    text = b.stt('./voice.wav', tok)
     query = b.nlp(text)
     query = witch
     skills.getskills(witch)
