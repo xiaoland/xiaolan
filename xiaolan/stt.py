@@ -21,7 +21,7 @@ class baidu_stt(object):
     def __init__(self, text, token, json):
         self.text = text
         self.json = json
-        self.token = ''
+        self.token = token
         self.transcribed = transcribed
 
     def get_token(): #获取token
