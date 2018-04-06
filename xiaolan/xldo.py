@@ -60,12 +60,12 @@ def snowboystart():
 def convenstation():
     
     token = ''
-    b = baidu_stt()
+    b = baidu_stt(1, token, 2, '{')
     r = recorder()
     speaker.ding()
     r.record()
     speaker.dong()
-    b.stt(1, token, 2, '{')
+    b.stt()
     query = witch
     skills.getskills(witch)
     
