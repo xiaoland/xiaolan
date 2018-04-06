@@ -14,11 +14,11 @@ from urllib import quote
 
 
 class baidu_tts(object):
-    def __init__(self, token):
-        self.token = ''
-
+    def __init__(self):
         
-    def get_token(self):
+        pass
+        
+    def get_token():
         AK = 'M9jz0511Yfbb15d1BshqtC5g'
         SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
         try:
@@ -47,12 +47,10 @@ class baidu_tts(object):
                                   exc_info=True)
           
         
-    def tts(self, saytext):
-        if self.token == '':
-            self.token = self.get_token()
+    def tts(self, saytext, token):
         query = {'tex': self.stext,
                  'lan': 'zh',
-                 'tok': self.token,
+                 'tok': token,
                  'ctp': 1,
                  'cuid': str(get_mac())[:32],
                  'per': 4
