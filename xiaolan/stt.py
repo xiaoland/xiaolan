@@ -37,7 +37,7 @@ class baidu_stt(object):
                 if (endtime - time).days <= 29:
                     return token
         finally:
-            cache.close()
+            print ('r')
         url = 'http://openapi.baidu.com/oauth/2.0/token'
         params = urllib.urlencode({'grant_type': 'client_credentials',
                                    'client_id': AK,
