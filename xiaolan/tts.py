@@ -14,15 +14,13 @@ from urllib import quote
 
 
 class baidu_tts(object):
-    def __init__(self, token, turl, AK, SK, url, per):
-        self.token = '24.b889fe13015f30355edcdd5343fc2ee9.2592000.1523371315.282335-10747354'
-        self.turl = 'http://openapi.baidu.com/oauth/2.0/token'
-        self.url = 'http://tsn.baidu.com/text2audio'
-        self.AK = 'M9jz0511Yfbb15d1BshqtC5g'
-        self.SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
-        self.per = 4
+    def __init__(self, token):
+        self.token = ''
+
         
     def get_token(self):
+        AK = 'M9jz0511Yfbb15d1BshqtC5g'
+        SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
         try:
             pms = cache.readlines()
             if len(pms) > 0:
@@ -57,7 +55,7 @@ class baidu_tts(object):
                  'tok': self.token,
                  'ctp': 1,
                  'cuid': str(get_mac())[:32],
-                 'per': self.per
+                 'per': 4
                  }
         r = requests.post('http://tsn.baidu.com/text2audio',
                           data=query,
