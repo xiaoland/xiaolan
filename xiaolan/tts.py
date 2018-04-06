@@ -10,6 +10,8 @@ import json
 import pyaudio
 import time
 import shutil  
+import urllib
+import urllib2
 from urllib import quote  
 
 
