@@ -27,7 +27,6 @@ class baidu_stt(object):
     def get_token(): #获取token
         AK = '87oa8ZdtoVLSuVwV4YPqaeD3'
         SK = 'wi8G8UEa1tkgAKZbKsUHaZk8V6p4NxvL'
-        
         try:
             pms = cache.readlines()
             if len(pms) > 0:
@@ -54,9 +53,7 @@ class baidu_stt(object):
                                   exc_info=True)
             return token
         
-    def stt(self, fp): #开始
-        if self.token == '':
-            self.token = self.get_token()
+    def stt(self, fp, token): #开始
         try:
             wav_file = wave.open(fp, 'rb')
         except IOError:
@@ -71,7 +68,7 @@ class baidu_stt(object):
         if self.token == '':
             self.token = self.get_token()
         data = {"format": "wav",
-                "token": self.token,
+                "token": token,
                 "len": len(audio),
                 "rate": frame_rate,
                 "speech": base_data,
