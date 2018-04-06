@@ -60,7 +60,7 @@ def snowboystart():
 def convenstation():
     
     token = ''
-    b = baidu_stt(1, token, 2)
+    b = baidu_stt(1, token, 2, '{')
     r = recorder()
     speaker.ding()
     r.record()
