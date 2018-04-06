@@ -27,16 +27,6 @@ class baidu_stt(object):
     def get_token(self, t): #获取token
         AK = '87oa8ZdtoVLSuVwV4YPqaeD3'
         SK = 'wi8G8UEa1tkgAKZbKsUHaZk8V6p4NxvL'
-        try:
-            if len(pms) > 0:
-                time = pms[0]
-                token = pms[1]
-                time = dparser.parse(time)
-                endtime = datetime.datetime.now()
-                if (endtime - time).days <= 29:
-                    return token
-        finally:
-            print ('r')
         url = 'http://openapi.baidu.com/oauth/2.0/token'
         params = urllib.urlencode({'grant_type': 'client_credentials',
                                    'client_id': AK,
