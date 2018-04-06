@@ -13,6 +13,8 @@ import logging
 import time
 import os.path
 import sys
+import urllib
+import urllib2
 sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
 
 
