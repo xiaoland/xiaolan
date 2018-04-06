@@ -24,7 +24,7 @@ class baidu_stt(object):
         self.token = token
         self.transcribed = transcribed
 
-    def get_token(t): #获取token
+    def get_token(self, t): #获取token
         AK = '87oa8ZdtoVLSuVwV4YPqaeD3'
         SK = 'wi8G8UEa1tkgAKZbKsUHaZk8V6p4NxvL'
         try:
