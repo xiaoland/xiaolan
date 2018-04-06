@@ -19,6 +19,21 @@ def start(cortolthings, platfrom):
 	h = smartHome()
 	h.start(platfrom)
 	
+def keyvalue_all(self,input_json):  
+    key_value=''  
+    if isinstance(input_json,dict):  
+        for key in input_json.keys():  
+            key_value = input_json.get(key)  
+            if isinstance(key_value,dict):  
+                self.print_keyvalue_all(key_value)  
+            elif isinstance(key_value,list):  
+                for json_array in key_value:  
+                    self.print_keyvalue_all(json_array)  
+            else:  
+                print str(key)+" = "+str(key_value)  
+    elif isinstance(input_json,list):  
+        for input_json_array in input_json:  
+            self.print_keyvalue_all(input_json_array)  
 	
 #主控包含传感器、蜂鸣器
 class smartHome(object):
@@ -96,15 +111,8 @@ class smartHome(object):
 			
 		headers = {'x-ha-access': password, 'content-type': 'application/json'}
     		r = requests.get("192.168.2.110:8123/api/services", headers=headers)
-    		r_jsons = r.json()
-		entity_id = r_json['']
-		for r_json in r_json: 
-		    entity_id = r_json['entity_id']
-                    domain = entity_id.split(".")[0]
-        	    if domain not in ["group", "automation", "script"]:
-            	    url_entity = url + ":" + port + "/api/states/" + entity_id
-            	    entity = requests.get(url_entity, headers=headers).json()
-                    devices.append(entity)
+		json = r.json()
+		services = keyvalue_all(1, json)
 		
 		if cortolinent == 'open':
 			pass
@@ -124,6 +132,12 @@ class smartHome(object):
 			recorder.record()
 			speaker.dong()
 			baidu_stt.stt()
+			
+		headers = {'x-ha-access': password, 'content-type': 'application/json'}
+    		r = requests.get("192.168.2.110:8123/api/services", headers=headers)
+		json = r.json()
+		services = keyvalue_all(1, json)
+		
 		if cortolinent == 'open':
 			pass
 		elif cortolinent == 'close':
@@ -144,6 +158,11 @@ class smartHome(object):
 			baidu_stt.stt()
 			text = switch
 			
+			headers = {'x-ha-access': password, 'content-type': 'application/json'}
+    			r = requests.get("192.168.2.110:8123/api/services", headers=headers)
+			json = r.json()
+			services = keyvalue_all(1, json)
+			
 			if switch_states == 'on':
 				saytext = "该插座为打开状态"
 				baidu_tts.tts(saytext)
@@ -161,6 +180,11 @@ class smartHome(object):
 			speaker.dong()
 			baidu_stt.stt()
 			text = sensor
+			
+			headers = {'x-ha-access': password, 'content-type': 'application/json'}
+    			r = requests.get("192.168.2.110:8123/api/services", headers=headers)
+			json = r.json()
+			service = keyvalue_all(1, json)
 			
 			saytext = "该传感器的数据为" + sensor_states
 			baidu_tts.tts(saytext)
