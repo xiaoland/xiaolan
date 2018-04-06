@@ -52,8 +52,6 @@ class baidu_stt(object):
             self._logger.critical('Token request failed with response: %r',
                                   r.text,
                                   exc_info=True)
-            tokenstates = r.states()
-            return tokenstates
             return token
         
     def stt(self, fp): #开始
