@@ -21,7 +21,7 @@ class baidu_tts(object):
         
         pass
         
-    def get_token(self, t):
+    def get_token(self, token):
         AK = 'M9jz0511Yfbb15d1BshqtC5g'
         SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
         URL = 'http://openapi.baidu.com/oauth/2.0/token'
