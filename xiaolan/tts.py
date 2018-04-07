@@ -12,6 +12,7 @@ import time
 import shutil  
 import urllib
 import urllib2
+import base64
 from urllib import quote  
 
 
