@@ -35,6 +35,7 @@ def main(text):
     r = requests.post(url, data=data)
     saytext = r.text
     bt = baidu_tts()
-    bt.tts(saytext)
+    tok = bt.get_token()
+    bt.tts(saytext, tok)
     speaker.speak()
     
