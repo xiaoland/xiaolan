@@ -5,8 +5,8 @@ import os
 import requests
 import json
 sys.path.append('/home/pi/xiaolan/xiaolan/')
-import stt
-import tts
+from stt import bsidu_stt
+from tts import baidu_tts
 import snowboy
 import speaker
 import recorder
