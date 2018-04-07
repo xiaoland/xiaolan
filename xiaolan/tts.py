@@ -26,8 +26,8 @@ class baidu_tts(object):
         SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
         URL = 'http://openapi.baidu.com/oauth/2.0/token'
         params = urllib.urlencode({'grant_type': 'client_credentials',
-                                   'client_id': self.AK,
-                                   'client_secret': self.SK})
+                                   'client_id': AK,
+                                   'client_secret': SK})
         r = requests.get(URL, params=params)
         try:
             r.raise_for_status()
