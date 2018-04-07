@@ -11,7 +11,7 @@ CHUNK = 1024
 FORMAT = pyaudio.paInt16
 RATE = 16000
 CHANNELS = 1
-RECORD_SECONDS = 10
+RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = "voice.wav"
 
 class recorder(object):
