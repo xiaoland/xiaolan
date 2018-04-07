@@ -64,9 +64,9 @@ class baidu_stt(object):
                 "len": len(audio),
                 "rate": frame_rate,
                 "speech": base_data,
-                "cuid": str(get_mac())[:32],
+                "cuid": 'b0-10-41-92-84-4d',
                 "channel": 1}
-        data = json.dumps(data)
+        
         r = requests.post('http://vop.baidu.com/server_api',
                           data=data,
                           headers={'content-type': 'application/json'})
@@ -99,62 +99,7 @@ class baidu_stt(object):
             return transcribed
         
         #意图理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
-        def query(self):
-            intent = 1
-            if intent == 1:
-                if domain == 'train':
-                    arrival_city = r.json()['arrival_city']
-                    start_city = r.json()['start_city']
-                    start_station = r.json()['start_station']
-                    train_type = r.json()['train_type']
-                    return train_type, start_station, start_city, arrival_city
-                elif domain == 'weather':
-                    date = r.json()['date']
-                    region = r.json()['region']
-                    return date
-                    return region
-                elif domain == 'flight':
-                    start_date = r.json['start_date']
-                    start_city = r.json()['start_city']
-                    arrival_city = r.json()['arrival_city']
-                    airline = r.json()['airline']
-                    return airline, arrival_city, start_city, start_date
-                elif domain == 'map':
-                    start = r.json()['start']
-                    arrival = r.json()['arrival']
-                    drive_sort = r.json()['drive_sort']
-                    route_type = r.json()[' route_type ']
-                    return route_type
-                    return drive_sort
-                    return arrival
-                    return start
-                elif domain == 'telephone':
-                    name = r.json()['name']
-                    operator = r.json()['operator']
-                    location = r.json()['location']
-                    return name
-                    return operator
-                    return location
-                elif domain == 'app':
-                    appname = r.json()['appname']
-                    return appname
-                elif domain == 'website':
-                    sitename = r.json()['sitename']
-                    browser = r.json()['browser']
-                    return browser
-                    return sitename
-                elif domain == 'music':
-                    name = r.json()['name']
-                    return name
-                elif domain == 'joke':
-                    sence = r.json()['sence']
-                    audience = r.json()['audience']
-                    return sence
-                    return audience
-                elif domian == 'instruction':
-                    inent = r.json()['intent']
-                    return inent
-                return domian
+    
     def nlplexer(text):
         pass
         
