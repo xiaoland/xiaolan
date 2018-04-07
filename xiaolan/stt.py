@@ -98,7 +98,7 @@ class baidu_stt(object):
             return transcribed
         
         #意图理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
-        def inent(self):
+        def query(self):
             intent = 1
             if intent == 1:
                 if domain == 'train':
@@ -153,6 +153,7 @@ class baidu_stt(object):
                 elif domian == 'instruction':
                     inent = r.json()['intent']
                     return inent
+                return domian
     def nlplexer(text):
         pass
         
