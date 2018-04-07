@@ -102,13 +102,13 @@ class baidu_stt(object):
     def nlpquery(self):
         intent = 1 
         if intent == 1: 
-            if self.domain == 'train': 
+            if domain == 'train': 
                 arrival_city = r.json()['arrival_city'] 
                 start_city = r.json()['start_city'] 
                 start_station = r.json()['start_station'] 
                 train_type = r.json()['train_type'] 
                 return train_type, start_station, start_city, arrival_city 
-            elif self.domain == 'weather': 
+            elif domain == 'weather': 
                 date = r.json()['date'] 
                 region = r.json()['region'] 
                 return date return region 
@@ -118,7 +118,7 @@ class baidu_stt(object):
                 arrival_city = r.json()['arrival_city'] 
                 airline = r.json()['airline'] 
                 return airline, arrival_city, start_city, start_date 
-            elif self.domain == 'map': 
+            elif domain == 'map': 
                 start = r.json()['start'] 
                 arrival = r.json()['arrival'] 
                 drive_sort = r.json()['drive_sort'] 
@@ -127,14 +127,14 @@ class baidu_stt(object):
                 return drive_sort 
                 return arrival 
                 return start 
-            elif self.domain == 'telephone':
+            elif domain == 'telephone':
                 name = r.json()['name']
                 operator = r.json()['operator'] 
                 location = r.json()['location'] 
                 return name 
                 return operator 
                 return location 
-            elif self.domain == 'app': 
+            elif domain == 'app': 
                 appname = r.json()['appname'] 
                 return appname 
             elif self.domain == 'website': 
@@ -142,17 +142,20 @@ class baidu_stt(object):
                 browser = r.json()['browser'] 
                 return browser 
                 return sitename 
-            elif self.domain == 'music': 
+            elif domain == 'music': 
                 name = r.json()['name'] 
                 return name 
-            elif self.domain == 'joke': 
+            elif domain == 'joke': 
                 sence = r.json()['sence'] 
                 audience = r.json()['audience'] 
                 return sence 
                 return audience 
-            elif self.domian == 'instruction': 
+            elif domian == 'instruction': 
                 inent = r.json()['intent'] 
-                return inent 
+                return inent
+            else:
+                tuling = 'tuling'
+                return tuling
             return domian
     def nlplexer(text):
         pass
