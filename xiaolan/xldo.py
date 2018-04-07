@@ -107,42 +107,42 @@ class skills(object):
         else:
             skills.tuling(text)
     
-    def clock(re, repeatday, d, h, m, music):
+    def clock(self, re, repeatday, d, h, m, music):
         clock.start(re, repeatday, d, h, m, music)
         
-    def xlonly():
+    def xlonly(self):
         
         xlonly.start()
     
-    def weather(loc):
+    def weather(self, loc):
         
         weather.start(loc)
         
-    def camera():
+    def camera(self):
         
         camera.start(service)
         
-    def music():
+    def music(self):
         
         music.start(name)
         
-    def tuling(text):
+    def tuling(self, text):
         
         tuling.start(text)
     
-    def story():
+    def story(self):
         
         story.start()
         
-    def joke():
+    def joke(self):
         
         joke.start()
         
-    def news(newsservice):
+    def news(self, newsservice):
         
         news.start(newsservice)
         
-    def smarthome():
+    def smarthome(self):
         
         s = smartHome()
         s.start()
