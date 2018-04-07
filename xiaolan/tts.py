@@ -44,7 +44,7 @@ class baidu_tts(object):
                  'lan': 'zh',
                  'tok': token,
                  'ctp': 1,
-                 'cuid': str(get_mac())[:32],
+                 'cuid': 'b0-10-41-92-84-4d',
                  'per': 4
                  }
         r = requests.post('http://tsn.baidu.com/text2audio',
