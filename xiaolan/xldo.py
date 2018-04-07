@@ -62,14 +62,15 @@ def convenstation():
     token = ''
     b = baidu_stt(1, token, 2, '{')
     r = recorder()
+    s = skills()
+    
     speaker.ding()
     r.record()
     speaker.dong()
     tok = b.get_token(1)
     text = b.stt('./voice.wav', tok)
-    query = b.nlp(text)
-    query = witch
-    skills.getskills(witch)
+    query = b.nlpquery(text)
+    s.getskills(query)
     
 class skills(object):
     
