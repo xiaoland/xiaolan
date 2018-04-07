@@ -33,7 +33,8 @@ def main(text):
                 }
     }
     r = requests.post(url, data=data)
-    saytext = r.json()['text']
-    baidu_tts.tts(saytext)
+    saytext = r.text
+    bt = baidu_tts()
+    bt.tts(saytext)
     speaker.speak()
     
