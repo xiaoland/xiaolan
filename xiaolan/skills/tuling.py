@@ -4,6 +4,7 @@ import sys
 import os
 import requests
 import json
+import urllib2
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import bsidu_stt
 from tts import baidu_tts
@@ -32,8 +33,10 @@ def main(text):
                     "userId": ui
                 }
     }
-    r = requests.post(url, data=data)
-    saytext = r.text
+
+    talkback = requests.post(url, data=data)
+    hjson = json.loads(talkback.read())
+    saytext = hjson['text']
     bt = baidu_tts()
     tok = bt.get_token()
     bt.tts(saytext, tok)
