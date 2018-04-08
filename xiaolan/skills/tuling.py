@@ -35,10 +35,9 @@ def main(text):
     }
 
     talkback = requests.post(url, data=data)
-    talkback_data = json.load(talkback)
-    for talkback_list in talkback_data:
-        text = talkback_list['text']
-    saytext = text 
+    talkback_data = json.loads(talkback)
+    print talkback_data
+    saytext = talkback_data['results']['values']['text']
 
     bt = baidu_tts()
     tok = bt.get_token()
