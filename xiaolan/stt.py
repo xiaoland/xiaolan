@@ -59,14 +59,14 @@ class baidu_stt(object):
         base_data = base64.b64encode(audio)
         if self.token == '':
             self.token = self.get_token()
-        data = {"format": "wav",
+        dataf = {"format": "wav",
                 "token": token,
                 "len": len(audio),
                 "rate": frame_rate,
                 "speech": base_data,
                 "cuid": 'b0-10-41-92-84-4d',
                 "channel": 1}
-        
+        data = json.dumps(dataf)
         r = requests.post('http://vop.baidu.com/server_api',
                           data=data,
                           headers={'content-type': 'application/json'})
