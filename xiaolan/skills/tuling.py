@@ -28,7 +28,7 @@ def main(text):
                   "inputText": {
                       "text": "附近的酒店"
                   },
-              }
+              },
               "userInfo": {
                   "apiKey": ak,
                   "userId": ui
