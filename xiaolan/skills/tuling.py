@@ -5,6 +5,7 @@ import os
 import requests
 import json
 import urllib2
+import demjson
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import bsidu_stt
 from tts import baidu_tts
@@ -35,7 +36,7 @@ def main(text):
     }
 
     talkback = requests.post(url, data=data)
-    talkback_data = json.loads(talkback)
+    talkback_data = demjson.decode(talkback)
     print talkback_data
     saytext = talkback_data['results']['values']['text']
 
