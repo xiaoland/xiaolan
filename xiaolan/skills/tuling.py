@@ -23,22 +23,24 @@ def main(text):
     ui = '167031'
     url = 'http://openapi.tuling123.com/openapi/api/v2'
     data = {
-	              "reqType":0,
-                "perception": {
-                    "inputText": {
-                        "text": text
-                    },
-                },
-                "userInfo": {
-                    "apiKey": ak,
-                    "userId": ui
-                }
-    }
+	      "reqType":0,
+              "perception": {
+                  "inputText": {
+                      "text": "附近的酒店"
+                  },
+              }
+              "userInfo": {
+                  "apiKey": ak,
+                  "userId": ui
+              }
+            }
 
     talkback = requests.post(url, data=data)
-    talkback_data = demjson.decode(talkback)
+    talkback_data = talkback.json()
     print talkback_data
-    saytext = talkback_data['results']['values']['text']
+    talkback_list = talkback_data['results']
+    talkback_val = talkback_list['values']
+    saytext = talkback_val['text']
 
     bt = baidu_tts()
     tok = bt.get_token()
