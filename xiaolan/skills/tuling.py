@@ -22,7 +22,7 @@ def main(text):
     ak = 'c380ed8f2880443c84892ace36ba6bad'
     ui = '167031'
     url = 'http://openapi.tuling123.com/openapi/api/v2'
-    data = {
+    dataf = {
 	      "reqType":0,
               "perception": {
                   "inputText": {
@@ -34,7 +34,7 @@ def main(text):
                   "userId": ui
               }
            }
-
+    data = json.dumps(dataf)
     talkback = requests.post(url, data=data)
     talkback_data = talkback.json()
     print talkback_data
