@@ -39,7 +39,7 @@ def main(text):
     talkback_data = talkback.json()
     print talkback_data
     talkback_list = talkback_data['results']
-    talkback_val = talkback_list[2]
+    talkback_val = talkback_list[1]
     saytext = talkback_val['text']
 
     bt = baidu_tts()
