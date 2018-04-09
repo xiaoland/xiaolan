@@ -72,12 +72,17 @@ class baidu_stt(object):
         r = requests.post('http://vop.baidu.com/server_api',
                           data=data,
                           headers={'content-type': 'application/json'})
+        
         json = r.json()
+        
         try:
             r.raise_for_status()
             text = ''
             if 'result' in r.json():
                 text = r.json()['result'][0].encode('utf-8')
+                print ("STT GET:")
+                print (text)
+                return text
         except requests.exceptions.HTTPError:
             self._logger.critical('Request failed with response: %r',
                                   r.text,
@@ -98,7 +103,6 @@ class baidu_stt(object):
             if text:
                 transcribed.append(text.upper())
             print (json)
-            return transcribed
         
         #意图理解（大家一起补充啊，内容较多，或者看看有没有什么BUG，参考http://ai.baidu.com/docs#/ASR-Query-Protocol/6a6adfe0）
     def nlpquery(self):
