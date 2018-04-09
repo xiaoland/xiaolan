@@ -18,7 +18,7 @@ import urllib2
 import base64
 sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
 
-
+domian = 'a'
 
 class baidu_stt(object):
     def __init__(self, text, token, domain, transcribed):
