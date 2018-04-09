@@ -1,60 +1,52 @@
+# -*- coding: utf-8 -*-
 import sys
 import os
 import json
-import 
-        if intent == 1:
-            if domain == 'train':
-                arrival_city = r.json()['arrival_city']
-                start_city = r.json()['start_city']
-                start_station = r.json()['start_station']
-                train_type = r.json()['train_type']
-                return train_type, start_station, start_city, arrival_city
+import requests
+import pygame
+import demjson
+import time
+
+intent = ''
+
+def get_intent(text):
+        ak = 'cd3c2238c7348d28363a1aad0b93d474'
+        url = 'https://ai.aixxz.com'
+        path = '/api?'
+
+        data = {
+                "city" = "中山"
+                "nickname" = "tb"
+                "text" = text
+                "user" = "123456"
+               }
+        r = requests.post(url + path + data,
+                          headers={'Authorization', 'APPCODE ' + appcode})
+        json = r.json()
+        domian = json['intent']
+        return domain
+        
+        
+def do_intent(domian, json)
+        if intent == '':
+            if domain == 'ticket':
+                semantic = json['semantic']
+                transportation = semantic['transportation']
+                start_loc = semantic['start_loc']
+                startdate = semantic['startdate']
+                return startdate, start_loc, transportation
             elif domain == 'weather':
-                date = r.json()['date']
-                region = r.json()['region']
-                return date
-                return region
-            elif domain == 'flight':
-                start_date = r.json['start_date']
-                start_city = r.json()['start_city']
-                arrival_city = r.json()['arrival_city']
-                airline = r.json()['airline']
-                return airline, arrival_city, start_city, start_date
-            elif domain == 'map':
-                start = r.json()['start']
-                arrival = r.json()['arrival']
-                drive_sort = r.json()['drive_sort']
-                route_type = r.json()[' route_type ']
-                return route_type
-                return drive_sort
-                return arrival
-                return start
-            elif domain == 'telephone':
-                name = r.json()['name']
-                operator = r.json()['operator']
-                location = r.json()['location']
-                return name
-                return operator
-                return location
-            elif domain == 'app':
-                appname = r.json()['appname']
-                return appname
-            elif domain == 'website':
-                sitename = r.json()['sitename']
-                browser = r.json()['browser']
-                return browser
-                return sitename
+                semantic = json['semantic']
+                city = semantic['city']
+                return city
             elif domain == 'music':
-                name = r.json()['name']
-                return name
+                semantic = json['semantic']
+                mode = semantic['mode']
+                return mode
             elif domain == 'joke':
-                sence = r.json()['sence']
-                audience = r.json()['audience']
+                sence = 'joke'
                 return sence
-                return audience
-            elif domian == 'instruction':
-                inent = r.json()['intent']
-                return inent
             else:
                 tuling = 'tuling'
                 return tuling
+        return domian
