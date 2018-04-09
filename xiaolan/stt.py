@@ -12,7 +12,7 @@ import hyper
 import logging
 import time
 import os.path
-import sys
+import demjson
 import urllib
 import urllib2
 import base64
@@ -66,7 +66,9 @@ class baidu_stt(object):
                 "speech": base_data,
                 "cuid": 'b0-10-41-92-84-4d',
                 "channel": 1}
-        data = json.dumps(dataf)
+        
+        data = demjson.encode(dataf)
+        
         r = requests.post('http://vop.baidu.com/server_api',
                           data=data,
                           headers={'content-type': 'application/json'})
