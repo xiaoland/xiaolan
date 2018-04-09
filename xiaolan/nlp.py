@@ -69,6 +69,15 @@ def do_intent(text): #自制的语义理解系统,欢迎大家补充
                 return intent
         elif '傻逼' in text:
                 speaker.falu()
+        elif '拍照' in text:
+                intent = 'camera'
+                return intent
+        elif '邮件' in text:
+                intent = 'email'
+                return intent
+        elif '快递' in text:
+                intent = 'experss'
+                return intent
         else:
                 intent = 'tuling'
                 return intent
