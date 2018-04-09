@@ -41,7 +41,7 @@ class baidu_tts(object):
           
         
     def tts(self, saytext, token):
-        query = {'tex': self.stext,
+        data = {'tex': self.stext,
                  'lan': 'zh',
                  'tok': token,
                  'ctp': 1,
@@ -49,7 +49,7 @@ class baidu_tts(object):
                  'per': 4
                  }
         r = requests.post('http://tsn.baidu.com/text2audio',
-                          data=query,
+                          data=data,
                           headers={'content-type': 'application/json'})
                try:
             r.raise_for_status()
