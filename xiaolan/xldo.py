@@ -74,8 +74,12 @@ def convenstation():
         s.smarthome()
     elif '儿子' in text:
         s.xlonly()
+    elif '女儿' in text:
+        s.xlonly()
     else:
         intent = nlp.get_intent(text)
+        if intent == 'text':
+            intent = nlp.do_intent(text)
         s.getskills(intent)
     
 class skills(object):
