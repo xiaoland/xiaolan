@@ -21,9 +21,9 @@ sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
 
 
 class baidu_stt(object):
-    def __init__(self, text, token, json, transcribed):
+    def __init__(self, text, token, domain, transcribed):
         self.text = text
-        self.json = json
+        self.domian = json
         self.token = token
         self.transcribed = transcribed
 
