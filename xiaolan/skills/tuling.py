@@ -39,7 +39,7 @@ def main(text):
     talkback_data = talkback.json()
     print talkback_data
     talkback_list = talkback_data["results"]
-    talkback_dict = talkback_list[0]
+    talkback_dict = talkback_list[-1]
     talkback_val = talkback_dict["values"]
     saytext = talkback_val["text"]
 
