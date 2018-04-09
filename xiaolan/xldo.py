@@ -20,6 +20,7 @@ import wave
 from recorder import recorder
 import snowboy
 import speaker
+import nlp
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
 sys.path.append('/home/pi/xiaolan/xiaolan/skills/')
@@ -69,8 +70,13 @@ def convenstation():
     speaker.dong()
     tok = b.get_token()
     text = b.stt('./voice.wav', tok)
-    query = b.nlpquery(text)
-    s.getskills(query)
+    if '智能家居' in text:
+        s.smarthome()
+    elif '儿子' in text:
+        s.xlonly()
+    else:
+        intent = nlp.get_intent(text)
+        s.getskills(intent)
     
 class skills(object):
     
@@ -79,17 +85,17 @@ class skills(object):
         
     def getskills(self):
         if self.witch == 'clock':
-            skills.clock(re, repeatday, d, h, m, music)
+            skills.clock()
         elif self.witch == 'xlonly':
             skills.xlonly()
         elif self.witch == 'camera':
-            skills.camera(service)
+            skills.camera()
         elif self.witch == 'smarthome':
             skills.smarthome()
         elif self.witch == 'weather':
-            skills.weather(loc)
+            skills.weather()
         elif self.witch == 'music':
-            skills.music(name)
+            skills.music()
         elif self.witch == 'ts':
             skills.ts()
         elif self.witch == 'email':
@@ -99,7 +105,7 @@ class skills(object):
         elif self.witch == 'joke':
             skills.joke()
         elif self.witch == 'news':
-            skills.news(newsservice)
+            skills.news()
         elif self.witch == 'smarthome':
             skills.smarthome()
         elif self.witch == 'caream':
@@ -107,28 +113,28 @@ class skills(object):
         else:
             skills.tuling(text)
     
-    def clock(self, re, repeatday, d, h, m, music):
-        clock.start(re, repeatday, d, h, m, music)
+    def clock(self):
+        clock.start()
         
     def xlonly(self):
         
         xlonly.start()
     
-    def weather(self, loc):
+    def weather(self):
         
-        weather.start(loc)
+        weather.start()
         
     def camera(self):
         
-        camera.start(service)
+        camera.start()
         
     def music(self):
         
-        music.start(name)
+        music.start()
         
-    def tuling(self, text):
+    def tuling(self):
         
-        tuling.start(text)
+        tuling.start()
     
     def story(self):
         
@@ -138,9 +144,9 @@ class skills(object):
         
         joke.start()
         
-    def news(self, newsservice):
+    def news(self):
         
-        news.start(newsservice)
+        news.start()
         
     def smarthome(self):
         
