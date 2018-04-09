@@ -13,6 +13,7 @@ import shutil
 import urllib
 import urllib2
 import base64
+import tempfile
 from urllib import quote  
 
 
