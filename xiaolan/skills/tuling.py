@@ -37,12 +37,7 @@ def main(text):
     data = json.dumps(dataf)
     talkback = requests.post(url, data=data)
     talkback_data = talkback.json()
-    print talkback_data
-    talkback_list = talkback_data["results"]
-    talkback_dict = talkback_list[-1]
-    talkback_val = talkback_dict["values"]
-    text = talkback_val["text"]
-    print text
+    text = talkback_data["results"][-1]["values"]["text"]
     saytext = text.encode('utf-8','strict')
     bt = baidu_tts()
     tok = bt.get_token()
