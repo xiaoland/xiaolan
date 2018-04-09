@@ -26,7 +26,7 @@ def main(text):
 	      "reqType":0,
               "perception": {
                   "inputText": {
-                      "text": "附近的酒店"
+                      "text": text
                   },
               },
               "userInfo": {
