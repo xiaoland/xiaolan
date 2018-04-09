@@ -50,8 +50,16 @@ class baidu_tts(object):
         r = requests.post('http://tsn.baidu.com/text2audio',
                           data=query,
                           headers={'content-type': 'application/json'})
-        if r.status_code == 200:
-            with open('say.mp3', 'wb') as f:
-                f.write(result)
-                r.raw.decode_content = True
-                shutil.copyfileobj(r.raw, f)
+               try:
+            r.raise_for_status()
+            if r.json()['err_msg'] is not None:
+                self._logger.critical('Baidu TTS failed with response: %r',
+                                      r.json()['err_msg'],
+                                      exc_info=True)
+                return None
+        except Exception:
+            pass
+        with tempfile.NamedTemporaryFile(suffix='.mp3', delete=False) as f:
+            f.write(r.content)
+            tmpfile = 'say'
+            return tmpfile
