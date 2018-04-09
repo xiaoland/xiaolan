@@ -41,8 +41,9 @@ def main(text):
     talkback_list = talkback_data["results"]
     talkback_dict = talkback_list[-1]
     talkback_val = talkback_dict["values"]
-    saytext = talkback_val["text"]
-
+    text = talkback_val["text"]
+    print text
+    saytext = text.encode('utf-8','strict')
     bt = baidu_tts()
     tok = bt.get_token()
     bt.tts(saytext, tok)
