@@ -51,6 +51,7 @@ class baidu_tts(object):
                           data=query,
                           headers={'content-type': 'application/json'})
         if r.status_code == 200:
-            with open(r"/home/pi/xiaolan/xiaolan/musiclib/say.mp3", 'wb') as f:
+            with open('say.mp3', 'wb') as f:
+                f.write(result)
                 r.raw.decode_content = True
                 shutil.copyfileobj(r.raw, f)
