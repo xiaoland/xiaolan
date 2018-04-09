@@ -73,20 +73,15 @@ class baidu_stt(object):
                           data=data,
                           headers={'content-type': 'application/json'})
         
-        json = r.json()
-        
         try:
             r.raise_for_status()
             text = ''
             if 'result' in r.json():
                 text = r.json()['result'][0].encode('utf-8')
-                print ("STT GET:")
-                print (text)
                 return text
         except requests.exceptions.HTTPError:
-            self._logger.critical('Request failed with response: %r',
-                                  r.text,
-                                  exc_info=True)
+            print ('Request failed with response: %r',
+                   r.text)
             return []
         except requests.exceptions.RequestException:
             print ('Request failed.')
