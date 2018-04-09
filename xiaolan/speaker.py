@@ -22,4 +22,4 @@ def speak(): #说出的回话
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
     
 def player(): #音乐播放器
-    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/music.mp3')
+    os.system('omxplayer /home/pi/xiaolan/xiaolan/music.mp3')
