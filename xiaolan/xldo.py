@@ -84,35 +84,35 @@ def convenstation():
     
 class skills(object):
     
-    def __init__(self, witch):
-        self.witch = witch
+    def __init__(self):
+        pass
         
     def getskills(self):
-        if self.witch == 'clock':
+        if witch == 'clock':
             skills.clock()
-        elif self.witch == 'xlonly':
+        elif witch == 'xlonly':
             skills.xlonly()
-        elif self.witch == 'camera':
+        elif witch == 'camera':
             skills.camera()
-        elif self.witch == 'smarthome':
+        elif witch == 'smarthome':
             skills.smarthome()
-        elif self.witch == 'weather':
+        elif witch == 'weather':
             skills.weather()
-        elif self.witch == 'music':
+        elif witch == 'music':
             skills.music()
-        elif self.witch == 'ts':
+        elif witch == 'ts':
             skills.ts()
-        elif self.witch == 'email':
+        elif witch == 'email':
             skills.email()
-        elif self.witch == 'story':
+        elif witch == 'story':
             skills.story()
-        elif self.witch == 'joke':
+        elif witch == 'joke':
             skills.joke()
-        elif self.witch == 'news':
+        elif witch == 'news':
             skills.news()
-        elif self.witch == 'smarthome':
+        elif witch == 'smarthome':
             skills.smarthome()
-        elif self.witch == 'caream':
+        elif witch == 'caream':
             skills.caream()
         else:
             skills.tuling(text)
