@@ -28,15 +28,12 @@ def get_intent(text):
                   'user': '123456',
                   'text': textf,
                   'city': city}
-        header = {"Host":"ai.aixxz.com","X-Ca-Timestamp":"1523284131144","gateway_channel":"http","X-Ca-Request-Mode":"debug","X-Ca-Key":"24846601","X-Ca-Stage":"RELEASE","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","X-Ca-Signature-Headers":"X-Ca-Timestamp,X-Ca-Request-Mode,X-Ca-Key,X-Ca-Stage","X-Ca-Signature":"on/fCtcL1WKbRkyb3tc6p0WPDdglweeAluV3K8nEQWY="}
-
-
-        request = urllib2.Request('https://ai.aixxz.com/api?',
-                                  querys,
-                                  body)  
+        
+        data = urllib.urlencode(querys) 
+        request = urllib2.Request(host, data)
         request.add_header('Authorization', 'APPCODE ' + appcode)
         response = urllib2.urlopen(request)
-        
+        reback = response.read()
         json = demjson.decode(response)
         domain = json['intent']
         return domain
