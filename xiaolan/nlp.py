@@ -35,7 +35,7 @@ def get_intent(text):
         ctx = ssl.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
-        response = urllib2.urlopen(request, context = ctx)
+        response = urllib2.urlopen(request, context=ctx)
         reback = response.read()
         json = demjson.decode(response)
         domain = json['intent']
