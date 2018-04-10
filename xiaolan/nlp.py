@@ -24,7 +24,7 @@ def get_intent(text):
                 "user": "123456"
                }
         r = requests.post(url + path + data,
-                          headers={'Authorization', 'APPCODE ' + appcode})
+                          headers={'Authorization', 'APPCODE ' + ak})
         json = r.json()
         domian = json['intent']
         return domain
