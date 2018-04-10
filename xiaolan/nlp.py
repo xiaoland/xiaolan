@@ -23,11 +23,7 @@ def get_intent(text):
         textf = stext.encode('utf-8','strict')
         appcode = '24846601'
         body = {}
-        querys = '{
-                  'nickname': 'b',
-                  'user': '123456',
-                  'text': textf,
-                  'city': city}'
+        querys = '{"nickname": "b", "user": "123456", "text": textf, "city": city}'
         
         data = urllib.urlencode(querys) 
         request = urllib2.Request(host, data)
