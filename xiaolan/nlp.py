@@ -14,8 +14,7 @@ from stt import baidu_stt
 
 def get_intent(text):
         ak = 'cd3c2238c7348d28363a1aad0b93d474'
-        url = 'https://ai.aixxz.com'
-        path = '/api?'
+        url = 'https://ai.aixxz.com/api?'
 
         data = {
                 "city": "中山",
@@ -23,7 +22,6 @@ def get_intent(text):
                 "text": text,
                 "user": "123456"}
         r = requests.post(url,
-                          path,
                           data,
                           headers={'Authorization', 'APPCODE ' + ak})
         json = r.json()
