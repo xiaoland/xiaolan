@@ -23,9 +23,10 @@ def get_intent(text):
         path = '/api'
         method = 'POST'
         appcode = 'cd3c2238c7348d28363a1aad0b93d474'
-        querys = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&' + textl
         textf = text.encode('utf-8','strict')
         textl = 'text=' + textf + '&uesr=123456'
+        querys = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&' + textl
+
         bodys = {}
         url = host + path + '?' + querys
 
