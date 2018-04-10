@@ -18,10 +18,10 @@ def get_intent(text):
         path = '/api?'
 
         data = {
-                "city" = "中山"
-                "nickname" = "tb"
-                "text" = text
-                "user" = "123456"
+                "city": "中山"
+                "nickname": "tb"
+                "text": text
+                "user": "123456"
                }
         r = requests.post(url + path + data,
                           headers={'Authorization', 'APPCODE ' + appcode})
