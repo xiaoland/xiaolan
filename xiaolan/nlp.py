@@ -16,12 +16,13 @@ from stt import baidu_stt
 
 
 def get_intent(text):
-  ak = 'cd3c2238c7348d28363a1aad0b93d474'
+        ak = 'cd3c2238c7348d28363a1aad0b93d474'
         city = '中山'
         host = 'https://ai.aixxz.com/api?'
         stext = text
         textf = stext.encode('utf-8','strict')
-        appcode = 'cd3c2238c7348d28363a1aad0b93d474'
+        appcode = '24846601'
+        body = {}
         querys = {
                   'nickname': 'b',
                   'user': '123456',
@@ -30,12 +31,15 @@ def get_intent(text):
         header = {"Host":"ai.aixxz.com","X-Ca-Timestamp":"1523284131144","gateway_channel":"http","X-Ca-Request-Mode":"debug","X-Ca-Key":"24846601","X-Ca-Stage":"RELEASE","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","X-Ca-Signature-Headers":"X-Ca-Timestamp,X-Ca-Request-Mode,X-Ca-Key,X-Ca-Stage","X-Ca-Signature":"on/fCtcL1WKbRkyb3tc6p0WPDdglweeAluV3K8nEQWY="}
 
 
-        r = requests.post(host,
-                          querys,
-                          header)
+        request = urllib2.Request('https://ai.aixxz.com/api?',
+                                  querys,
+                                  body)  
+        request.add_header('Authorization', 'APPCODE ' + appcode)
+        
         json = r.json()
         domain = json['intent']
         return domain
+        
         
 def do_intent(text): #自制的语义理解系统,欢迎大家补充
         if '闹钟' in text:
