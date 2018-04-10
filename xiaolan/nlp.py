@@ -16,16 +16,25 @@ def get_intent(text):
         ak = 'cd3c2238c7348d28363a1aad0b93d474'
         url = 'https://ai.aixxz.com/api?'
 
-        data = {
-                "city": "中山",
-                "nickname": "tb",
-                "text": text,
-                "user": "123456"}
-        r = requests.post(url,
-                          data,
-                          headers={'Authorization', 'APPCODE ' + ak})
-        json = r.json()
-        domian = json['intent']
+        host = 'https://ai.aixxz.com'
+        path = '/api'
+        method = 'POST'
+        appcode = 'cd3c2238c7348d28363a1aad0b93d474'
+        querys = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&' + textl
+        textf = text.encode('utf-8','strict')
+        textl = 'text=' + textf + '&uesr=123456'
+        bodys = {}
+        url = host + path + '?' + querys
+
+        request = urllib2.Request(url)
+        request.add_header('Authorization', 'APPCODE ' + appcode)
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        response = urllib2.urlopen(request, context=ctx)
+        content = response.read()
+        if (content):
+                print content
         return domain
         
         
