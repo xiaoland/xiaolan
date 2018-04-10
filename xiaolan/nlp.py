@@ -6,6 +6,9 @@ import requests
 import pygame
 import demjson
 import time
+import ssl
+import urllib2
+import urllib
 from recorder import recorder
 import snowboy
 from tts import baidu_tts
