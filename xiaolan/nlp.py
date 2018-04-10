@@ -32,7 +32,10 @@ def get_intent(text):
         data = urllib.urlencode(querys) 
         request = urllib2.Request(host, data)
         request.add_header('Authorization', 'APPCODE ' + appcode)
-        response = urllib2.urlopen(request)
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        response = urllib2.urlopen(request, context = ctx)
         reback = response.read()
         json = demjson.decode(response)
         domain = json['intent']
