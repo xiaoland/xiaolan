@@ -21,7 +21,7 @@ def get_intent(text):
         host = 'https://ai.aixxz.com/api?'
         stext = text
         textf = stext.encode('utf-8','strict')
-        appcode = '24846601'
+        appcode = '02603abb13f54212b31e4b2c1157a038'
         body = 1
         querys = {"nickname": "b", "user": "123456", "text": textf, "city": city}
         data = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&text=' + textf + '&user=123456'
