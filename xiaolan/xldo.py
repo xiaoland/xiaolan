@@ -80,14 +80,14 @@ def convenstation():
         intent = nlp.get_intent(text)
         if intent == 'text':
             intent = nlp.do_intent(text)
-        s.getskills(intent)
+        s.getskills(intent, text)
     
 class skills(object):
     
     def __init__(self):
         pass
         
-    def getskills(self):
+    def getskills(self, witch, text):
         if witch == 'clock':
             skills.clock()
         elif witch == 'xlonly':
