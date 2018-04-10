@@ -22,17 +22,19 @@ def get_intent(text):
         stext = text
         textf = stext.encode('utf-8','strict')
         appcode = '24846601'
-        body = {}
-        querys = '{"nickname": "b", "user": "123456", "text": textf, "city": city}'
-        
-        data = urllib.urlencode(querys) 
-        request = urllib2.Request(host, data)
+        body = 1
+        querys = {"nickname": "b", "user": "123456", "text": textf, "city": city}
+        dataf = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&text=' + textf + '&user=123456'
+
+        data = urllib.urlencode(dataf)
+        request = urllib2.Request(host, data)  
         request.add_header('Authorization', 'APPCODE ' + appcode)
         ctx = ssl.create_default_context()
         ctx.check_hostname = False
         ctx.verify_mode = ssl.CERT_NONE
         response = urllib2.urlopen(request, context=ctx)
         reback = response.read()
+        
         json = demjson.decode(response)
         domain = json['intent']
         return domain
