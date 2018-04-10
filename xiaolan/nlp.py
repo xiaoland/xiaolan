@@ -22,7 +22,6 @@ def get_intent(text):
         stext = text
         textf = stext.encode('utf-8','strict')
         appcode = 'cd3c2238c7348d28363a1aad0b93d474'
-        body = {}
         querys = {
                   'nickname': 'b',
                   'user': '123456',
@@ -34,6 +33,8 @@ def get_intent(text):
         r = requests.post(host,
                           querys,
                           header)
+        json = r.json()
+        domain = json['intent']
         return domain
         
 def do_intent(text): #自制的语义理解系统,欢迎大家补充
