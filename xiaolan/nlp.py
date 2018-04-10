@@ -32,7 +32,7 @@ def get_intent(text):
 
 
         r = requests.post(host,
-                          query,
+                          querys,
                           header=header,
                           body=body)
         return domain
