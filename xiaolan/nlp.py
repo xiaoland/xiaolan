@@ -33,8 +33,7 @@ def get_intent(text):
 
         r = requests.post(host,
                           querys,
-                          header=header,
-                          body=body)
+                          header=header)
         return domain
         
 def do_intent(text): #自制的语义理解系统,欢迎大家补充
