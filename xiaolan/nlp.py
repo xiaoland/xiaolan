@@ -24,9 +24,8 @@ def get_intent(text):
         appcode = '24846601'
         body = 1
         querys = {"nickname": "b", "user": "123456", "text": textf, "city": city}
-        dataf = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&text=' + textf + '&user=123456'
+        data = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&text=' + textf + '&user=123456'
 
-        data = urllib.urlencode(dataf)
         request = urllib2.Request(host, data)  
         request.add_header('Authorization', 'APPCODE ' + appcode)
         ctx = ssl.create_default_context()
