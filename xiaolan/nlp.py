@@ -35,8 +35,9 @@ def get_intent(text):
                                   querys,
                                   body)  
         request.add_header('Authorization', 'APPCODE ' + appcode)
+        response = urllib2.urlopen(request)
         
-        json = r.json()
+        json = demjson.decode(response)
         domain = json['intent']
         return domain
         
