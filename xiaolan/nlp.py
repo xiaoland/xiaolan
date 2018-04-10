@@ -17,30 +17,21 @@ from stt import baidu_stt
 
 def get_intent(text):
         ak = 'cd3c2238c7348d28363a1aad0b93d474'
-        url = 'https://ai.aixxz.com/api?'
-
-        host = 'https://ai.aixxz.com'
-        path = '/api'
-        method = 'POST'
+        city = '中山'
+        host = 'https://ai.aixxz.com/api?'
+        stext = text
+        textf = stext.encode('utf-8','strict')
         appcode = 'cd3c2238c7348d28363a1aad0b93d474'
-        textf = text.encode('utf-8','strict')
-        textl = 'text=' + textf + '&uesr=123456'
-        querys = 'city=%E6%B7%B1%E5%9C%B3&comfrom=comfrom&event=text&lang=zh_CN&nickname=%E8%8A%B1%E5%A5%BD%E6%9C%88%E5%9C%86&' + textl
+        body = {}
+        querys = {
+                  'nickname': 'b',
+                  'user': '123456',
+                  'text': textf,
+                  'city': city}
 
-        bodys = {}
-        url = host + path + '?' + querys
 
-        request = urllib2.Request(url)
-        request.add_header('Authorization', 'APPCODE ' + appcode)
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-        response = urllib2.urlopen(request, context=ctx)
-        content = response.read()
-        if (content):
-                print content
+        r = requests.post(
         return domain
-        
         
 def do_intent(text): #自制的语义理解系统,欢迎大家补充
         if '闹钟' in text:
