@@ -71,7 +71,17 @@ def convenstation():
     speaker.ding()
     r.record()
     speaker.dong()
-
+    if stt_service == 'baidu':
+        
+        tok = b.get_token()
+        text = b.stt('./voice.wav', tok)
+    
+    elif stt_service == 'aiui':
+        
+        a = aiui()
+        tok = a.get_token()
+        text = a.stt(tok)
+        
     if '智能家居' in text:
         s.smarthome()
     elif '儿子' in text:
