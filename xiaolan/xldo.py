@@ -36,6 +36,9 @@ import camera
 
 interrupted = False
 
+#STT语音识别API选择：讯飞，百度，分别是：'aiui'   'baidu'
+stt_use = 'baidu'
+
 def welcome():
 
     print('''
@@ -68,8 +71,7 @@ def convenstation():
     speaker.ding()
     r.record()
     speaker.dong()
-    tok = b.get_token()
-    text = b.stt('./voice.wav', tok)
+
     if '智能家居' in text:
         s.smarthome()
     elif '儿子' in text:
