@@ -148,9 +148,9 @@ class skills(object):
         
         music.start()
         
-    def tuling(self):
+    def tuling(self, text):
         
-        tuling.start()
+        tuling.start(text)
     
     def story(self):
         
