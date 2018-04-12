@@ -24,7 +24,7 @@ def start():
 def main():
 
     bt = baidu_tts()
-    bs = baidu_stt(1, token, 2, '{')
+    bs = baidu_stt(1, 'a', 2, '{')
     r = recorder()
     url = ' http://api.avatardata.cn/Weather/Query?key='
     APIKEY = '5fb31534ef0e4a43812ba3f881194afe'
