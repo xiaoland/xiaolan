@@ -110,6 +110,8 @@ class skills(object):
             skills.smarthome()
         elif witch == 'caream':
             skills.caream()
+        elif witch == 'no':
+            convenstation()
         else:
             skills.tuling(text)
     
