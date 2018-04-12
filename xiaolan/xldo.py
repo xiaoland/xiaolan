@@ -84,36 +84,37 @@ class skills(object):
         pass
         
     def getskills(self, witch, text):
+        s = skills()
         if witch == 'clock':
-            skills.clock()
+            s.clock()
         elif witch == 'xlonly':
-            skills.xlonly()
+            s.xlonly()
         elif witch == 'camera':
-            skills.camera()
+            s.camera()
         elif witch == 'smarthome':
-            skills.smarthome()
+            s.smarthome()
         elif witch == 'weather':
-            skills.weather()
+            s.weather()
         elif witch == 'music':
-            skills.music()
+            s.music()
         elif witch == 'ts':
-            skills.ts()
+            s.ts()
         elif witch == 'email':
-            skills.email()
+            s.email()
         elif witch == 'story':
-            skills.story()
+            s.story()
         elif witch == 'joke':
-            skills.joke()
+            s.joke()
         elif witch == 'news':
-            skills.news()
+            s.news()
         elif witch == 'smarthome':
-            skills.smarthome()
+            s.smarthome()
         elif witch == 'caream':
-            skills.caream()
+            s.caream()
         elif witch == 'no':
             convenstation()
         else:
-            skills.tuling(text)
+            s.tuling(text)
     
     def clock(self):
         clock.start()
