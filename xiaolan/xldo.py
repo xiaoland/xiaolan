@@ -71,28 +71,12 @@ def convenstation():
     speaker.ding()
     r.record()
     speaker.dong()
-    if stt_service == 'baidu':
         
-        tok = b.get_token()
-        text = b.stt('./voice.wav', tok)
-    
-    elif stt_service == 'aiui':
-        
-        a = aiui()
-        tok = a.get_token()
-        text = a.stt(tok)
-        
-    if '智能家居' in text:
-        s.smarthome()
-    elif '儿子' in text:
-        s.xlonly()
-    elif '女儿' in text:
-        s.xlonly()
-    else:
-        intent = nlp.get_intent(text)
-        if intent == 'text':
-            intent = nlp.do_intent(text)
-        s.getskills(intent, text)
+    tok = b.get_token()
+    text = b.stt('./voice.wav', tok)
+
+    intent = nlp.do_intent(text)
+    s.getskills(intent, text)
     
 class skills(object):
     
