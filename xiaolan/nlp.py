@@ -17,7 +17,8 @@ from stt import baidu_stt
 
 def get_intent():
         pass
-def do_intent(text): #自制的语义理解系统,欢迎大家补充
+def do_intent(text):#自制的语义理解系统,欢迎大家补充
+    try:
         if '闹钟' in text:
                 intent = 'clock'
                 return intent
@@ -68,3 +69,6 @@ def do_intent(text): #自制的语义理解系统,欢迎大家补充
         else:
                 intent = 'tuling'
                 return intent
+    except TypeError:
+        intent = 'no'
+        return intent
