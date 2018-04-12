@@ -22,6 +22,9 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
         if '闹钟' in text:
                 intent = 'clock'
                 return intent
+        elif '天气' in text:
+                intent = 'weather'
+                return intent
         elif '打开' in text:
                 intent = 'smarthome'
                 return intent
