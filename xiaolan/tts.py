@@ -51,7 +51,5 @@ class baidu_tts(object):
         r = requests.post('http://tsn.baidu.com/text2audio',
                           data=data,
                           headers={'content-type': 'application/json'})
-        if r.status_code == 200:  
-            with open(r"/home/pi/xiaolan/xiaolan/musiclib/say.mp3", 'wb') as f:  
-                r.raw.decode_content = True  
-                shutil.copyfileobj(r.raw, f) 
+        with open('say.mp3', 'wb') as f:
+            f.write(result)
