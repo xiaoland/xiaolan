@@ -77,7 +77,23 @@ def convenstation():
 
     intent = nlp.do_intent(text)
     s.getskills(intent, text)
+
+def sconvenstation():
     
+    token = ''
+    b = baidu_stt(1, token, 2, '{')
+    r = recorder()
+    s = skills()
+    speaker.speacilrecorder()
+    speaker.ding()
+    r.record()
+    speaker.dong()
+        
+    tok = b.get_token()
+    text = b.stt('./voice.wav', tok)
+    
+    intent = nlp.do_intent(text)
+    s.getskills(intent, text)
 class skills(object):
     
     def __init__(self):
@@ -112,7 +128,7 @@ class skills(object):
         elif witch == 'caream':
             s.caream()
         elif witch == 'no':
-            convenstation()
+            sconvenstation()
         else:
             s.tuling(text)
     
