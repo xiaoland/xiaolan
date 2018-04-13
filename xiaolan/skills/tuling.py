@@ -11,7 +11,7 @@ from stt import baidu_stt
 from tts import baidu_tts
 import snowboy
 import speaker
-import recorder
+from recorder import recorder
 
 def start(text):
   
@@ -38,9 +38,11 @@ def main(text):
     talkback = requests.post(url, data=data)
     talkback_data = talkback.json()
     text = talkback_data["results"][-1]["values"]["text"]
-    saytext = text.encode('utf-8','strict')
+    saytext = text.encode('utf-8', 'strict')
     bt = baidu_tts()
     tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
     
+
+
