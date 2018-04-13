@@ -41,7 +41,7 @@ class baidu_tts(object):
           
         
     def tts(self, saytext, token):
-        data = {'tex': self.stext,
+        data = {'tex': saytext,
                  'lan': 'zh',
                  'tok': token,
                  'ctp': 1,
