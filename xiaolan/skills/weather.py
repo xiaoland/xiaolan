@@ -30,7 +30,7 @@ def main():
     APIKEY = '5fb31534ef0e4a43812ba3f881194afe'
 
     locsertext = '请问您要查询哪个城市的天气?'
-    locsertchtext = locsertchtext.encode('utf-8','strict')
+    locsertchtext = locsertext.encode('utf-8','strict')
     tok = bt.get_token()
     bt.tts(locsertchtext, tok)
     speaker.speak()
