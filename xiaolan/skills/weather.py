@@ -33,12 +33,12 @@ def main():
     r = requests.post(url + APIKEY + '&cityname=' + location)
     
     json = r.json()
-    weather = json['result']['weather'][1]['info']['day'][2]
-    temperature = json['result']['weather'][1]['info']['day'][3]
+    weather = json['result']['weather'][0]['info']['day'][1]
+    temperature = json['result']['weather'][0]['info']['day'][2]
     yundong = json['result']['life']['info']['yundong'][-1]
     chuanyi = json['result']['life']['info']['chuanyi'][-1]
-    mweather = json['result']['weather'][2]['info']['day'][2]
-    mtemperature = json['result']['weather'][2]['info']['day'][3]
+    mweather = json['result']['weather'][1]['info']['day'][1]
+    mtemperature = json['result']['weather'][1]['info']['day'][2]
     
     tweatherstates = location + '，今天的天气是,' + weather + '，最高温度是,' + temperature + '，摄氏度，' + '，运动建议，' + yundong + '，穿衣建议，' + chuanyi
     mweatherstates = location + '，明天的天气是,' + mweather + '，最高温度是,' + mtemperature + '，摄氏度，'
