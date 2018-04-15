@@ -53,8 +53,6 @@ def main():
     else:
         saytext = json['result'][0]['content']
         
-    jokefj = jokef.encode('utf-8','strict')
-    jokesj = jokes.encode('utf-8','strict')
     saytext = jokefj + '第二个笑话' + jokesj
     tok = bt.get_token()
     bt.tts(saytext, tok)
