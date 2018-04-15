@@ -33,13 +33,16 @@ def main():
     r = requests.post(url + APIKEY + '&cityname=' + location)
     
     json = r.json()
+    print json
     weather = json['result']['weather'][0]['info']['day'][-6]
-    temperature = json['result']['weather'][0]['info']['day'][-5]
+    temperature = json['result']['weather'][0]['info']['day'][2]
     yundong = json['result']['life']['info']['yundong'][-1]
     chuanyi = json['result']['life']['info']['chuanyi'][-1]
     
-    tweatherstates = location + '，今天的天气是,' + weather + '，最高温度是,' + temperature + '，摄氏度，' + yundong + chuanyi
+    tweatherstates = location + ',今天的天气是,' + weather + '，最高温度是,'  + temperature + '，摄氏度，' + yundong + chuanyi
     saytext = tweatherstates.encode('utf-8','strict')
     tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
+
+
