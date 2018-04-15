@@ -28,8 +28,6 @@ def main():
     r = recorder()
     url = ' http://api.avatardata.cn/Weather/Query?key='
     APIKEY = '5fb31534ef0e4a43812ba3f881194afe'
-    
-    
     location = '中山'
     
     r = requests.post(url + APIKEY + '&cityname=' + location)
