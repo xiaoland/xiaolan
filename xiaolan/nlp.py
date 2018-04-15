@@ -69,6 +69,9 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
         elif '快递' in text:
                 intent = 'experss'
                 return intent
+        elif '笑话' in text:
+                intent = 'joke'
+                return intent
         else:
                 intent = 'tuling'
                 return intent
