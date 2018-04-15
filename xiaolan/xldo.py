@@ -34,11 +34,6 @@ import news
 import smarthome
 import camera
 
-interrupted = False
-
-#STT语音识别API选择：讯飞，百度，分别是：'aiui'   'baidu'
-stt_use = 'baidu'
-
 def welcome():
 
     print('''
