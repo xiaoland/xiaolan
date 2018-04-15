@@ -74,9 +74,11 @@ def convenstation():
         
     tok = b.get_token()
     text = b.stt('./voice.wav', tok)
-
-    intent = nlp.do_intent(text)
-    s.getskills(intent, text)
+    if text == '':
+        snowboystart()
+    else:
+        intent = nlp.do_intent(text)
+        s.getskills(intent, text)
 
 def sconvenstation():
     
