@@ -11,7 +11,7 @@
   - 准备以上硬件
   - 将小蓝git下来
   - 安装一下东东：
-    - sudo apt-get install omxplayer
+    - sudo apt-get install omxplayer mplayer
     - sudo apt-get install cmake g++ gcc
     - sudo apt-get install python2.7 python3 python-pyaudio python3-pyaudio sox
     - sudo apt-get install pulseaudio
