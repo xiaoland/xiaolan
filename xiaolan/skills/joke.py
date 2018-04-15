@@ -21,7 +21,18 @@ def main():
     
     url = 'http://api.avatardata.cn/Joke/QueryJokeByTime?key='
     key = 'a63ac25e95f741aea51167a05891498c'
-    r = requests.post(url + key + '&page=2&rows=10&sort=asc&time=1418745237')
-    joke = r.json()['content']
-    baidu_tts(joke)
+    bt = baidu_tts()
+    bs = baidu_stt(1, 'a', 2, '{')
+    
+    r = requests.post(url + key + '&sort=asc&time=1418745237')
+    
+    json = r.json()
+    
+    jokef = json['result'][1]['content']
+    jokes = json['result'][2]['content']
+    jokefj = jokef.encode('utf-8','strict')
+    jokesj = jokes.encode('utf-8','strict')
+    saytext = jokefj + '第二个笑话' + jokesj
+    tok = bt.get_token()
+    bt.tts(saytext, tok)
     speaker.speak()
