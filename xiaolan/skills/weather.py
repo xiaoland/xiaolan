@@ -40,11 +40,8 @@ def main():
     mweather = json['result']['weather'][1]['info']['day'][1]
     mtemperature = json['result']['weather'][1]['info']['day'][2]
     
-    tweatherstates = location + '，今天的天气是,' + weather + '，最高温度是,' + temperature + '，摄氏度，' + '，运动建议，' + yundong + '，穿衣建议，' + chuanyi
-    mweatherstates = location + '，明天的天气是,' + mweather + '，最高温度是,' + mtemperature + '，摄氏度，'
-    saytextf = tweatherstates.encode('utf-8','strict')
-    saytexts = mweatherstates.encode('utf-8','strict')
-    saytext = saytextf + saytexts
+    tweatherstates = location + '，今天的天气是,' + weather + '，最高温度是,' + temperature + '，摄氏度，' + yundong + chuanyi
+    saytext = tweatherstates.encode('utf-8','strict')
     tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
