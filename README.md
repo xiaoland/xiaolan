@@ -58,7 +58,6 @@
     - speaker.py #音响
     - recorder.py #录音
     - snowboy.py #snowboy主控
-  
     - musiclib #音乐库：
       - ding.wav
       - dong.wav
@@ -66,7 +65,6 @@
       - kacha.mp3
       - speacilrecorde.mp3
       - say.mp3
-     
     - skills #技能：
       - xlonly.py #父母私人助理技能
       - weather.py # 天气查询技能
@@ -75,7 +73,6 @@
       - joke.py #笑话技能
       - tuling.py #图灵机器人对话接入技能
       - clock.py #闹钟技能
-    
     - snowboy #snowboy唤醒引擎：
       - snowboydecoder.py #snowboy主要文件
       - xiaolanxiaolan.pmdl #小蓝小蓝唤醒词
