@@ -20,11 +20,11 @@ def start():
 def main():
     
     url = 'http://api.avatardata.cn/Joke/QueryJokeByTime?key='
-    key = 'a63ac25e95f741aea51167a05891498c'
+    apikey = 'a63ac25e95f741aea51167a05891498c'
     bt = baidu_tts()
     bs = baidu_stt(1, 'a', 2, '{')
     
-    r = requests.post(url + key + '&sort=asc&time=1418745237')
+    r = requests.post(url + apikey + '&sort=asc&time=1418745237')
     
     json = r.json()
     
