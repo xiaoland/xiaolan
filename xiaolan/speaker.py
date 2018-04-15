@@ -2,9 +2,7 @@
 # 音响控制器
 import sys
 import os
-import logging
-import pygame
-import hyper
+import mp3player
 
 def ding(): #开始录制指令提示音
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/ding.wav')
@@ -19,9 +17,11 @@ def kacha(): #拍照声
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/kacha.mp3')
     
 def speak(): #说出的回话
-    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
+    
+    mp3player.playMP3('/home/pi/xiaolan/xiaolan/musiclib/say.mp3')
     
 def player(): #音乐播放器
     os.system('omxplayer /home/pi/xiaolan/xiaolan/music.mp3')
+    
 def speacilrecorder(): #重新录制
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/speacilrecorder.mp3')
