@@ -23,3 +23,5 @@ def speak(): #说出的回话
     
 def player(): #音乐播放器
     os.system('omxplayer /home/pi/xiaolan/xiaolan/music.mp3')
+def speacilrecorder(): #重新录制
+    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/speacilrecorder.mp3')
