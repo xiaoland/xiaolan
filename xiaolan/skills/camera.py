@@ -97,8 +97,7 @@ class usbCamera(object):
 	def __init__(self):
 		pass
 	def takePhoto(self):
-		
-		nowTime = datetime.datetime.now().strftime("%Y-%m-%d-%H:%M:%S")
+	
 		os.system('fswebcam  -r 1280x720 --no-banner /home/pi/xiaolan/xiaolan/img/img.jpg')
 		speaker.kacha()
 	def saveTime(self,time):
