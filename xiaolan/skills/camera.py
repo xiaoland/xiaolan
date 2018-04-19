@@ -18,15 +18,12 @@ conn,cursor=(None,None)
 #gpio
 @unique
 
-def start(service):
-	s = sth()
-	c = usbCamera()
-	if service == 'dht11':
-		s.readDht()
-	elif service == 'caream':
-		c.takePhoto()
-	elif service == 'buzzer':
-		s.buzzer()
+def start():
+	main()
+
+def main():
+	u = usbCamera()
+	u.takePhoto()
 		
 class gpio(Enum):
 	pdht11=1
@@ -100,10 +97,10 @@ class usbCamera(object):
 	def __init__(self):
 		pass
 	def takePhoto(self):
-		speaker.kacha()
+		
 		nowTime = datetime.datetime.now().strftime("%Y-%m-%d-%H:%M:%S")
-		os.system('fswebcam  -r 1280x720 --no-banner ../img/%s.jpg' % nowTime)
-		saveTime(nowTime)
+		os.system('fswebcam  -r 1280x720 --no-banner /home/pi/xiaolan/xiaolan/img/img.jpg')
+		speaker.kacha()
 	def saveTime(self,time):
 		executeDb('insert into pic (id,time) VALUES (\'%s\',\'%s\') ' %  (uuid.uuid1(),time))
 def init():
