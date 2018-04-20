@@ -15,8 +15,40 @@ from tts import baidu_tts
 from stt import baidu_stt
 
 
-def get_intent():
-        pass
+
+def wx_get_token():
+        AS = '35217ef7c047d495ec7f5962a7fcf553'
+        AID = 'wx05f5d960e3519a25'
+        url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' + AID + '&secret=' + AS
+        r = requests.get(url)
+        json = r.json()
+        token = json['access_token']
+        return token
+
+def get_intent(text):
+        
+        city = '中山'
+        tok = wx_get_token()
+        url = 'https://api.weixin.qq.com/semantic/semproxy/search?access_token=' + tok
+        appid = 'wx05f5d960e3519a25'
+        service = "search,datetime,weather,location,number,restaurant,map,nearby,coupan,hotel,train,flight,travel,movie,music,video,novel,stock,remind,cookbook,baike,news,tv,instruction,tv_instruction"
+        dataf = {
+                "query": text,
+                "city": city,
+                "category": service,
+                "appid": appid}
+        
+        data = demjson.encode(dataf)
+        r = requests.post(url,
+                          data)
+        wxintentjson = r.json()
+        states = wxintentjson['errcode']
+        if states == 0:
+                intent = wxintentjson['intent']
+                return intent
+        else:
+                do_intent()
+        
 def do_intent(text):#自制的语义理解系统,欢迎大家补充
     try:
         if '闹钟' in text:
