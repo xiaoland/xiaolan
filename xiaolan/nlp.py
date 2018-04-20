@@ -38,7 +38,7 @@ def get_intent(text):
                 "category": service,
                 "appid": appid}
         
-        data = demjson.encode(dataf)
+        data = json.dumps(dataf)
         r = requests.post(url,
                           data)
         wxintentjson = r.json()
