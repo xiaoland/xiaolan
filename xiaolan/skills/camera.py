@@ -100,8 +100,6 @@ class usbCamera(object):
 	
 		os.system('fswebcam  -r 1280x720 --no-banner /home/pi/xiaolan/xiaolan/img/img.jpg')
 		speaker.kacha()
-	def saveTime(self,time):
-		executeDb('insert into pic (id,time) VALUES (\'%s\',\'%s\') ' %  (uuid.uuid1(),time))
 def init():
 	global conn,cursor
 	os.system('bash ./check.sh')
