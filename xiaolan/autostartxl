@@ -1,0 +1,14 @@
+#!/bin/sh
+#/etc/init.d/ip_acquire
+### BEGIN INIT INFO
+# Provides:          start_tool
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: start_tool
+# Description: This service is used to start my applaction
+### END INIT INFO
+
+cd xiaolan/xiaolan
+python xldo.py
