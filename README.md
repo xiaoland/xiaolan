@@ -6,3 +6,8 @@
 
 - 介绍以及本开源项目的所有请看：
 - https://github.com/xiaoland/xiaolan-dev/wiki
+
+- 重大更新：
+  - 利用讯飞AIUI平台实现了语义理解！
+  - 已经完成云端的语义理解
+  - 对客户的指令理解更加准确
