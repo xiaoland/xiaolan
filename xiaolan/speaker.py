@@ -23,18 +23,12 @@ def kacha(): #拍照声
     
 def speak(): #说出的回话
     
-    pygame.init()
-    pygame.mixer.music.load('/home/pi/xiaolan/xiaolan/musiclib/say.mp3')
-    pygame.mixer.music.play()
-    
+    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
+
 def music(): #音乐播放器
     
-    pygame.init()
-    pygame.mixer.music.load('/home/pi/xiaolan/xiaolan/musiclib/music.mp3')
-    pygame.mixer.music.play()
+    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/music.mp3')
     
 def speacilrecorder():
-    
-    pygame.init()
-    pygame.mixer.music.load('omxplayer /home/pi/xiaolan/xiaolan/musiclib/speacilrecorder.mp3')
-    pygame.mixer.music.play()
+
+    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/speacilrecorder.mp3')
