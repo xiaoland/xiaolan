@@ -5,49 +5,41 @@ import json
 import requests
 import pygame
 import demjson
-import time
-import ssl
-import urllib2
-import urllib
+import base64
+import hashlib
 from recorder import recorder
 import snowboy
 from tts import baidu_tts
 from stt import baidu_stt
 
 
-
-def wx_get_token():
-        AS = '35217ef7c047d495ec7f5962a7fcf553'
-        AID = 'wx05f5d960e3519a25'
-        url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=' + AID + '&secret=' + AS
-        r = requests.get(url)
-        json = r.json()
-        token = json['access_token']
-        return token
-
 def get_intent(text):
         
-        city = '中山'
-        tok = wx_get_token()
-        url = 'https://api.weixin.qq.com/semantic/semproxy/search?access_token=' + tok
-        appid = 'wx05f5d960e3519a25'
-        service = "search,datetime,weather,location,number,restaurant,map,nearby,coupan,hotel,train,flight,travel,movie,music,video,novel,stock,remind,cookbook,baike,news,tv,instruction,tv_instruction"
-        dataf = {
-                "query": text,
-                "city": city,
-                "category": service,
-                "appid": appid}
+        url = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic'
+        appid = '5ace1bbb'
+        apikey = '9e1b8f6028b14b969cdec166eca127ea'
+        curtime = 1524283695
+        texts = text.md5()
+        texts.update(str.encode(encoding='utf-8'))
+        textl = texts.hexdigest()
+        checksumf = apikey + curtime + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textl
+        checksums = checksumf.md5()
+        checksums.update(str.encode(encoding='utf-8'))
+        checksuml = checksums.hexdigest()
+        headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': '	1524283016', 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
+        body = {"text": textl}
         
-        data = json.dumps(dataf)
         r = requests.post(url,
-                          data)
-        wxintentjson = r.json()
-        states = wxintentjson['errcode']
-        if states == 0:
-                intent = wxintentjson['intent']
+                          headers=headers,
+                          body=body)
+        json = r.json()
+        print json
+        intent = json['data']['service']
+        print intent
+        if intent != None:
                 return intent
         else:
-                do_intent()
+                do_intent(text)
         
 def do_intent(text):#自制的语义理解系统,欢迎大家补充
     try:
