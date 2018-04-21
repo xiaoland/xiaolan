@@ -1,22 +1,14 @@
 # -*- coding: utf-8 -*-
 # 小蓝中央控制
 
-import xlpath
 import sys
 import os
 import pyaudio
 import pygame
 import requests
 import json
-import pygame
-import hyper
-import time
-import signal
 from stt import baidu_stt
 from tts import baidu_tts
-import logging
-import tempfile
-import wave
 from recorder import recorder
 import snowboy
 import speaker
@@ -69,7 +61,7 @@ def convenstation():
         
     tok = b.get_token()
     text = b.stt('./voice.wav', tok)
-    intent = nlp.do_intent(text)
+    intent = nlp.get_intent(text)
     s.getskills(intent, text)
 
 def sconvenstation():
