@@ -88,7 +88,7 @@ def sconvenstation():
     if text == '':
         snowboystart()
     else:
-        intent = nlp.do_intent(text)
+        intent = nlp.get_intent(text)
         s.getskills(intent, text)
 class skills(object):
     
