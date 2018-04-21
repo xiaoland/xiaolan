@@ -8,7 +8,6 @@ pip install python3-requests python-requests python-demjson python3-demjson
 pip install MusicBoxApi==1.0.4
 su pi
 sudo apt-get install libatlas-base-dev
-git clone https://github.com/xiaoland/xiaolan-dev.git 
 mv /home/pi/xiaolan-dev /home/pi/xiaolan
 cp /home/pi/xiaolan/xiaolan/autostartxl /etc/init.d/
 su root
