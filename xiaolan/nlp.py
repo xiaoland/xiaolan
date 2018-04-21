@@ -24,7 +24,7 @@ def get_intent(text):
         textl = texts.hexdigest()
         checksumf = apikey + curtime + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textl
         checksums = hashlib.md5()
-        checksums.update(str.encode(encoding='utf-8'))
+        checksums.update(str.encode('utf-8'))
         checksuml = checksums.hexdigest()
         headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': '	1524283016', 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
         body = {"text": textl}
