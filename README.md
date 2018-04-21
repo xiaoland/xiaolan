@@ -1,4 +1,5 @@
 # xiaolan---中文交互式智能家居机器人
+[GitHubTag](https://img.shields.io/travis/USER/REPO.svg)
 
 这是一个中文的智能家居控制对话机器人——由叮当衍生而来，目前还未100%完成，所以发上来，希望大家一起研发，一个人研发也没那么多点子和经验
 
