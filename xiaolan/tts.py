@@ -5,7 +5,6 @@ import os
 import logging
 import requests
 import wave
-import xlpath
 import json
 import pyaudio
 import time
