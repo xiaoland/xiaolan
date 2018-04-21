@@ -123,6 +123,10 @@ class skills(object):
             s.smarthome()
         elif witch == 'caream':
             s.caream()
+        elif witch == 'video':
+            s.video()
+        elif witch == 'hotelSearch':
+            s.hotel()
         elif witch == 'no':
             sconvenstation()
         else:
@@ -167,6 +171,14 @@ class skills(object):
         
         s = smartHome()
         s.start()
+    
+    def video(self):
+        
+        video.start()
+    
+    def hotel(self):
+        
+        hotel.start()
         
 welcome()
 snowboystart()
