@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo apt-get install python3-dev python-dev python-pyaudio python3-pyaudio
