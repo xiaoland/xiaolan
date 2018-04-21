@@ -1,20 +1,15 @@
 # -*- coding: utf-8 -*-
 # 百度STT
 import sys
-import signal
 import requests
 import os
 import json
 import xlpath
 import wave
 import pyaudio
-import hyper
-import logging
 import time
 import os.path
 import demjson
-import urllib
-import urllib2
 import base64
 sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
 
