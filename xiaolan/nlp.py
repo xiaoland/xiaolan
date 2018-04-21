@@ -19,11 +19,11 @@ def get_intent(text):
         appid = '5ace1bbb'
         apikey = '9e1b8f6028b14b969cdec166eca127ea'
         curtime = 1524283695
-        texts = text.md5()
+        texts = hashlib.md5()
         texts.update(str.encode(encoding='utf-8'))
         textl = texts.hexdigest()
         checksumf = apikey + curtime + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textl
-        checksums = checksumf.md5()
+        checksums = hashlib.md5()
         checksums.update(str.encode(encoding='utf-8'))
         checksuml = checksums.hexdigest()
         headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': '	1524283016', 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
