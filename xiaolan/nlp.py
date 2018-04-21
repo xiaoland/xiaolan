@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 import sys
+if sys.getdefaultencoding() != 'utf-8':
+        reload(sys)
+        sys.setdefaultencoding('utf-8')
+
 import os
 import json
 import requests
@@ -14,28 +18,30 @@ from stt import baidu_stt
 
 
 def get_intent(text):
-        
-        urlf = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic'
+
+        urlf = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic?text='
         appid = '5ace1bbb'
         apikey = '9e1b8f6028b14b969cdec166eca127ea'
-        curtime = '1524283695'
-        texts = hashlib.md5()
-        texts.update(str.encode('utf-8'))
-        textl = texts.hexdigest()
-        checksumf = apikey + curtime + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textl
-        checksums = hashlib.md5()
-        checksums.update(str.encode('utf-8'))
-        checksuml = checksums.hexdigest()
-        headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': '1524283016', 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
+        lastmdl = 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9'
+        curtimeo = int(time.time())
+        curtimef = str(curtimeo)
+
+        textl = base64.b64encode(text)
+        textv = 'text=' + textl
+        
+        csumc = apikey + curtimef + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textv
+
+        c = hashlib.md5()
+        c.update(csumc)
+        checksuml = c.hexdigest()
+        
+        headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': curtimef, 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
         url = urlf + textl
         
         r = requests.post(url,
-                          headers=headers,
-                          body=body)
+                          headers=headers)
         json = r.json()
-        print json
         intent = json['data']['service']
-        print intent
         if intent != None:
                 return intent
         else:
