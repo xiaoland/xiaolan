@@ -6,7 +6,6 @@ import os
 import requests
 import json
 import demjson
-import eyed3
 import subprocess
 import hashlib
 import re
