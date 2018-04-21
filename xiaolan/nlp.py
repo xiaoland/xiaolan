@@ -18,7 +18,7 @@ def get_intent(text):
         url = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic'
         appid = '5ace1bbb'
         apikey = '9e1b8f6028b14b969cdec166eca127ea'
-        curtime = 1524283695
+        curtime = '1524283695'
         texts = hashlib.md5()
         texts.update(str.encode('utf-8'))
         textl = texts.hexdigest()
