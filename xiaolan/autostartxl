@@ -10,5 +10,5 @@
 # Description: This service is used to start my applaction
 ### END INIT INFO
 
-cd xiaolan/xiaolan
+cd /home/pi/xiaolan/xiaolan
 python xldo.py
