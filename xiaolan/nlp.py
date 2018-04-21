@@ -15,7 +15,7 @@ from stt import baidu_stt
 
 def get_intent(text):
         
-        url = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic'
+        urlf = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic'
         appid = '5ace1bbb'
         apikey = '9e1b8f6028b14b969cdec166eca127ea'
         curtime = '1524283695'
@@ -26,8 +26,8 @@ def get_intent(text):
         checksums = hashlib.md5()
         checksums.update(str.encode('utf-8'))
         checksuml = checksums.hexdigest()
-        headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': '	1524283016', 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
-        body = {"text": textl}
+        headers = {'X-Appid': appid, 'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'X-CurTime': '1524283016', 'X-Param': 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9', 'X-CheckSum': checksuml}
+        url = urlf + textl
         
         r = requests.post(url,
                           headers=headers,
