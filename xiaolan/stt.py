@@ -4,7 +4,6 @@ import sys
 import requests
 import os
 import json
-import xlpath
 import wave
 import pyaudio
 import time
