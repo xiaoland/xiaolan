@@ -20,7 +20,7 @@ def get_intent(text):
         apikey = '9e1b8f6028b14b969cdec166eca127ea'
         curtime = 1524283695
         texts = hashlib.md5()
-        texts.update(str.encode(encoding='utf-8'))
+        texts.update(str.encode('utf-8'))
         textl = texts.hexdigest()
         checksumf = apikey + curtime + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textl
         checksums = hashlib.md5()
