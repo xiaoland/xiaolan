@@ -9,3 +9,7 @@ pip install MusicBoxApi==1.0.4
 su pi
 sudo apt-get install libatlas-base-dev
 mv /home/pi/xiaolan-dev /home/pi/xiaolan
+cp /home/pi/xiaolan/xiaolan/autostartxl /etc/init.d/
+su root
+chmod +777 /etc/init.d/autostartxl
+sudo update-rc.d autostartxl defaults
