@@ -19,3 +19,5 @@ su root
 cp /home/pi/xiaolan/xiaolan/autostartxl /etc/init.d/
 chmod +777 /etc/init.d/autostartxl
 sudo update-rc.d autostartxl defaults
+cd /home/pi/xiaolan/xiaolan
+python xldo.py
