@@ -27,7 +27,7 @@ def start():
         global interrupted
         return interrupted
 
-    model = '/home/pi/xiaolan/xiaolan/snowboy/lanmei.pmdl'
+    model = '/home/pi/xiaolan/xiaolan/snowboy/blueberry.pmdl'
     
     # capture SIGINT signal, e.g., Ctrl+C
     signal.signal(signal.SIGINT, signal_handler)
