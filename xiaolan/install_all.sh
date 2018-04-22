@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt-get install omxplayer mplayer pulseaudio fswebcam
+sudo apt-get install omxplayer pulseaudio fswebcam
 sudo apt-get install cmake g++ gcc python2.7 python3
 sudo apt-get install python-dev python3-dev python-pyaudio python3-pyaudio sox
 su root
