@@ -28,11 +28,26 @@ def main():
     url = 'https://snowboy.kitt.ai/api/v1/train/'
     apikey = '78ee816d9bfc8fb0e01341d4408e3f23fbbc9b03'
     askf = '第一次训练录音开始，请在滴一声之后说出，blueberry'
+    asks = '第二次训练录音开始，请在滴一声之后说出，blueberry'
+    askt = '第三次训练录音开始，请在滴一声之后说出，blueberry'
     bt.tts(askf, tok)
     speaker.speak()
     speaker.ding()
-    r.trainrecord()
+    r.train_f_record()
     speaker.dong()
+    bt.tts(asks, tok)
+    speaker.speak()
+    speaker.ding()
+    r.train_s_record()
+    speaker.dong()
+    bt.tts(askt, tok)
+    speaker.speak()
+    speaker.ding()
+    r.train_t_record()
+    speaker.dong()
+    wav1 = "/home/pi/xiaolan/xiaolan/train_f.wav"
+    wav2 = "/home/pi/xiaolan/xiaolan/train_s.wav"
+    wav3 = "/home/pi/xiaolan/xiaolan/train_t.wav"
     
     data = {
             "name": 'blueberry',
@@ -44,4 +59,10 @@ def main():
                 {"wave": get_wave(wav3)}
             ],
            }
+    r = requests.post(url,
+                      data=data)
+    
+    exit = '上传到snowboy完毕'
+    bt.tts(exit, tok)
+    speaker.speak()
             
