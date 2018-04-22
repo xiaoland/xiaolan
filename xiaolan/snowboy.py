@@ -33,7 +33,7 @@ def start():
     signal.signal(signal.SIGINT, signal_handler)
 
     detector = snowboydecoder.HotwordDetector(model, sensitivity=0.5)
-    print('Listening... Press Ctrl+C to exit')
+    print('xiaolan_Snowboy_HotWord_Detector Listening ... ')
 
     # main loop
     detector.start(detected_callback=back,
