@@ -23,6 +23,7 @@ import joke
 import news
 import smarthome
 import camera
+import snowboytrain
 
 def welcome():
 
@@ -105,6 +106,8 @@ class skills(object):
             s.hotel()
         elif witch == 'no':
             sconvenstation()
+        elif witch == 'snowboytrain':
+            s.snowboytrain()
         else:
             s.tuling(text)
     
@@ -155,6 +158,10 @@ class skills(object):
     def hotel(self):
         
         hotel.start()
+        
+    def snowboytrain(self):
+        
+        snowboytrain.start()
         
 welcome()
 snowboystarts()
