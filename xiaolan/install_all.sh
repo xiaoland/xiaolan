@@ -4,7 +4,6 @@ sudo apt-get install cmake g++ gcc python2.7 python3
 sudo apt-get install python-dev python3-dev python-pyaudio python3-pyaudio sox
 pip install pyaudio
 pip install demjson requests hyper crypto
-pip install MusicBoxApi==1.0.4
 sudo apt-get install libatlas-base-dev
 mv /home/pi/xiaolan-dev /home/pi/xiaolan
 wget http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
