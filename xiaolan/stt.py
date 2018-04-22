@@ -10,6 +10,8 @@ import time
 import os.path
 import demjson
 import base64
+import urllib
+import urllib2
 sys.path.append('/home/pi/xiaolan/xiaolan/baiduaip/aip')
 
 domian = 'a'
