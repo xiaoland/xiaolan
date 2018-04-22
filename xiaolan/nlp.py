@@ -25,8 +25,12 @@ def get_intent(text):
         lastmdl = 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9'
         curtimeo = int(time.time())
         curtimef = str(curtimeo)
-
-        textl = base64.b64encode(text)
+        try:
+                 textl = base64.b64encode(text)
+        except TypeError:
+                intent = 'no'
+                return intent
+                
         textv = 'text=' + textl
         
         csumc = apikey + curtimef + 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9' + textv
@@ -41,7 +45,10 @@ def get_intent(text):
         r = requests.post(url,
                           headers=headers)
         json = r.json()
-        intent = json['data']['service']
+        try:
+                intent = json['data']['service']
+        except KeyError:
+                do_intent(text)
         if intent != None:
                 return intent
         else:
