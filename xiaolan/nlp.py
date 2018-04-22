@@ -102,6 +102,9 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
         elif '笑话' in text:
                 intent = 'joke'
                 return intent
+        elif '唤醒词训练' in text:
+                intent= 'snowboytrain'
+                return intent
         else:
                 intent = 'tuling'
                 return intent
