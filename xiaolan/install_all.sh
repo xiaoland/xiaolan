@@ -8,6 +8,13 @@ pip install demjson requests hyper crypto
 pip install MusicBoxApi==1.0.4
 sudo apt-get install libatlas-base-dev
 mv /home/pi/xiaolan-dev /home/pi/xiaolan
+wget http://www.portaudio.com/archives/pa_stable_v190600_20161030.tgz
+tar -zxvf pa_stable_v190600_20161030.tgz -C /home/pi/
+sudo apt install libasound-dev
+cd /home/pi/portaudio
+./configure
+make
+sudo make install
 su root
 cp /home/pi/xiaolan/xiaolan/autostartxl /etc/init.d/
 chmod +777 /etc/init.d/autostartxl
