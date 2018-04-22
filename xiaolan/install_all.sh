@@ -2,7 +2,6 @@
 sudo apt-get install omxplayer pulseaudio fswebcam
 sudo apt-get install cmake g++ gcc python2.7 python3
 sudo apt-get install python-dev python3-dev python-pyaudio python3-pyaudio sox
-su root
 pip install pyaudio
 pip install demjson requests hyper crypto
 pip install MusicBoxApi==1.0.4
