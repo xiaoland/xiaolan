@@ -75,7 +75,7 @@ class recorder(object):
         wf.writeframes(b''.join(frames))
         wf.close()
         
-     def train_s_record(self): # 录制指令（这里没有问题）
+    def train_s_record(self): # 录制指令（这里没有问题）
         p = pyaudio.PyAudio()
         stream = p.open(format = FORMAT,
                         channels = CHANNELS,
@@ -101,7 +101,7 @@ class recorder(object):
         wf.writeframes(b''.join(frames))
         wf.close()
         
-     def train_t_record(self): # 录制指令（这里没有问题）
+    def train_t_record(self): # 录制指令（这里没有问题）
         p = pyaudio.PyAudio()
         stream = p.open(format = FORMAT,
                         channels = CHANNELS,
