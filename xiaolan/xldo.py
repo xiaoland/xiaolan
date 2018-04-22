@@ -13,8 +13,6 @@ from recorder import recorder
 import snowboy
 import speaker
 import nlp
-sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
-import snowboydecoder
 sys.path.append('/home/pi/xiaolan/xiaolan/skills/')
 import clock
 import xlonly
@@ -44,7 +42,7 @@ def welcome():
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/welcome.mp3')
     os.system('pulseaudio --start')
 
-def snowboystart():
+def snowboystarts():
     
     os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
 
@@ -173,7 +171,7 @@ class skills(object):
         hotel.start()
         
 welcome()
-snowboystart()
+snowboystarts()
 
 
 
