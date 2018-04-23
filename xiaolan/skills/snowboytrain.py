@@ -1,8 +1,8 @@
-#! /usr/bin/python
 # -*- coding: UTF-8 -*-
 import sys
-import os
+import base64
 import requests
+import os
 import json
 import demjson
 import base64
@@ -20,6 +20,20 @@ def start():
 def get_wave(fname):
     with open(fname) as infile:
         return base64.b64encode(infile.read())
+
+
+endpoint = "https://snowboy.kitt.ai/api/v1/train/"
+
+
+############# MODIFY THE FOLLOWING #############
+token = "78ee816d9bfc8fb0e01341d4408e3f23fbbc9b03"
+hotword_name = "blueberry"
+language = "en"
+age_group = "20_29"
+gender = "M"
+microphone = "macbook microphone"
+############### END OF MODIFY ##################
+
 
 def main():
     
@@ -49,22 +63,29 @@ def main():
     wav1 = "/home/pi/xiaolan/xiaolan/train_f.wav"
     wav2 = "/home/pi/xiaolan/xiaolan/train_s.wav"
     wav3 = "/home/pi/xiaolan/xiaolan/train_t.wav"
-    
+    out = "/home/pi/xiaolan/xiaolan/snowboy/blueberry.pmdl"
     data = {
-            "name": 'blueberry',
-            "language": 'en',
-            "token": apikey,
-            "voice_samples": [
-                {"wave": get_wave(wav1)},
-                {"wave": get_wave(wav2)},
-                {"wave": get_wave(wav3)}
-            ],
-           }
-    r = requests.post(url,
-                      data=data)
-    
-    exit = '上传到snowboy完毕'
-    bt.tts(exit, tok)
-    speaker.speak()
-            
-start()
+        "name": hotword_name,
+        "language": language,
+        "age_group": age_group,
+        "gender": gender,
+        "microphone": microphone,
+        "token": token,
+        "voice_samples": [
+            {"wave": get_wave(wav1)},
+            {"wave": get_wave(wav2)},
+            {"wave": get_wave(wav3)}
+        ]
+    }
+
+    response = requests.post(endpoint, json=data)
+    if response.ok:
+        with open(out, "w") as outfile:
+            outfile.write(response.content)
+        print "Saved model to '%s'." % out
+        trueback = "Saved model to '%s'." % out
+        bt.tts(tureback, tok)
+        speaker.speak()
+    else:
+        print "Request failed."
+        print response.text
