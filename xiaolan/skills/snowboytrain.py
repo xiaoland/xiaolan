@@ -5,6 +5,7 @@ import os
 import requests
 import json
 import demjson
+import base64
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
 from stt import baidu_stt
