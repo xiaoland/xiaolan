@@ -11,7 +11,7 @@ import speaker
 from stt import baidu_stt
 from tts import baidu_tts
 import snowboy
-import recorder
+from recorder import recorder
 
 def start():
     
@@ -67,3 +67,4 @@ def main():
     bt.tts(exit, tok)
     speaker.speak()
             
+start()
