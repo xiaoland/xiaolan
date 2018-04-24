@@ -29,12 +29,11 @@ def welcome():
 
     print('''
 
-    #################*******####################
-    #         小蓝-中文智能家居对话机器人         *
-    #      (c)蓝之酱-1481605673@qq.com         *
-    #         由叮当-中文对话机器人衍而来         *
-    #      (c)潘伟洲-m@hahack.com              *                           
-    #             欢迎使用!!!  :)              *              
+    #################*******###################
+    #         小蓝-中文智能家居对话机器人         #
+    #      (c)蓝之酱-1481605673@qq.com         #
+    #   www.github.com/xiaoland/xiaolan-dev   #                                    
+    #             欢迎使用!!!  :)              #              
     ###########################################
 
     ''')
@@ -106,6 +105,8 @@ class skills(object):
             s.hotel()
         elif witch == 'no':
             sconvenstation()
+        elif witch == 'reintent':
+            nlp.do_intent(text)
         elif witch == 'snowboytrain':
             s.snowboytrain()
         else:
