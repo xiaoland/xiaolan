@@ -22,25 +22,23 @@ def start():
 
 def main():
 
-    token = ''
     bt = baidu_tts()
     bs = baidu_stt(1, 'a', 2, '{')
     r = recorder()
-    url = ' http://api.avatardata.cn/Weather/Query?key='
-    APIKEY = '5fb31534ef0e4a43812ba3f881194afe'
-    location = '中山'
+    host = 'https://api.seniverse.com/v3/weather/now.json?key='
+    key = 'sxyi6ehxblxkqeto'
+    APIURL = key + '&location=ip&language=zh-Hans&unit=c'
     
-    r = requests.post(url + APIKEY + '&cityname=' + location)
+    url = host + APIURL
+
+    r = requests.get(url)
     
     json = r.json()
-    print json
-    weather = json['result']['weather'][0]['info']['day'][-6]
-    temperature = json['result']['weather'][0]['info']['day'][2]
-    yundong = json['result']['life']['info']['yundong'][-1]
-    chuanyi = json['result']['life']['info']['chuanyi'][-1]
+    weather = json['now']['text']
+    temperature = json['now']['temperature']
+    humidity = json['now']['humidity']
     
-    tweatherstates = location + ',今天的天气是,' + weather + '，最高温度是,'  + temperature + '，摄氏度，' + yundong + chuanyi
-    saytext = tweatherstates.encode('utf-8','strict')
+    tweatherstates = location + ',今天,' + weather + '，温度是,'  + temperature + '，摄氏度，'
     tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
