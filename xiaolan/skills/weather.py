@@ -38,7 +38,7 @@ def main():
     temperature = json['now']['temperature']
     humidity = json['now']['humidity']
     
-    tweatherstates = location + ',今天,' + weather + '，温度是,'  + temperature + '，摄氏度，'
+    tweatherstates = ',今天,' + weather + '，温度是,'  + temperature + '，摄氏度，'
     tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
