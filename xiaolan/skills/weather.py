@@ -25,9 +25,10 @@ def main():
     bt = baidu_tts()
     bs = baidu_stt(1, 'a', 2, '{')
     r = recorder()
+    location = 'zhongshan'
     host = 'https://api.seniverse.com/v3/weather/now.json?key='
     key = 'sxyi6ehxblxkqeto'
-    APIURL = key + '&location=ip&language=zh-Hans&unit=c'
+    APIURL = key + '&location=' + location + '&language=zh-Hans&unit=c'
     
     url = host + APIURL
 
