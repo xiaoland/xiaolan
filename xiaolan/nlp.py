@@ -48,9 +48,11 @@ def get_intent(text):
         try:
                 intent = json['data']['service']
         except KeyError:
-                do_intent(text)
+                intent = 'reintent'
+                return intent
         except TypeError:
-                do_intent(text)
+                intent = 'reintent'
+                return intent
         if intent != None:
                 return intent
         else:
