@@ -27,7 +27,7 @@ def main():
     appid = '20180425000150592'
     apikey = 'gN56Mdv4mh2KJ0Ko2p6v'
     
-    asktext = '请问您要翻译成什么？请在滴一声后说出内容，文言文也可以翻译哦！'
+    asktext = '请问您要翻译什么？请在滴一声后说出内容，文言文也可以翻译哦！'
     bt.tts(asktext, tok)
     speaker.speak()
     speaker.ding()
