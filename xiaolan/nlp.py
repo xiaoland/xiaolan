@@ -70,7 +70,7 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
                 intent = 'smarthome'
                 return intent
         elif '翻译' in text:
-                intent = 'ts'
+                intent = 'translate'
                 return intent
         elif '搜索' in text:
                 intent = 'ser'
