@@ -24,6 +24,7 @@ import news
 import smarthome
 import camera
 import snowboytrain
+import ts
 
 def welcome():
 
@@ -109,6 +110,8 @@ class skills(object):
             nlp.do_intent(text)
         elif witch == 'snowboytrain':
             s.snowboytrain()
+        elif witch == 'translate':
+            s.ts()
         else:
             s.tuling(text)
     
@@ -163,6 +166,10 @@ class skills(object):
     def snowboytrain(self):
         
         snowboytrain.start()
+    
+    def ts(self):
+        
+        ts.start()
         
 welcome()
 snowboystarts()
