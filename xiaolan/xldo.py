@@ -33,8 +33,8 @@ def welcome():
     #################*******###################
     #         小蓝-中文智能家居对话机器人         #
     #      (c)蓝之酱-1481605673@qq.com         #
-    #   www.github.com/xiaoland/xiaolan-dev   #                                    
-    #             欢迎使用!!!  :)              #              
+    #   www.github.com/xiaoland/xiaolan-dev   #                                   
+    #               欢迎使用!!!  :)            #              
     ###########################################
 
     ''')
@@ -49,8 +49,7 @@ def snowboystarts():
 
 def convenstation():
     
-    token = ''
-    b = baidu_stt(1, token, 2, '{')
+    b = baidu_stt(1, 3, 2, '{')
     r = recorder()
     s = skills()
     
@@ -61,7 +60,7 @@ def convenstation():
     tok = b.get_token()
     text = b.stt('./voice.wav', tok)
     intent = nlp.get_intent(text)
-    s.getskills(intent, text)
+    s.getskills(intent, text, tok)
 
 def sconvenstation():
 
@@ -72,104 +71,104 @@ class skills(object):
     def __init__(self):
         pass
         
-    def getskills(self, witch, text):
+    def getskills(self, witch, text， tok):
         s = skills()
         if witch == 'clock':
-            s.clock()
+            s.clock(tok)
         elif witch == 'xlonly':
-            s.xlonly()
+            s.xlonly(tok)
         elif witch == 'camera':
-            s.camera()
+            s.camera(tok)
         elif witch == 'smarthome':
-            s.smarthome()
+            s.smarthome(tok)
         elif witch == 'weather':
-            s.weather()
+            s.weather(tok)
         elif witch == 'music':
-            s.music()
+            s.music(tok)
         elif witch == 'ts':
-            s.ts()
+            s.ts(tok)
         elif witch == 'email':
-            s.email()
+            s.email(tok)
         elif witch == 'story':
-            s.story()
+            s.story(tok)
         elif witch == 'joke':
-            s.joke()
+            s.joke(tok)
         elif witch == 'news':
-            s.news()
+            s.news(tok)
         elif witch == 'smarthome':
-            s.smarthome()
+            s.smarthome(tok)
         elif witch == 'caream':
-            s.caream()
+            s.caream(tok)
         elif witch == 'video':
-            s.video()
+            s.video(tok)
         elif witch == 'hotelSearch':
-            s.hotel()
+            s.hotel(tok)
         elif witch == 'no':
-            sconvenstation()
+            sconvenstation(tok)
         elif witch == 'reintent':
             nlp.do_intent(text)
         elif witch == 'snowboytrain':
-            s.snowboytrain()
+            s.snowboytrain(tok)
         elif witch == 'translate':
-            s.ts()
+            s.ts(tok)
         else:
-            s.tuling(text)
+            s.tuling(text, tok)
     
-    def clock(self):
-        clock.start()
+    def clock(self, tok):
+        clock.start(tok)
         
-    def xlonly(self):
+    def xlonly(self, tok):
         
-        xlonly.start()
+        xlonly.start(tok)
     
-    def weather(self):
+    def weather(self, tok):
         
-        weather.start()
+        weather.start(tok)
         
-    def camera(self):
+    def camera(self, tok):
         
-        camera.start()
+        camera.start(tok)
         
-    def music(self):
+    def music(self, tok):
         
-        music.start()
+        music.start(tok)
         
-    def tuling(self, text):
+    def tuling(self, text, tok):
         
-        tuling.start(text)
+        tuling.start(text, tok)
     
-    def story(self):
+    def story(self, tok):
         
-        story.start()
+        story.start(tok)
         
-    def joke(self):
+    def joke(self, tok):
         
-        joke.start()
+        joke.start(tok)
         
-    def news(self):
+    def news(self, tok):
         
-        news.start()
+        news.start(tok)
         
-    def smarthome(self):
+    def smarthome(self, tok):
         
         s = smartHome()
-        s.start()
+        s.start(tok)
     
-    def video(self):
+    def video(self, tok):
         
-        video.start()
+        video.start(tok)
     
-    def hotel(self):
+    def hotel(self, tok):
         
-        hotel.start()
+        hotel.start(tok)
         
-    def snowboytrain(self):
+    def snowboytrain(self, tok):
         
-        snowboytrain.start()
+        snowboytrain.start(tok)
     
-    def ts(self):
+    def ts(self, tok):
         
-        ts.start()
+        ts.start(tok)
         
 welcome()
 snowboystarts()
