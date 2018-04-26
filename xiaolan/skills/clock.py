@@ -13,22 +13,23 @@ import snowboy
 import recorder
 import speaker
 
-def start(d, re, redata, h, m):
+def start(tok):
     
-    main(d, re, redata, h, m)
+    main(tok)
   
-def main(d, re, redata, h, m):
-    if re == 'True':
-        flag = 1
-        while flag:
-            t = time.localtime()  # 当前时间的纪元值
-            fmt = "%H %M"
-            now = time.strftime(fmt, t)  # 将纪元值转化为包含时、分的字符串
-            now = now.split(' ') #以空格切割，将时、分放入名为now的列表中
-
-            hour = now[0]
-            minute = now[1]
-            if hour == h and minute == m:
-                os.sys(omxplayer /home/pi/xiaolan/xiaolan/music/clock.mp3)
-                flag = 0
+def main(tok):
+    bt = baidu_tts()
+    bs = baidu_stt(1, 2, 3, 4)
+    r recorder()
+    asktext = '请问您要设定什么时候的闹钟？要重复请在开头说重复闹钟，默认单次，重复闹钟请说出重复日期哦！'
+    bt.tts(asktext, tok)
+    speaker.speak()
+    speaker.ding()
+    r.record()
+    speaker.dong()
+    settext = bs.stt('./voice.wav', tok)
+    if settext[0:3] = '重复闹钟':
+        clockmode = 'reclock'
+        reclocktime = settext[4:6]
         
+    
