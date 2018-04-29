@@ -8,6 +8,10 @@ import demjson
 import base64
 import hashlib
 import music
+import smarthome
+import raspberrypi_gpio
+import ts
+import news
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
 from stt import baidu_stt
