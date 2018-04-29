@@ -25,6 +25,7 @@ import smarthome
 import camera
 import snowboytrain
 import ts
+import onesay
 
 def welcome():
 
