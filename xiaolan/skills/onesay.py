@@ -12,6 +12,7 @@ import smarthome
 import raspberrypi_gpio
 import ts
 import news
+import tuling
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
 from stt import baidu_stt
@@ -43,6 +44,8 @@ def start(text):
     elif '儿子' in text:
         xlonly.ei()
         xlonly.start()
+    else:
+        tuling.start(text)
         
           
             
