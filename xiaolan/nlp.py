@@ -11,13 +11,12 @@ import pygame
 import demjson
 import base64
 import hashlib
-sys.append('/home/pi/xiaolan/xiaolan/skills/)
-import onesay
 from recorder import recorder
 import snowboy
 from tts import baidu_tts
 from stt import baidu_stt
-
+sys.path.append('/home/pi/xiaolan/xiaolan/skills')
+import onesay
 
 def get_intent(text):
 
@@ -119,7 +118,6 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
                 intent= 'snowboytrain'
                 return intent
         else:
-                intent = 'onesay'
                 onesay.main(text)
     except TypeError:
         intent = 'no'
