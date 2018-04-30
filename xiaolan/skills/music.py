@@ -28,9 +28,8 @@ class music(object):
         bt = baidu_tts()
         bs = baidu_stt(1, 'a', 2, '{')
         r = recorder()
-        host = 'https://c.y.qq.com/soso/fcgi-bin/client_search_cp?'
-        dataup = 'ct=24&qqmusic_ver=1298&new_json=1&remoteplace=txt.yqq.center&searchid=39931161434873138&t=0&aggr=1&cr=1&catZhida=1&lossless=0&flag_qc=0&p=1&n=20&w='
-        datadown = '&g_tk=679269129&jsonpCallback=MusicJsonCallback4697791032816454&loginUin=1481605673&hostUin=0&format=jsonp&inCharset=utf8&outCharset=utf-8&notice=0&platform=yqq&needNewCode=0'
+        url = 'http://mp3.baidu.com/dev/api/?'
+        songurl = 'http://ting.baidu.com/data/music/links?songIds='
         ask_chose = '欢迎使用小蓝音乐播放器，请输入指令，是随机播放还是搜索'
         bt.tts(ask_chose, tok)
         speaker.speak()
@@ -46,11 +45,14 @@ class music(object):
             r.record()
             speaker.dong()
             ser_song_name = bs.stt('./voice.wav', tok)
-            serurl = host + dataup + ser_song_name + datadown
+            serurl = url + 'tn=getinfo&ct=0&ie=utf-8&word=' + ser_song_name + '&format=json'
             
             ser = requests.get(serurl)
             
             serjson = ser.json()
+            songid = serjson['song_id']
+            
+            
         
     
     
