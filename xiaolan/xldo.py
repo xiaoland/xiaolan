@@ -3,7 +3,6 @@
 
 import sys
 import os
-pid = os.fork()
 import pyaudio
 import pygame
 import requests
@@ -46,10 +45,8 @@ def welcome():
     os.system('pulseaudio --start')
 
 def awaken():
-    if pid = 0:
+
         os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
-    else:
-        os.system('python /home/pi/xiaolan/xiaolan/ocrawaken.py')
 
 def convenstation():
     
@@ -75,7 +72,7 @@ class skills(object):
     def __init__(self):
         pass
         
-    def getskills(self, witch, text， tok):
+    def getskills(self, witch, text, tok):
         s = skills()
         if witch == 'clock':
             s.clock(tok)
