@@ -54,3 +54,7 @@ class ocrawaken(object):
             o = ocrawaken()
             tok = o.get_token()
             o.ocrawaken(tok)
+            
+o = ocrawaken()
+tok = o.get_token()
+c.ocrawaken(tok)
