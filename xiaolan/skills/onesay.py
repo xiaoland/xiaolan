@@ -9,7 +9,6 @@ import base64
 import hashlib
 import music
 import smarthome
-import raspberrypi-gpio
 import ts
 import news
 import tuling
