@@ -50,10 +50,6 @@ class ocrawaken(object):
         if faceyn == 1:
             speaker.ocrawaken()
             xldo.convenstation()
-        else:
-            o = ocrawaken()
-            tok = o.get_token()
-            o.ocrawaken(tok)
             
 o = ocrawaken()
 tok = o.get_token()
