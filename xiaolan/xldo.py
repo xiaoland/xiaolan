@@ -3,6 +3,7 @@
 
 import sys
 import os
+pid = os.fork()
 import pyaudio
 import pygame
 import requests
@@ -44,9 +45,11 @@ def welcome():
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/welcome.mp3')
     os.system('pulseaudio --start')
 
-def snowboystarts():
-    
-    os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
+def awaken():
+    if pid = 0:
+        os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
+    else:
+        os.system('python /home/pi/xiaolan/xiaolan/ocrawaken.py')
 
 def convenstation():
     
@@ -172,7 +175,7 @@ class skills(object):
         ts.start(tok)
         
 welcome()
-snowboystarts()
+awaken()
 
 
 
