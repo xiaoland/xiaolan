@@ -27,7 +27,7 @@ def main(tok):
     r.record()
     speaker.dong()
     settext = bs.stt('./voice.wav', tok)
-    if settext[0:3] = '重复闹钟':
+    if settext[0:3] == '重复闹钟':
         clockmode = 'reclock'
         reclocktime = settext[4:6]
         
