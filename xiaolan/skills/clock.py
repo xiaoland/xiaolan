@@ -9,7 +9,6 @@ import time
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
-import snowboy
 import recorder
 import speaker
 
@@ -20,7 +19,7 @@ def start(tok):
 def main(tok):
     bt = baidu_tts()
     bs = baidu_stt(1, 2, 3, 4)
-    r recorder()
+    r.recorder()
     asktext = '请问您要设定什么时候的闹钟？要重复请在开头说重复闹钟，默认单次，重复闹钟请说出重复日期哦！'
     bt.tts(asktext, tok)
     speaker.speak()
