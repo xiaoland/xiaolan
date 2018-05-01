@@ -10,7 +10,6 @@ import random
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
-import snowboy
 from recorder import recorder
 import speaker
 
