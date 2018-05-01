@@ -4,7 +4,6 @@ import requests
 import base64
 import json
 import demjson
-import xldo
 
 class ocrawaken(object):
     
