@@ -12,7 +12,6 @@ import demjson
 import base64
 import hashlib
 from recorder import recorder
-import snowboy
 from tts import baidu_tts
 from stt import baidu_stt
 sys.path.append('/home/pi/xiaolan/xiaolan/skills')
