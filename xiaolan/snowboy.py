@@ -55,7 +55,7 @@ def stop():
         
     except SystemExit,error:
         
-        xldo.convenstation()
+        xldo.oconvenstation()
         start()
         
 
