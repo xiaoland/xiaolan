@@ -7,6 +7,7 @@ import pyaudio
 import pygame
 import requests
 import json
+import snowboy
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
