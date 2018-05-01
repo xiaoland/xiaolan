@@ -9,7 +9,6 @@ sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
 from stt import baidu_stt
 from tts import baidu_tts
-import snowboy
 import recorder
 
 __author__ = 'Caibiy'
