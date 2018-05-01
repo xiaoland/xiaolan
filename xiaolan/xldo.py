@@ -48,7 +48,7 @@ def awaken():
 
         os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
 
-def convenstation():
+def oconvenstation():
     
     b = baidu_stt(1, 3, 2, '{')
     r = recorder()
