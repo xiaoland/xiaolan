@@ -7,7 +7,7 @@ import pyaudio
 import pygame
 import requests
 import json
-import snowboy
+import snowboydecoder
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
@@ -46,8 +46,12 @@ def welcome():
 
 def awaken():
 
-        os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
+    detector = snowboydecoder.HotwordDetector("/home/pi/xiaolan/xiaolan/snowboy/blueberry.pmdl", sensitivity=0.5, audio_gain=1)
+    detector.start(detected_callback)
 
+def detected_callback():
+    print "检测到唤醒，转交指令给xldo"
+    
 def oconvenstation():
     
     b = baidu_stt(1, 3, 2, '{')
