@@ -51,8 +51,12 @@ def awaken():
 
 def detected_callback():
     print "检测到唤醒，转交指令给xldo"
+    try:
+        sys.exit(-1)
+    except SystemExit:
+        xldo.convenstation()
     
-def oconvenstation():
+def convenstation():
     
     b = baidu_stt(1, 3, 2, '{')
     r = recorder()
