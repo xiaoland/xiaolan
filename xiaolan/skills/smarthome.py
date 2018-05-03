@@ -4,15 +4,15 @@ import json
 import sys
 import os
 import requests
-import pygame
+import demjson
 import time
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
-import recorder
+from recorder import recorder
 import speaker
 
-password = 'y20050801056'
+password = 'y20050801'
 
 def start(cortolthings, platfrom):
 	h = smartHome()
