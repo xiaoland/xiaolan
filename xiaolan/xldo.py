@@ -7,7 +7,6 @@ import pyaudio
 import pygame
 import requests
 import json
-import snowboydecoder
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
@@ -26,6 +25,8 @@ import camera
 import snowboytrain
 import ts
 import onesay
+sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
+import snowboydecoder
 
 def welcome():
 
