@@ -12,10 +12,9 @@ from tts import baidu_tts
 from recorder import recorder
 import speaker
 
-password = 'y20050801'
-
 def start(cortolthings, platfrom):
 	h = smartHome()
+	platfrom = 'hass'
 	h.start(platfrom)
 	
 def keyvalue_all(self,input_json):  
@@ -45,108 +44,100 @@ class smartHome(object):
 
 	
 	def main(self, platfrom):
-		if platfrom == '':
+		if platfrom == 'hass':
 			h = smartHome()
+			bt = baidu_tts()
+			bs = baidu_stt(1, 2, 3, 4)
+			tok = bt.get_token()
 			ask = "请在滴一声之后，说出指令"
-			baidu_tts.tts(ask)
+			bt.tts(ask, tok)
 			speaker.speak()
 			speaker.ding()
 			recorder.record()
 			speaker.dong()
-			baidu_stt.stt()
-			baidu_stt.nlp()
-			inent = cortolinent
+			text = bs.stt('./voice.wav', tok)
 			if "灯" in parsed_text:
-				h.hasslights(cortollight)
+				h.hasslights(tok)
 			elif "开关" in parsed_text:
-				back = cortolswitch
-				h.hassswitchs(cortolswitch)
+				h.hassswitchs(tok)
 			elif "获取" in parsed_text:
 				asks = "您要获取传感器的数据还是灯或插头的状态"
-				baidu_tts.tts(asks)
+				bt.tts(asks, tok)
 				speaker.speak()
 				speaker.ding()
 				recorder.record()
 				speaker.dong()
-				baidu_stt.stt()
+				text = bs.stt('./voice.wav', tok)
 				if "灯" in text:
 					ty = 1
-					h.hasssensor(ty)
-				elif "插头" in text:
+					h.hasssensor(ty, tok)
+				elif "插座" in text:
 					ty = 2
-					h.hasssensor(ty)
+					h.hasssensor(ty, tok)
 				elif "传感器" in text:
 					ty = 3
-					h.hasssensor(ty)
+					h.hasssensor(ty, tok)
 			
-			
-			
-			
-    	#蜂鸣器（raspberrypi)
-	def buzzer(self):
-		os.system('gpio -g write %s 1' % self.__pbuzzer)
-		time.sleep(0.5)
-		os.system('gpio -g write %s 0' % self.__pbuzzer)
-	
-	#温湿度读取（DHT11）
-	def readDth(self):
-		humidity,temperature = Adafruit_DHT.read_retry(self.sensor,self.__pdht11)
-		if humidity is not None and temperature is not None:
-			print('temp:%s,humidity%d' % (humidity,temperature))
-			return (humidity,temperature)
-	
 	#灯类控制Homeassistant
-	def hasslight(cortollight):
+	def hasslight(tok):
 		url = '192.168.2.110'
-		apikey = 'y20050801056'
-		if cortollight == '':
-			askf = "您想要控制什么灯?，请在滴一声之后说出，开，或，关，加上，名称"
-			baidu_tts.tts(askf)
-			speaker.speak()
-			speaker.ding()
-			recorder.record()
-			speaker.dong()
-			baidu_stt.stt()
+		apikey = 'y20050801'
+		entity_id = {}
+		askf = "您想要控制什么灯?，请在滴一声之后说出，开，或，关，加上，名称"
+		baidu_tts.tts(askf)
+		speaker.speak()
+		speaker.ding()
+		recorder.record()
+		speaker.dong()
+		baidu_stt.stt()
 			
 		headers = {'x-ha-access': password, 'content-type': 'application/json'}
-    		r = requests.get("192.168.2.110:8123/api/services", headers=headers)
+    		r = requests.get('http://' + url + ':8123/api/history/period/2016-12-29T00:00:00+02:00',
+				 headers=headers)
+		
 		json = r.json()
 		services = keyvalue_all(1, json)
 		
-		if cortolinent == 'open':
+		if '打开' in text:
 			pass
-		elif cortolinent == 'close':
+		elif '关闭' in text:
 			pass
 	
 	#开关控制（homeassistant)
-	def hassswitchs(cortolswitch):
+	def hassswitchs(tok):
 		domain = "switch"
 		url = '192.168.2.110'
-		apikey = 'y20050801056'
-		if cortolswitch == '':
-			askt = "您想要控制什么开关?，请在滴一声之后说出，开，或，关，加上，名称"
-			baidu_tts.tts(askt)
-			speaker.speak()
-			speaker.ding()
-			recorder.record()
-			speaker.dong()
-			baidu_stt.stt()
+		apikey = 'y20050801'
+		entity_id = {}
+		askt = "您想要控制什么开关?，请在滴一声之后说出，开，或，关，加上，名称"
+		bt.tts(askt, tok)
+		speaker.speak()
+		speaker.ding()
+		recorder.record()
+		speaker.dong()
+		text = bs.stt('./voice.wav', tok))
 			
 		headers = {'x-ha-access': password, 'content-type': 'application/json'}
-    		r = requests.get("192.168.2.110:8123/api/services", headers=headers)
-		json = r.json()
-		services = keyvalue_all(1, json)
+    		r = requests.get('http://' + url + ':8123/api/history/period/2016-12-29T00:00:00+02:00',
+				 headers=headers)
 		
-		if cortolinent == 'open':
+		json = r.json()
+		all_data_base = json[0:-1]
+		friendly_name = all_data_base[0:-1]['attributes']['friendly_name']
+		for friendly_name in 
+		
+		
+		
+		if '打开' in :
 			pass
-		elif cortolinent == 'close':
+		elif cortolinent == 'turn_off':
 			pass
 
 	
 	#设备数据/状态获取(homeassistant)
 	def hasssensor(ty):
 		url = 'http://192.168.2.110'
-		apikey = 'y20050801056'
+		apikey = 'y20050801'
 		if ty == 1:
 			askf = "您想要获取哪个开关的状态？"
 			baidu_tts.tts(askf)
