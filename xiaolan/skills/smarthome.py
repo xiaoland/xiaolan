@@ -7,6 +7,7 @@ import requests
 import demjson
 import time
 sys.path.append('/home/pi/xiaolan/xiaolan/')
+import xldo
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
@@ -59,38 +60,127 @@ class hass(object):
 			if '传感器' in text:
 				getstatethings = text[2:-4]
 				getmode = 'sensor'
-				h.sensor(getstatethings, getmode, tok)
-			elif '插座' in text:
-				getstatethings = text[2:-4]
-				getmode = 'switchs'
-				h.sensor(getstatethings, getmode, tok)
-			elif '灯' in text:
-				getstatethings = text[2:-4]
-				getmode = 'light'
-				h.sensor(getstatethings, getmode, tok, e_id)
+				h.sensor(getstatethings, tok)
+
 		else:
 			h.usuallycortol(text, tok)
+	
+	def e_id():
 		
-	def cortol(cortolthings, cortolmode, tok):
-		 	
-		url = 'http://hassio.local:'
+		url = 'http://hassio.local'
 		port = '8123'
 		passwd = 'y20050801'
+		service = '/api/states'
+		headers = {'x-ha-access': passwd,
+          		   'content-type': 'application/json'}
+		
+		r = requests.get(url + ':' + port + service,
+				 headers=headers)
+		
+		r_json = r.json()
+		e_id = {}
+                for r_jsons in r_json:
+                    entity_id = r_jsons['entity_id']
+                    friendly_name = r_jsons['attributes']['friendly_name']
+                    domain = entity_id.split(".")[0]
+                    e_id[friendly_name] = entity_id
+                return e_id
+			
+	
+	def cortol(self, cortolthings, cortolmode, tok):
+		 	
 		bt = baidu_tts()
 		bs = baidu_stt(1, 2, 3, 4)
 		r = recorder()
 		h = hass()
+		url = 'http://hassio.local'
+		port = '8123'
+		passwd = 'y20050801'
+		headers = {'x-ha-access': passwd,
+          		   'content-type': 'application/json'}
+
 		
-		
-		
-		
-		
-		
-		
-		
+		if cortolmode == 'turn_on':
+			service = '/api/services/switch/turn_on'
+		elif cortolmode == 'turn_off':
+			service = '/api/services/switch/turn_off'
+		else:
+			service = '/api/services/switch/turn_on'
 			
+		e_id = h.e_id()
+		try:
+			cortole_id = e_id['cortolthings']
+			data = {"entity_id": cortole_id}
+		except KeyError:
+			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
+			bt.tts(sorry, tok)
+			speaker.speak()
+			xldo.awaken()
+		except TypeError:
+			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
+			bt.tts(sorry, tok)
+			speaker.speak()
+			xldo.awaken()
+		except ValueError:
+			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
+			bt.tts(sorry, tok)
+			speaker.speak()
+			xldo.awaken()
+		else:
 			
+			cortolback  = requests.post(url + ':' + port + service,
+						    headers=headres,
+						    data=data)
+			if cortolback.status_code == 200 or cortolback.status_code == 201:
+				sayback = '执行成功'
+				bt.tts(sayback, tok)
+				speaker.speak()
+			else:
+				sayback = '执行错误'
+				bt.tts(sayback, tok)
+				speaker.speak()
+	
+	def sensor(getstatethings, tok):
+		
+		bt = baidu_tts()
+		bs = baidu_stt(1, 2, 3, 4)
+		r = recorder()
+		h = hass()
+		url = 'http://hassio.local'
+		port = '8123'
+		passwd = 'y20050801'
+		headers = {'x-ha-access': passwd,
+          		   'content-type': 'application/json'}
+
+		e_id = e_id()
 			
+		service = '/api/states' + e_id[getstatesthings]
+		r = requests.get(url +':' + port + service,
+			         headers=headers)
 			
+		r_json = r.json()
+		
+		if cortolback.status_code == 200 or cortolback.status_code == 201:
 			
-			
+			state = r_json['state']
+			if state == 'on':
+				say = '此设备为开启状态'
+				bt.tts(say, tok)
+				speaker.speak()
+			elif state == 'off':
+				say = '此设备为关闭状态'
+				bt.tts(say, tok)
+				speaker.speak()
+			elif state == 'below_horizon':
+				say = '太阳已经下山了'
+				bt.tts(say, tok)
+				speaker.speak()
+			else:
+				if state.isdigit() == True:
+					say = '数据是' + state
+					bt.tts(say, tok)
+					speaker.speak()
+		else:
+			sayback = '执行错误'
+			bt.tts(sayback, tok)
+			speaker.speak()		
