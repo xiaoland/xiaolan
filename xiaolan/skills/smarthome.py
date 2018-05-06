@@ -47,17 +47,18 @@ class hass(object):
 			text = bs.stt('./voice.wav', tok)
 			if text != None:
 				break
+		texts = str.encode(encoding='UTF-8',errors='strict')
 		if '打开' in text:
-			cortolthings = text[2:-2]
+			cortolthings = texts[2:-2]
 			cortolmode = 'turn_on'
 			h.cortol(cortolthings, cortolmode, tok)
 		elif '关闭' in text:
-			cortolthings = text[2:-2]
+			cortolthings = texts[2:-2]
 			cortolmode = 'turn_off'
 			h.cortol(cortolthings, cortolmode, tok)
 		elif '查看' in text:
 			if '传感器' in text:
-				getstatethings = text[2:-5]
+				getstatethings = texts[2:-5]
 				getmode = 'sensor'
 				h.sensor(getstatethings, tok)
 		if '红外' in text:
