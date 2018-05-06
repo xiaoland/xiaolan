@@ -15,11 +15,11 @@ from tts import baidu_tts
 import speaker
 from recorder import recorder
 
-def start():
+def start(tok):
 
-    main()
+    main(tok)
 
-def main():
+def main(tok):
 
     bt = baidu_tts()
     bs = baidu_stt(1, 'a', 2, '{')
@@ -38,6 +38,5 @@ def main():
     temperature = json['results'][0]['now']['temperature']
     
     tweatherstates = ',今天,' + weather + '，温度是,'  + temperature + '，摄氏度，'
-    tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
