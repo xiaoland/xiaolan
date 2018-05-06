@@ -49,16 +49,16 @@ class hass(object):
 				break
 		texts = str.encode(encoding='UTF-8',errors='strict')
 		if '打开' in text:
-			cortolthings = texts[4:-2]
+			cortolthings = texts[6:-2]
 			cortolmode = 'turn_on'
 			h.cortol(cortolthings, cortolmode, tok)
 		elif '关闭' in text:
-			cortolthings = texts[4:-2]
+			cortolthings = texts[6:-2]
 			cortolmode = 'turn_off'
 			h.cortol(cortolthings, cortolmode, tok)
 		elif '查看' in text:
 			if '传感器' in text:
-				getstatethings = texts[4:-5]
+				getstatethings = texts[6:-5]
 				getmode = 'sensor'
 				h.sensor(getstatethings, tok)
 		if '红外' in text:
