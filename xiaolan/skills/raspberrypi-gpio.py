@@ -18,11 +18,11 @@ conn,cursor=(None,None)
 #gpio
 @unique
 
-def start():
+def start(tok):
   
-	main()
+	main(tok)
 
-def main():
+def main(tok):
 	initDb()
   s = sth()
 	s.readDth()
