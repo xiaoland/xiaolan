@@ -13,11 +13,11 @@ from tts import baidu_tts
 import recorder
 import speaker
 
-def start():
+def start(tok):
     
-    main()
+    main(tok)
     
-def main():
+def main(tok):
     
     url = 'http://api.avatardata.cn/Joke/QueryJokeByTime?key='
     key = 'a63ac25e95f741aea51167a05891498c'
