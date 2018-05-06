@@ -24,7 +24,6 @@ def main(tok):
     bt = baidu_tts()
     bs = baidu_stt(1, 'a', 2, '{')
     newsserviceasktext = '请问您要听什么新闻?'
-    tok = bt.get_token()
     
     bt.tts(newsserviceasktext, tok)
     speaker.speak()
