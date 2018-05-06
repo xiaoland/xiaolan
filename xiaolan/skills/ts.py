@@ -13,10 +13,11 @@ from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
 
-def start():
-    main()
+def start(tok):
+    main(tok)
   
-def main():
+def main(tok):
+    
     bt = baidu_tts()
     bs = baidu_stt(1, 2, 3, 4)
     r = recorder()
