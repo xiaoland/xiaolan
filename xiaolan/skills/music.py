@@ -15,9 +15,8 @@ from tts import baidu_tts
 
 bt = baidu_tts()
 
-def start():
+def start(tok):
     m = music()
-    tok = bt.get_token()
     m.musicwelcome(tok)
 
 class music(object):
