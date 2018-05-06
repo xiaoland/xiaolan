@@ -130,23 +130,23 @@ class hass(object):
 		
 		if cortolmode == 'turn_on':
 			if e_id[cortolthings_e] != None:
-				if 'switch' in e_id['cortolthings']:
+				if 'switch' in e_id[cortolthings_e]:
 					service = '/api/services/switch/turn_on'
-				elif 'light' in e_id['cortolthings']:
+				elif 'light' in e_id[cortolthings_e]:
 					service = '/api/services/switch/turn_on'
-				elif 'automation' in e_id['cortolthings']:
+				elif 'automation' in e_id[cortolthings_e]:
 					service = '/api/services/automation/turn_on'
 		elif cortolmode == 'turn_off':
 			if e_id[cortolthings_e] != None:
-				if 'switch' in e_id['cortolthings']:
+				if 'switch' in e_id[cortolthings_e]:
 					service = '/api/services/switch/turn_off'
-				elif 'light' in e_id['cortolthings']:
+				elif 'light' in e_id[cortolthings_e]:
 					service = '/api/services/switch/turn_off'
-				elif 'automation' in e_id['cortolthings']:
+				elif 'automation' in e_id[cortolthings_e]:
 					service = '/api/services/automation/turn_off'
 		
 		try:
-			cortole_id = e_id['cortolthings']
+			cortole_id = e_id[cortolthings_e]
 			data = {"entity_id": cortole_id}
 		except KeyError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
@@ -187,8 +187,9 @@ class hass(object):
           		   'content-type': 'application/json'}
 
 		e_id = e_id()
-			
-		service = '/api/states' + e_id[getstatesthings]
+		
+		getstatethings_e = unicode(getstatesthings, "utf-8", "ignore")
+		service = '/api/states' + e_id[getstatesthings_e]
 		r = requests.get(url +':' + port + service,
 			         headers=headers)
 			
