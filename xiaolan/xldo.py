@@ -122,7 +122,7 @@ class skills(object):
         elif witch == 'translate':
             s.ts(tok)
         else:
-            s.tuling(text, tok)
+            s.onesay(text, tok)
     
     def clock(self, tok):
         clock.start(tok)
@@ -179,6 +179,10 @@ class skills(object):
     def ts(self, tok):
         
         ts.start(tok)
+        
+    def onesay(self, text, tok):
+        
+        onesay.start(text, tok)
         
 welcome()
 awaken()
