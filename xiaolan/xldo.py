@@ -62,11 +62,9 @@ def convenstation():
     b = baidu_stt(1, 3, 2, '{')
     r = recorder()
     s = skills()
-    
     speaker.ding()
     r.record()
-    speaker.dong()
-        
+    speaker.dong()  
     tok = b.get_token()
     text = b.stt('./voice.wav', tok)
     intent = nlp.get_intent(text)
