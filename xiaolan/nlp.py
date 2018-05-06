@@ -117,7 +117,7 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
                 intent= 'snowboytrain'
                 return intent
         else:
-                onesay.main(text)
+                onesay.start(text)
     except TypeError:
         intent = 'no'
         return intent
