@@ -17,3 +17,5 @@ def detected_callback():
         sys.exit(-1)
     except SystemExit:
         os.system('python /home/pi/xiaolan/xiaolan/xldo.py a')
+
+awaken()
