@@ -12,9 +12,9 @@ from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
 
-def start():
+def start(tok):
     
-    main()
+    main(tok)
 
 def get_wave(fname):
     with open(fname) as infile:
@@ -34,11 +34,10 @@ microphone = "macbook microphone"
 ############### END OF MODIFY ##################
 
 
-def main():
+def main(tok):
     
     r = recorder()
     bt = baidu_tts()
-    tok = bt.get_token()
     url = 'https://snowboy.kitt.ai/api/v1/train/'
     apikey = '78ee816d9bfc8fb0e01341d4408e3f23fbbc9b03'
     askf = '第一次训练录音开始，请在滴一声之后说出，blueberry'
