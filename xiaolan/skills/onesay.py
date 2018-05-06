@@ -42,7 +42,7 @@ def start(text, tok):
             songname = text[2:-1]
             music.onesay(songname)
     elif '我想听' in text:
-        if '随机' in text or '音乐' in text::
+        if '随机' in text or '音乐' in text:
             music.start()
         else:
             songname = text[3:-1]
