@@ -8,7 +8,7 @@ import demjson
 import base64
 import hashlib
 import music
-import smarthome
+from smarthome import hass
 import ts
 import news
 import tuling
@@ -19,21 +19,22 @@ from tts import baidu_tts
 from recorder import recorder
 
 def start(text, tok):
+    sm = hass()
     if '打开' in text:
         cortolthings = text[2:-1]
         cortolmode = 'turn_on'
-        smarthome.cortol(cortolthings, cortolmode, tok)
+        sm.cortol(cortolthings, cortolmode, tok)
     elif '关闭' in text:
         cortolthings = text[2:-1]
         cortolmode = 'turn_off'
-        smarthome.cortol(cortolthings, cortolmode, tok)
+        sm.cortol(cortolthings, cortolmode, tok)
     elif '将' in text and '翻译' in text:
         tsthings = text[1:-6]
         tsmode = text[-1:-2]
     elif '查看' in text and '状态' in text:
         getstatethings = text[2:-1]
         getmode = 'sensor'
-        smarthome.sensor(getstatethings, getmode, tok)
+        sm.sensor(getstatethings, getmode, tok)
         
     elif '播放' in text:
         if '随机' in text or '音乐' in text:
