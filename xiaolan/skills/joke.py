@@ -53,6 +53,5 @@ def main(tok):
         saytext = json['result'][0]['content']
         
     saytext = jokefj + '第二个笑话' + jokesj
-    tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
