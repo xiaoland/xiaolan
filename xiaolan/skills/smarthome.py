@@ -61,11 +61,36 @@ class hass(object):
 				getstatethings = text[2:-4]
 				getmode = 'sensor'
 				h.sensor(getstatethings, tok)
+		if '红外' in text:
+			if '学习' in text:
+				h.study(tok)
 
 		else:
 			h.usuallycortol(text, tok)
 	
-	def e_id():
+	def service(self):
+		
+		url = 'http://hassio.local'
+		port = '8123'
+		passwd = 'y20050801'
+		service = '/api/services'
+		headers = {'x-ha-access': passwd,
+          		   'content-type': 'application/json'}
+		
+		r = requests.get(url + ':' + port + service,
+				 headers=headers)
+		
+		json = r.json()
+		domians = {}
+		
+		for jsons in json:
+			domain = jsons['domain']
+			services = jsons['services']
+			domains[domain] = services
+		return domains
+				 
+	
+	def e_id(self):
 		
 		url = 'http://hassio.local'
 		port = '8123'
@@ -98,16 +123,27 @@ class hass(object):
 		passwd = 'y20050801'
 		headers = {'x-ha-access': passwd,
           		   'content-type': 'application/json'}
-
+		
+		domains = h.service()
+		e_id = h.e_id()
 		
 		if cortolmode == 'turn_on':
-			service = '/api/services/switch/turn_on'
+			if e_id['cortolthings'] != None:
+				if 'switch' in e_id['cortolthings']:
+					service = '/api/services/switch/turn_on'
+				elif 'light' in e_id['cortolthings']:
+					service = '/api/services/switch/turn_on'
+				elif 'automation' in e_id['cortolthings']:
+					service = '/api/services/automation/turn_on'
 		elif cortolmode == 'turn_off':
-			service = '/api/services/switch/turn_off'
-		else:
-			service = '/api/services/switch/turn_on'
-			
-		e_id = h.e_id()
+			if e_id['cortolthings'] != None:
+				if 'switch' in e_id['cortolthings']:
+					service = '/api/services/switch/turn_off'
+				elif 'light' in e_id['cortolthings']:
+					service = '/api/services/switch/turn_off'
+				elif 'automation' in e_id['cortolthings']:
+					service = '/api/services/automation/turn_off'
+		
 		try:
 			cortole_id = e_id['cortolthings']
 			data = {"entity_id": cortole_id}
@@ -140,7 +176,7 @@ class hass(object):
 				bt.tts(sayback, tok)
 				speaker.speak()
 	
-	def sensor(getstatethings, tok):
+	def sensor(self, getstatethings, tok):
 		
 		bt = baidu_tts()
 		bs = baidu_stt(1, 2, 3, 4)
@@ -158,11 +194,11 @@ class hass(object):
 		r = requests.get(url +':' + port + service,
 			         headers=headers)
 			
-		r_json = r.json()
+		json = r.json()
 		
 		if cortolback.status_code == 200 or cortolback.status_code == 201:
 			
-			state = r_json['state']
+			state = json['state']
 			if state == 'on':
 				say = '此设备为开启状态'
 				bt.tts(say, tok)
@@ -184,3 +220,27 @@ class hass(object):
 			sayback = '执行错误'
 			bt.tts(sayback, tok)
 			speaker.speak()		
+	def study(self, tok):
+		
+		bt = baidu_tts()
+		bs = baidu_stt(1, 2, 3, 4)
+		r = recorder()
+		h = hass()
+		url = 'http://hassio.local'
+		port = '8123'
+		passwd = 'y20050801'
+		headers = {'x-ha-access': passwd,
+          		   'content-type': 'application/json'}
+		
+		say = '该功能暂未开发完毕，sorry'
+		bt.tts(say, tok)
+		speaker.speak()
+		
+		
+	
+	
+	
+	
+	
+	
+	
