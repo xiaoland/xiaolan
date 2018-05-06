@@ -152,8 +152,8 @@ class skills(object):
         
     def smarthome(self, tok):
         
-        s = smartHome()
-        s.start(tok)
+        sm = smartHome()
+        sm.start(tok)
     
     def video(self, tok):
         
