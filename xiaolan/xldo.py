@@ -152,7 +152,7 @@ class skills(object):
         
     def smarthome(self, tok):
         
-        sm = smarthome.hass()
+        sm = hass()
         sm.start(tok)
     
     def video(self, tok):
