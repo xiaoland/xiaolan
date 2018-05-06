@@ -235,8 +235,7 @@ class hass(object):
 		say = '该功能暂未开发完毕，sorry'
 		bt.tts(say, tok)
 		speaker.speak()
-		
-		
+ 	
 	
 	
 	
