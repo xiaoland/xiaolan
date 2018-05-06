@@ -18,27 +18,36 @@ from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
 
-def start(text):
+def start(text, tok):
     if '打开' in text:
-        switch = text[2:-1]
-        hassmode = 'turn_on'
-        smarthome.onesay(switch, hassmode)
+        cortolthings = text[2:-1]
+        cortolmode = 'turn_on'
+        smarthome.cortol(cortolthings, cortolmode, tok)
     elif '关闭' in text:
-        switch = text[2:-1]
-        hassmode = 'turn_off'
-        smarthome.onesay(switch, hassmode)
+        cortolthings = text[2:-1]
+        cortolmode = 'turn_off'
+        smarthome.cortol(cortolthings, cortolmode, tok)
+    elif '将' in text and '翻译' in text:
+        tsthings = text[1:-6]
+        tsmode = text[-1:-2]
+    elif '查看' in text and '状态' in text:
+        getstatethings = text[2:-1]
+        getmode = 'sensor'
+        smarthome.sensor(getstatethings, getmode, tok)
+        
     elif '播放' in text:
-        if '音乐' in text:
-            music.start()
+        if '随机' in text or '音乐' in text:
+            music.main()
         else:
             songname = text[2:-1]
             music.onesay(songname)
     elif '我想听' in text:
-        if '音乐' in text:
+        if '随机' in text or '音乐' in text::
             music.start()
         else:
             songname = text[3:-1]
             music.onesay(songname)
+            
     elif '儿子' in text:
         xlonly.ei()
         xlonly.start()
