@@ -55,7 +55,7 @@ def detected_callback():
     try:
         sys.exit(-1)
     except SystemExit:
-        xldo.convenstation()
+        convenstation()
     
 def convenstation():
     
