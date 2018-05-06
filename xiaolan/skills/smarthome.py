@@ -127,7 +127,7 @@ class hass(object):
 		e_id = h.e_id()
 		
 		if cortolmode == 'turn_on':
-			if e_id['cortolthings'] != None:
+			if e_id[cortolthings] != None:
 				if 'switch' in e_id['cortolthings']:
 					service = '/api/services/switch/turn_on'
 				elif 'light' in e_id['cortolthings']:
@@ -135,7 +135,7 @@ class hass(object):
 				elif 'automation' in e_id['cortolthings']:
 					service = '/api/services/automation/turn_on'
 		elif cortolmode == 'turn_off':
-			if e_id['cortolthings'] != None:
+			if e_id[cortolthings] != None:
 				if 'switch' in e_id['cortolthings']:
 					service = '/api/services/switch/turn_off'
 				elif 'light' in e_id['cortolthings']:
