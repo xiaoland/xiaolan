@@ -15,7 +15,7 @@ import recorder
 class usbCamera(object):
 	def __init__(self):
 		pass
-	def takePhoto(self):
+	def takePhoto(self, tok):
 	
 		os.system('fswebcam  -r 1280x720 --no-banner /home/pi/xiaolan/xiaolan/img/img.jpg')
 		speaker.kacha()
