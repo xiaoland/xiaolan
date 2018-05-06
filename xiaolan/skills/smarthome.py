@@ -80,7 +80,7 @@ class hass(object):
 				 headers=headers)
 		
 		json = r.json()
-		domians = {}
+		domains = {}
 		
 		for jsons in json:
 			domain = jsons['domain']
