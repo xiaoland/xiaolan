@@ -21,7 +21,6 @@ def main(tok):
     bt = baidu_tts()
     bs = baidu_stt(1, 2, 3, 4)
     r = recorder()
-    tok = bt.get_token()
     m = hashlib.md5()
     host = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
     appid = '20180425000150592'
