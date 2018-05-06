@@ -173,9 +173,16 @@ class skills(object):
     def onesay(self, text, tok):
         
         onesay.start(text, tok)
-        
-welcome()
-awaken()
+
+choses = sys.argv[1]
+if choses == 'b':
+    welcome()
+    awaken()
+elif choses == 'a':
+    convenstation()
+else:
+    welcome()
+    awaken()
 
 
 
