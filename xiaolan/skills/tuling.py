@@ -12,11 +12,11 @@ from tts import baidu_tts
 import speaker
 import recorder
 
-def start(text):
+def start(text, tok):
   
-    main(text)
+    main(text, tok)
     
-def main(text):
+def main(text, tok):
     
     ak = 'c380ed8f2880443c84892ace36ba6bad'
     ui = '167031'
@@ -42,7 +42,6 @@ def main(text):
     text = talkback_val["text"]
     saytext = text.encode('utf-8','strict')
     bt = baidu_tts()
-    tok = bt.get_token()
     bt.tts(saytext, tok)
     speaker.speak()
     
