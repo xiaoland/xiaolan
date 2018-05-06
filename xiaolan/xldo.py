@@ -20,7 +20,7 @@ import music
 import tuling
 import joke
 import news
-import smarthome
+from smarthome import hass
 import camera
 import snowboytrain
 import ts
@@ -152,7 +152,7 @@ class skills(object):
         
     def smarthome(self, tok):
         
-        sm = smarthome()
+        sm = smarthome.hass()
         sm.start(tok)
     
     def video(self, tok):
