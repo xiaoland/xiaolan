@@ -21,18 +21,18 @@ from recorder import recorder
 def start(text, tok):
     sm = hass()
     if '打开' in text:
-        cortolthings = text[2:-1]
+        cortolthings = text[2:-2]
         cortolmode = 'turn_on'
         sm.cortol(cortolthings, cortolmode, tok)
     elif '关闭' in text:
-        cortolthings = text[2:-1]
+        cortolthings = text[2:-2]
         cortolmode = 'turn_off'
         sm.cortol(cortolthings, cortolmode, tok)
     elif '将' in text and '翻译' in text:
         tsthings = text[1:-6]
         tsmode = text[-1:-2]
     elif '查看' in text and '状态' in text:
-        getstatethings = text[2:-1]
+        getstatethings = text[2:-2]
         getmode = 'sensor'
         sm.sensor(getstatethings, getmode, tok)
         
