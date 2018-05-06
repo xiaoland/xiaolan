@@ -7,7 +7,6 @@ import requests
 import demjson
 import time
 sys.path.append('/home/pi/xiaolan/xiaolan/')
-import xldo
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
@@ -151,17 +150,14 @@ class hass(object):
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
 			bt.tts(sorry, tok)
 			speaker.speak()
-			xldo.awaken()
 		except TypeError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
 			bt.tts(sorry, tok)
 			speaker.speak()
-			xldo.awaken()
 		except ValueError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
 			bt.tts(sorry, tok)
 			speaker.speak()
-			xldo.awaken()
 		else:
 			
 			cortolback  = requests.post(url + ':' + port + service,
