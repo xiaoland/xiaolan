@@ -126,9 +126,10 @@ class hass(object):
 		
 		domains = h.service()
 		e_id = h.e_id()
+		cortolthings_e = unicode(cortolthings, "utf-8", "ignore")
 		
 		if cortolmode == 'turn_on':
-			if e_id[cortolthings] != None:
+			if e_id[cortolthings_e] != None:
 				if 'switch' in e_id['cortolthings']:
 					service = '/api/services/switch/turn_on'
 				elif 'light' in e_id['cortolthings']:
@@ -136,7 +137,7 @@ class hass(object):
 				elif 'automation' in e_id['cortolthings']:
 					service = '/api/services/automation/turn_on'
 		elif cortolmode == 'turn_off':
-			if e_id[cortolthings] != None:
+			if e_id[cortolthings_e] != None:
 				if 'switch' in e_id['cortolthings']:
 					service = '/api/services/switch/turn_off'
 				elif 'light' in e_id['cortolthings']:
