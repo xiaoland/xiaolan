@@ -13,11 +13,11 @@ from tts import baidu_tts
 from recorder import recorder
 import speaker
 
-def start():
+def start(tok):
     
-    main()
+    main(tok)
     
-def main():
+def main(tok):
     APPKEY = 'b8fff66168feb233d5cdb2f7931750f3'
     url = 'http://v.juhe.cn/toutiao/index?type='
     r = recorder()
