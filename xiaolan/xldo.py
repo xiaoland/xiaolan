@@ -47,15 +47,7 @@ def welcome():
 
 def awaken():
 
-    detector = snowboydecoder.HotwordDetector("/home/pi/xiaolan/xiaolan/snowboy/blueberry.pmdl", sensitivity=0.5, audio_gain=1)
-    detector.start(detected_callback)
-
-def detected_callback():
-    print "检测到唤醒，转交指令给xldo"
-    try:
-        sys.exit(-1)
-    except SystemExit:
-        convenstation()
+    os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
     
 def convenstation():
     
