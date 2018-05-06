@@ -106,7 +106,8 @@ class skills(object):
         elif witch == 'no':
             sconvenstation(tok)
         elif witch == 'reintent':
-            nlp.do_intent(text)
+            intent = nlp.do_intent(text)
+            s.getskills(intent, text, tok)
         elif witch == 'snowboytrain':
             s.snowboytrain(tok)
         elif witch == 'translate':
