@@ -15,7 +15,7 @@ import speaker
 def start(tok):
 	
 	h = hass()
-	hass.start(tok)
+	h.start(tok)
 
 class hass(object):
 	def __init__(self):
