@@ -118,6 +118,8 @@ class hass(object):
                         e_id[friendly_name] = entity_id
                 except KeyError:
                     return e_id
+		else:
+		    return e_id
 			
 	
 	def cortol(self, cortolthings, cortolmode, tok): #智能家居中的灯、开关控制于此（支持一句话插件）
