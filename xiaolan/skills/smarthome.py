@@ -90,6 +90,8 @@ class hass(object):
 				domains[domain] = services
 		except KeyError:
 			return domains
+		else:
+			return domains
 				 
 	
 	def e_id():
