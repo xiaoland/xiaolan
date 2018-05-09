@@ -22,7 +22,7 @@ class hass(object):
 		
 		pass
 	
-	def start(self, tok):
+	def start(self, tok): #判断
 		 
 		bt = baidu_tts()
 		bs = baidu_stt(1, 2, 3, 4)
@@ -68,7 +68,7 @@ class hass(object):
 		else:
 			h.usuallycortol(text, tok)
 	
-	def service(self):
+	def service(self): #获取各个领域的服务
 		
 		url = 'http://hassio.local'
 		port = '8123'
@@ -90,7 +90,7 @@ class hass(object):
 		return domains
 				 
 	
-	def e_id(self):
+	def e_id(self): #获取设备id
 		
 		url = 'http://hassio.local'
 		port = '8123'
@@ -112,7 +112,7 @@ class hass(object):
                 return e_id
 			
 	
-	def cortol(self, cortolthings, cortolmode, tok):
+	def cortol(self, cortolthings, cortolmode, tok): #智能家居中的灯、开关控制于此（支持一句话插件）
 		 	
 		bt = baidu_tts()
 		bs = baidu_stt(1, 2, 3, 4)
@@ -163,7 +163,7 @@ class hass(object):
 		else:
 			
 			cortolback  = requests.post(url + ':' + port + service,
-						    headers=headres,
+						    headers=headers,
 						    data=data)
 			if cortolback.status_code == 200 or cortolback.status_code == 201:
 				sayback = '执行成功'
