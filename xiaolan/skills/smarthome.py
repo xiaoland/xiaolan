@@ -83,14 +83,16 @@ class hass(object):
 		json = r.json()
 		domains = {}
 		
-		for jsons in json:
-			domain = jsons['domain']
-			services = jsons['services']
-			domains[domain] = services
-		return domains
+		try:
+			for jsons in json:
+				domain = jsons['domain']
+				services = jsons['services']
+				domains[domain] = services
+		except KeyError:
+			return domains
 				 
 	
-	def e_id(self): #获取设备id
+	def e_id():
 		
 		url = 'http://hassio.local'
 		port = '8123'
@@ -104,12 +106,16 @@ class hass(object):
 		
 		r_json = r.json()
 		e_id = {}
-                for r_jsons in r_json:
-                    entity_id = r_jsons['entity_id']
-                    friendly_name = r_jsons['attributes']['friendly_name']
-                    domain = entity_id.split(".")[0]
-                    e_id[friendly_name] = entity_id
-                return e_id
+		friendly_name_e = unicode('friendly_name', "utf-8", "ignore")
+		attributes_e = unicode('attributes', "utf-8", "ignore")
+		try:
+                    for r_jsons in r_json:
+                        entity_id = r_jsons['entity_id']
+                        friendly_name = r_jsons['attributes']['friendly_name']
+                        domain = entity_id.split(".")[0]
+                        e_id[friendly_name] = entity_id
+                except KeyError:
+                    return e_id
 			
 	
 	def cortol(self, cortolthings, cortolmode, tok): #智能家居中的灯、开关控制于此（支持一句话插件）
