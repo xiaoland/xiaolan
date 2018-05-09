@@ -16,6 +16,7 @@ from tts import baidu_tts
 from stt import baidu_stt
 sys.path.append('/home/pi/xiaolan/xiaolan/skills')
 import onesay
+from smarthome import hass
 
 def get_intent(text):
 
@@ -59,10 +60,20 @@ def get_intent(text):
                 do_intent(text)
         
 def do_intent(text):#自制的语义理解系统,欢迎大家补充
+    sm = hass()
     try:
         if '闹钟' in text:
                 intent = 'clock'
                 return intent
+        elif '打开' in text:
+                cortolthings = text[6:-2]
+                print cortolthings
+                cortolmode = 'turn_on'
+                sm.cortol(cortolthings, cortolmode, tok)
+        elif '关闭' in text:
+                cortolthings = text[6:-2]
+                cortolmode = 'turn_off'
+                sm.cortol(cortolthings, cortolmode, tok)
         elif '天气' in text:
                 intent = 'weather'
                 return intent
