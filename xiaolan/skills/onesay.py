@@ -53,7 +53,7 @@ def start(text, tok):
         xlonly.ei()
         xlonly.start()
     else:
-        tuling.start(text)
+        tuling.start(text, tok)
         
           
             
