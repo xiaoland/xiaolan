@@ -172,7 +172,8 @@ class hass(object):
 		
 		try:
 			cortole_id = e_id[cortolthings]
-			data = {"entity_id": cortole_id.encode('utf-8')}
+			dataf = {"entity_id": cortole_id.encode('utf-8')}
+			data = json.dumps(dataf)
 		except KeyError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
 			bt.tts(sorry, tok)
