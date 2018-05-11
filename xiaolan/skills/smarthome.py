@@ -186,7 +186,7 @@ class hass(object):
 			bt.tts(sorry, tok)
 			speaker.speak()
 		else:
-			
+			print data
 			cortolback  = requests.post(url + ':' + port + service,
 						    headers=headers,
 						    data=data)
