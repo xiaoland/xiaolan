@@ -221,7 +221,7 @@ class hass(object):
 			
 		json = r.json()
 		
-		if cortolback.status_code == 200 or cortolback.status_code == 201:
+		if cortolback.status_code == '200' or cortolback.status_code == '201':
 			
 			state = json['state']
 			if state == 'on':
