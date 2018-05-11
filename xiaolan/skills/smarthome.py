@@ -136,27 +136,26 @@ class hass(object):
 		
 		domains = h.service()
 		e_id = h.e_id()
-		cortolthings_e = unicode(cortolthings, "utf-8", "ignore")
 		
 		if cortolmode == 'turn_on':
-			if e_id[cortolthings_e] != None:
-				if 'switch' in e_id[cortolthings_e]:
+			if e_id[cortolthings] != None:
+				if 'switch' in e_id[cortolthings]:
 					service = '/api/services/switch/turn_on'
-				elif 'light' in e_id[cortolthings_e]:
+				elif 'light' in e_id[cortolthings]:
 					service = '/api/services/switch/turn_on'
-				elif 'automation' in e_id[cortolthings_e]:
+				elif 'automation' in e_id[cortolthings]:
 					service = '/api/services/automation/turn_on'
 		elif cortolmode == 'turn_off':
-			if e_id[cortolthings_e] != None:
-				if 'switch' in e_id[cortolthings_e]:
+			if e_id[cortolthings] != None:
+				if 'switch' in e_id[cortolthings]:
 					service = '/api/services/switch/turn_off'
-				elif 'light' in e_id[cortolthings_e]:
+				elif 'light' in e_id[cortolthings]:
 					service = '/api/services/switch/turn_off'
-				elif 'automation' in e_id[cortolthings_e]:
+				elif 'automation' in e_id[cortolthings]:
 					service = '/api/services/automation/turn_off'
 		
 		try:
-			cortole_id = e_id[cortolthings_e]
+			cortole_id = e_id[cortolthings]
 			data = {"entity_id": cortole_id}
 		except KeyError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
