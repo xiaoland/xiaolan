@@ -191,7 +191,7 @@ class hass(object):
 			cortolback  = requests.post(url + ':' + port + service,
 						    headers=headers,
 						    data=data)
-			if cortolback.status_code == '200' or cortolback.status_code == '201':
+			if cortolback.status_code == 200 or cortolback.status_code == 201:
 				sayback = '执行成功'
 				bt.tts(sayback, tok)
 				speaker.speak()
@@ -222,7 +222,7 @@ class hass(object):
 			
 		json = r.json()
 		
-		if cortolback.status_code == '200' or cortolback.status_code == '201':
+		if cortolback.status_code == 200 or cortolback.status_code == 201:
 			
 			state = json['state']
 			if state == 'on':
