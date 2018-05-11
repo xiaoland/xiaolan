@@ -157,7 +157,7 @@ class hass(object):
 		
 		try:
 			cortole_id = e_id[cortolthings]
-			data = {"entity_id": cortole_id}
+			data = {"entity_id": cortole_id.encode('utf-8')}
 		except KeyError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
 			bt.tts(sorry, tok)
@@ -198,8 +198,9 @@ class hass(object):
 
 		e_id = e_id()
 		getstatesthings = unicode(getstatethings, "utf-8", "ignore")
-		
-		service = '/api/states' + e_id[getstatesthings]
+		getstatesthings_e = e_id[getstatesthings]
+		getstatesthings_l = getstatesthings_e.encode('utf-8')
+		service = '/api/states' + getstatesthings_l
 		r = requests.get(url +':' + port + service,
 			         headers=headers)
 			
