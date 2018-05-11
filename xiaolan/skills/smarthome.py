@@ -136,6 +136,7 @@ class hass(object):
 		
 		domains = h.service()
 		e_id = h.e_id()
+		cortolthings = unicode(cortolthings, "utf-8", "ignore")
 		
 		if cortolmode == 'turn_on':
 			if e_id[cortolthings] != None:
@@ -196,9 +197,9 @@ class hass(object):
           		   'content-type': 'application/json'}
 
 		e_id = e_id()
+		getstatesthings = unicode(getstatethings, "utf-8", "ignore")
 		
-		getstatethings_e = unicode(getstatesthings, "utf-8", "ignore")
-		service = '/api/states' + e_id[getstatesthings_e]
+		service = '/api/states' + e_id[getstatesthings]
 		r = requests.get(url +':' + port + service,
 			         headers=headers)
 			
