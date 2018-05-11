@@ -94,7 +94,7 @@ class hass(object):
 			return domains
 				 
 	
-	def e_id():
+	def e_id(self):
 		
 		url = 'http://hassio.local'
 		port = '8123'
