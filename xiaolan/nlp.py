@@ -59,9 +59,9 @@ def get_intent(text):
         else:
                 do_intent(text)
         
-def do_intent(text):#自制的语义理解系统,欢迎大家补充
+def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
     sm = hass()
-    try:
+    if text!= None:
         if '闹钟' in text:
                 intent = 'clock'
                 return intent
@@ -126,6 +126,6 @@ def do_intent(text):#自制的语义理解系统,欢迎大家补充
                 return intent
         else:
                 onesay.start(text, tok)
-    except TypeError:
+    else:
         intent = 'no'
         return intent
