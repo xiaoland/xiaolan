@@ -198,8 +198,8 @@ class hass(object):
 
 		e_id = e_id()
 		getstatesthings = unicode(getstatethings, "utf-8", "ignore")
-		getstatesthings_e = e_id[getstatesthings]
-		getstatesthings_l = getstatesthings_e.encode('utf-8')
+		getstatesthings_eid = e_id[getstatesthings]
+		getstatesthings_l = getstatesthings_eid.encode('utf-8')
 		service = '/api/states' + getstatesthings_l
 		r = requests.get(url +':' + port + service,
 			         headers=headers)
