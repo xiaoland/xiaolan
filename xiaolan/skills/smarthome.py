@@ -92,7 +92,7 @@ class hass(object):
 			c = 'white'
 			return c
 		else:
-			c = 'white'
+			c = None
 			return c
 	
 	def service(self): #获取各个领域的服务
@@ -182,7 +182,7 @@ class hass(object):
                                                 if color_name_f != None:
                                                         color_name = h.chosecolor(color_name_f)
                                                 else:
-                                                        color_name = 'white'
+                                                        color_name = None
 						service = '/api/services/light/turn_on'
 					elif 'automation' in e_id[cortolthings]:
 						color_name = None
