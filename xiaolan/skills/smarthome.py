@@ -68,6 +68,33 @@ class hass(object):
 		else:
 			h.usuallycortol(text, tok)
 	
+	def chosecolor(self, text)
+	
+		if '红色' in text:
+			c = 'red'
+			return c
+		elif '黄色' in text:
+			c = 'yellow'
+			return c
+		elif '橙色' in text:
+			c = 'orange'
+			return c
+		elif '绿色' in text:
+			c = 'green'
+			return c
+		elif '蓝色' in text:
+			c = 'blue'
+			return c
+		elif '紫色' in text:
+			c = 'purple'
+			return c
+		elif '白色' in text:
+			c = 'white'
+			return c
+		else:
+			c = 'white'
+			return c
+	
 	def service(self): #获取各个领域的服务
 		
 		url = 'http://hassio.local'
@@ -144,6 +171,17 @@ class hass(object):
 					if 'switch' in e_id[cortolthings]:
 						service = '/api/services/switch/turn_on'
 					elif 'light' in e_id[cortolthings]:
+						ask = '请问要设置什么颜色，可以忽略'
+                                                bt.tts(ask, tok)
+                                                speaker.speak()
+                                                speaker.ding()
+                                                r.recorder()
+                                                speaker.dong()
+                                                color_name_f = bs.stt('./voice.wav', tok)
+                                                if color_name_f != None:
+                                                        color_name = h.chosecolor(color_name_f)
+                                                else:
+                                                        color_name = 'white'
 						service = '/api/services/light/turn_on'
 					elif 'automation' in e_id[cortolthings]:
 						service = '/api/services/automation/turn_on'
@@ -152,6 +190,17 @@ class hass(object):
 					if 'switch' in e_id[cortolthings]:
 						service = '/api/services/switch/turn_off'
 					elif 'light' in e_id[cortolthings]:
+						ask = '请问要设置什么颜色，可以忽略'
+                                                bt.tts(ask, tok)
+                                                speaker.speak()
+                                                speaker.ding()
+                                                r.recorder()
+                                                speaker.dong()
+                                                color_name_f = bs.stt('./voice.wav', tok)
+                                                if color_name_f != None:
+                                                        color_name = h.chosecolor(color_name_f)
+                                                else:
+                                                        color_name = 'white'
 						service = '/api/services/light/turn_off'
 					elif 'automation' in e_id[cortolthings]:
 						service = '/api/services/automation/turn_off'
@@ -172,7 +221,8 @@ class hass(object):
 		
 		try:
 			cortole_id = e_id[cortolthings]
-			dataf = {"entity_id": cortole_id.encode('utf-8')}
+			dataf = {"color_name": color_name,
+				 "entity_id": cortole_id.encode('utf-8')}
 			data = json.dumps(dataf)
 		except KeyError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
