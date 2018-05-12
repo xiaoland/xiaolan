@@ -68,7 +68,7 @@ class hass(object):
 		else:
 			h.usuallycortol(text, tok)
 	
-	def chosecolor(self, text)
+	def chosecolor(self, text):
 	
 		if '红色' in text:
 			c = 'red'
