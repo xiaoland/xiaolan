@@ -175,7 +175,7 @@ class hass(object):
                                                 bt.tts(ask, tok)
                                                 speaker.speak()
                                                 speaker.ding()
-                                                r.recorder()
+                                                r.record()
                                                 speaker.dong()
                                                 color_name_f = bs.stt('./voice.wav', tok)
                                                 if color_name_f != None:
@@ -190,17 +190,6 @@ class hass(object):
 					if 'switch' in e_id[cortolthings]:
 						service = '/api/services/switch/turn_off'
 					elif 'light' in e_id[cortolthings]:
-						ask = '请问要设置什么颜色，可以忽略'
-                                                bt.tts(ask, tok)
-                                                speaker.speak()
-                                                speaker.ding()
-                                                r.recorder()
-                                                speaker.dong()
-                                                color_name_f = bs.stt('./voice.wav', tok)
-                                                if color_name_f != None:
-                                                        color_name = h.chosecolor(color_name_f)
-                                                else:
-                                                        color_name = 'white'
 						service = '/api/services/light/turn_off'
 					elif 'automation' in e_id[cortolthings]:
 						service = '/api/services/automation/turn_off'
