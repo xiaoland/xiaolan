@@ -104,7 +104,7 @@ class skills(object):
         elif witch == 'hotelSearch':
             s.hotel(tok)
         elif witch == 'no':
-            sconvenstation(tok)
+            sconvenstation()
         elif witch == 'reintent':
             intent = nlp.do_intent(text, tok)
             s.getskills(intent, text, tok)
