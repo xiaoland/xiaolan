@@ -216,7 +216,7 @@ class hass(object):
 		try:
 			
 			cortole_id = e_id[cortolthings]
-			if color_name == None:
+			if color_name == 'a':
 				dataf = {"entity_id": cortole_id.encode('utf-8')}
 				data = json.dumps(dataf)
 			else:
