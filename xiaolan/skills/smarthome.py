@@ -169,6 +169,7 @@ class hass(object):
 			if cortolmode == 'turn_on':
 				if e_id[cortolthings] != None:
 					if 'switch' in e_id[cortolthings]:
+						color_name = None
 						service = '/api/services/switch/turn_on'
 					elif 'light' in e_id[cortolthings]:
 						ask = '请问要设置什么颜色，可以忽略'
@@ -184,14 +185,18 @@ class hass(object):
                                                         color_name = 'white'
 						service = '/api/services/light/turn_on'
 					elif 'automation' in e_id[cortolthings]:
+						color_name = None
 						service = '/api/services/automation/turn_on'
 			elif cortolmode == 'turn_off':
 				if e_id[cortolthings] != None:
 					if 'switch' in e_id[cortolthings]:
+						color_name = None
 						service = '/api/services/switch/turn_off'
 					elif 'light' in e_id[cortolthings]:
+						color_name = None
 						service = '/api/services/light/turn_off'
 					elif 'automation' in e_id[cortolthings]:
+						color_name = None
 						service = '/api/services/automation/turn_off'
 		except KeyError:
 			sorry = '对不起，控制设备不存在，请注意！控制设备的名称得跟在homeassistant上设置的friendly，name一样'
