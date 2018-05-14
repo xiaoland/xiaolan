@@ -27,4 +27,4 @@
 - 智能家居插件已经可以控制灯、开关、遥控和获取传感器的数据（可以控制灯的颜色）
 - 新闻、翻译、智能家居、音乐等插件已经加入了一句话功能
 - 使用Alexa.pmdl唤醒可以三米以内唤醒
-- 发布了[小蓝-V2.5 成熟稳定版本](https://www.github.com/xiaoland/xiaolan-dev)
+- 发布了[小蓝-V2.5 成熟稳定版本](https://github.com/xiaoland/xiaolan-dev/releases)
