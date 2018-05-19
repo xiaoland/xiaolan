@@ -45,7 +45,7 @@ class xlMusic(object):
         r = recorder()
         m = xlMusic()
         
-        url = 'http://musicapi.leanapp.cn'
+        url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
         song_name_c = random.uniform(0, 11)
         if song_name_c == 0:
             song_name = '粉红色的回忆'
@@ -76,10 +76,10 @@ class xlMusic(object):
         get_song_id_rawj = requests.get(url + services['search'] + song_name)
         get_song_id_j = get_song_id_rawj.json()
         try:
-            id = get_song_id_j['resul']['songs'][song_name_c]['id']
+            id = get_song_id_j['song'][song_name_c]['songid']
         except KeyError:
             try:
-                id = get_song_id_j['resul']['songs'][0]['id']
+                id = get_song_id_j['song'][0]['songid']
             except KeyError:
                 bt.tts('对不起，播放错误')
                 speaker.speak()
@@ -88,7 +88,9 @@ class xlMusic(object):
         else:
             get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
             get_song_url_j = get_song_url_rawj.json()
-            song_url = get_song_url_j['data'][song_name_c]['url']
+            song_url_f = get_song_url_j['data'][song_name_c]['url']
+            download = requests.get(song_url)
+            speaker.play()
         
     def main(self, tok):
         
@@ -97,10 +99,10 @@ class xlMusic(object):
         r = recorder()
         m = xlMusic()
         
-        welcome = '欢迎使用小蓝音乐播放器，云服务使用网易云音乐'
+        welcome = '欢迎使用小蓝音乐播放器，云服务使用百度音乐'
         ask = '请问您要随机播放还是搜索播放？'
-        url = 'http://musicapi.leanapp.cn'
-        services = {'musicurl_get': '/music/url?id=', 'search': '/search?keywords='}
+        url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
+        services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query='}
         
         bt.tts(welcome, tok)
         speaker.speak()
