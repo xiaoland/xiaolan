@@ -6,6 +6,7 @@ import os
 import requests
 import json
 import demjson
+import random
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
 from recorder import recorder
@@ -17,41 +18,110 @@ bt = baidu_tts()
 
 def start(tok):
     m = music()
-    m.musicwelcome(tok)
+    m.main(tok)
 
-class music(object):
+class xlMusic(object):
+    
     def __init__(self):
+        
         pass
-    def musicwelcome(self, tok):
+    
+    def command_choose(self, commands, tok):
+        
+        if '随机播放' in commands or '随机' in commands:
+            command = 'sui_ji'
+            return command
+        elif '搜索播放' in commands or '搜索' in commands:
+            command = 'sou_suo'
+            return command
+        else:
+            command = 'sui_ji'
+            return command
+        
+    def sui_ji(self, services, tok):
         
         bt = baidu_tts()
-        bs = baidu_stt(1, 'a', 2, '{')
+        bs = baidu_stt(1, 2, 3, 4)
         r = recorder()
-        url = 'http://mp3.baidu.com/dev/api/?'
-        songurl = 'http://ting.baidu.com/data/music/links?songIds='
-        ask_chose = '欢迎使用小蓝音乐播放器，请输入指令，是随机播放还是搜索'
-        bt.tts(ask_chose, tok)
+        m = xlMusic()
+        
+        url = 'http://musicapi.leanapp.cn'
+        song_name_c = random.uniform(0, 11)
+        if song_name_c == 0:
+            song_name = '粉红色的回忆'
+        elif song_name_c == 1:
+            song_name = 'I hope you think of me'
+        elif song_name_c == 2:
+            song_name = '小幸运'
+        elif song_name_c == 3:
+            song_name = '全部都是你'
+        elif song_name_c == 4:
+            song_name = '佛系少女'
+        elif song_name_c == 5:
+            song_name = 'Something just like this'
+        elif song_name_c == 6:
+            song_name = 'Feel this Moment'
+        elif song_name_c == 7:
+            song_name = 'Welcome to NewYork'
+        elif song_name_c == 8:
+            song_name = '洛天依投食歌'
+        elif song_name_c == 9:
+            song_name = '带你去旅行'
+        elif song_name_c == 10:
+            song_name = '死机之歌'
+        elif song_name_c == 11:
+            song_name = 'Shape of You'
+        
+        
+        get_song_id_rawj = requests.get(url + services['search'] + song_name)
+        get_song_id_j = get_song_id_rawj.json()
+        try:
+            id = get_song_id_j['resul']['songs'][song_name_c]['id']
+        except KeyError:
+            try:
+                id = get_song_id_j['resul']['songs'][0]['id']
+            except KeyError:
+                bt.tts('对不起，播放错误')
+                speaker.speak()
+            else:
+                pass
+        else:
+            get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
+            get_song_url_j = get_song_url_rawj.json()
+            song_url = get_song_url_j['data'][song_name_c]['url']
+        
+    def main(self, tok):
+        
+        bt = baidu_tts()
+        bs = baidu_stt(1, 2, 3, 4)
+        r = recorder()
+        m = xlMusic()
+        
+        welcome = '欢迎使用小蓝音乐播放器，云服务使用网易云音乐'
+        ask = '请问您要随机播放还是搜索播放？'
+        url = 'http://musicapi.leanapp.cn'
+        services = {'musicurl_get': '/music/url?id=', 'search': '/search?keywords='}
+        
+        bt.tts(welcome, tok)
+        speaker.speak()
+        bt.tts(ask, tok)
         speaker.speak()
         speaker.ding()
         r.record()
         speaker.dong()
-        text = bs.stt('./voice.wav', tok)
-        if '搜索' in text:
-            ask_song_name = '请问您喜欢听哪首歌呢?'
-            bt.tts(ask_song_name, tok)
+        try:
+            commands = bs.stt('./voice.wav', tok)
+        except TypeError:
             speaker.speak()
             speaker.ding()
             r.record()
             speaker.dong()
-            ser_song_name = bs.stt('./voice.wav', tok)
-            serurl = url + 'tn=getinfo&ct=0&ie=utf-8&word=' + ser_song_name + '&format=json'
-            
-            ser = requests.get(serurl)
-            
-            serjson = ser.json()
-            songid = serjson['song_id']
-            
-            
-        
-    
-    
+            command = m.command_choose(commands, tok)
+        else:
+            if command == 'sui_ji':
+                m.sui_ji(services, tok)
+            elif command == 'sou_suo':
+                m.sou_suo(services, tok)
+            else:
+                m.sui_ji(services, tok)
+                
