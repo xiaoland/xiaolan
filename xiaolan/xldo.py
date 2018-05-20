@@ -112,6 +112,8 @@ class skills(object):
             s.snowboytrain(tok)
         elif witch == 'translate':
             s.ts(tok)
+        elif witch == 'respeaker':
+            os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
         else:
             s.onesay(text, tok)
     
