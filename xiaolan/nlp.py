@@ -15,7 +15,6 @@ from recorder import recorder
 from tts import baidu_tts
 from stt import baidu_stt
 sys.path.append('/home/pi/xiaolan/xiaolan/skills')
-import onesay
 from smarthome import hass
 
 def get_intent(text):
