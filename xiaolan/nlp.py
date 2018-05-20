@@ -62,6 +62,7 @@ def get_intent(text):
 def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
     sm = hass()
     m = xlMusic()
+     services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query=', 'hot': 'method=baidu.ting.song.getRecommandSongList&song_id=877578&num=12'}
     if text!= None:
         if '闹钟' in text:
                 intent = 'clock'
@@ -136,7 +137,7 @@ def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
                 m.sou_suo(services, songname, tok)
         elif '我想听' in text:
             if '音乐' in text:
-                m.start(tok)
+                m.sui_ji(services, tok)
             else:
                 songname = text[3:-1]
                 m.sou_suo(services, songname, tok)
