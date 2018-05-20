@@ -91,6 +91,8 @@ class xlMusic(object):
             song_url_f = get_song_url_j['bitrate']['file_link']
             song_url = (song_url_f.replace('\', ''))
             download = requests.get(song_url)
+            with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
+                code.write(download.content)
             speaker.play()
         
     def main(self, tok):
