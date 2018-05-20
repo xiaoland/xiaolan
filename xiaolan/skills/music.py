@@ -13,11 +13,8 @@ from recorder import recorder
 from stt import baidu_stt
 from tts import baidu_tts
 
-
-bt = baidu_tts()
-
 def start(tok):
-    m = music()
+    m = xlMusic()
     m.main(tok)
 
 class xlMusic(object):
@@ -49,6 +46,7 @@ class xlMusic(object):
         bt = baidu_tts()
         bs = baidu_stt(1, 2, 3, 4)
         r = recorder()
+        m = xlMusic()
         
         while song_name != None:
             speaker.play()
@@ -73,12 +71,10 @@ class xlMusic(object):
                 speaker.speak()
                 m.main(tok)
         else:
-            bt.tts('谢谢使用，下次再见', tok)
+            bt.tts('对不起，发生了故障', tok)
             speaker.speak()
-            os.system('python /home/pi/xiaolan/xiaolan/xldo.py b')
-            break
     
-    def sui_ji(self, services, tok):
+    def sou_suo(self, services, tok):
         
         bt = baidu_tts()
         bs = baidu_stt(1, 2, 3, 4)
@@ -86,32 +82,13 @@ class xlMusic(object):
         m = xlMusic()
         
         url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
-        song_name_c = random.uniform(0, 11)
-        if song_name_c == 0:
-            song_name = '皮皮虾我们走'
-        elif song_name_c == 1:
-            song_name = 'I hope you think of me'
-        elif song_name_c == 2:
-            song_name = '小幸运'
-        elif song_name_c == 3:
-            song_name = '全部都是你'
-        elif song_name_c == 4:
-            song_name = '佛系少女'
-        elif song_name_c == 5:
-            song_name = 'Something just like this'
-        elif song_name_c == 6:
-            song_name = 'Feel this Moment'
-        elif song_name_c == 7:
-            song_name = 'Welcome to NewYork'
-        elif song_name_c == 8:
-            song_name = '洛天依投食歌'
-        elif song_name_c == 9:
-            song_name = '带你去旅行'
-        elif song_name_c == 10:
-            song_name = '死机之歌'
-        elif song_name_c == 11:
-            song_name = 'Shape of You'
         
+        bt.tts('请问您要听什么歌?', tok)
+        speaker.speak()
+        speaker.ding()
+        r.record()
+        speaker.dong()
+        song_name = bs.stt('./voice.wav', tok)
         
         get_song_id_rawj = requests.get(url + services['search'] + song_name)
         get_song_id_j = get_song_id_rawj.json()
@@ -138,6 +115,81 @@ class xlMusic(object):
                 code.write(download.content)
             
             m.play(song_name, tok)
+    
+    def sui_ji(self, services, tok):
+        
+        bt = baidu_tts()
+        bs = baidu_stt(1, 2, 3, 4)
+        r = recorder()
+        m = xlMusic()
+        
+        url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
+        song_name_c = random.uniform(0, 12)
+        if song_name_c == 0:
+            song_name = '皮皮虾我们走'
+        elif song_name_c == 1:
+            song_name = 'I hope you think of me'
+        elif song_name_c == 2:
+            song_name = '小幸运'
+        elif song_name_c == 3:
+            song_name = '全部都是你'
+        elif song_name_c == 4:
+            song_name = '佛系少女'
+        elif song_name_c == 5:
+            song_name = 'Something just like this'
+        elif song_name_c == 6:
+            song_name = 'Feel this Moment'
+        elif song_name_c == 7:
+            song_name = 'Welcome to NewYork'
+        elif song_name_c == 8:
+            song_name = '洛天依投食歌'
+        elif song_name_c == 9:
+            song_name = '带你去旅行'
+        elif song_name_c == 10:
+            song_name = '死机之歌'
+        elif song_name_c == 11:
+            song_name = 'Shape of You'
+        elif song_name_c == 12:
+            song_name = 'Kiss Fight'
+        elif song_name_c == 13:
+            song_name== 'Hot song'
+        
+        if song_name != 'Hot song':
+            get_song_id_rawj = requests.get(url + services['search'] + song_name)
+        elif song_name == 'Hot song':
+            get_song_id_rawj = requests.get(url + services['hot'])
+        get_song_id_j = get_song_id_rawj.json()
+        
+        try:
+            if song_name == 'Hot song':
+                id = get_song_id_j['result']['list'][song_name_c]['song_id']
+            else:
+                id = get_song_id_j['song'][song_name_c]['songid']
+        except KeyError:
+            try:
+                if song_name == 'Hot song':
+                    id = get_song_id_j['result']['list'][song_name_c]['song_id']
+                else:
+                    id = get_song_id_j['song'][song_name_c]['songid']
+            except KeyError:
+                bt.tts('对不起，播放错误')
+                speaker.speak()
+            else:
+                pass
+        
+        else:
+            get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
+            get_song_url_j = get_song_url_rawj.json()
+            
+            song_name = get_song_url_j['songinfo']['title']
+            song_url_f = get_song_url_j['bitrate']['file_link']
+            song_url = (song_url_f.replace('\', ''))
+            
+            download = requests.get(song_url)
+            with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
+                code.write(download.content)
+            
+            m.play(song_name, tok)
         
     def main(self, tok):
         
@@ -149,7 +201,7 @@ class xlMusic(object):
         welcome = '欢迎使用小蓝音乐播放器，云服务使用百度音乐'
         ask = '请问您要随机播放还是搜索播放？'
         url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
-        services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query='}
+        services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query=', 'hot': 'method=baidu.ting.song.getRecommandSongList&song_id=877578&num=12'}
         
         bt.tts(welcome, tok)
         speaker.speak()
