@@ -153,7 +153,7 @@ class xlMusic(object):
         elif song_name_c == 12:
             song_name = 'Kiss Fight'
         elif song_name_c == 13:
-            song_name== 'Hot song'
+            song_name = 'Hot song'
         
         if song_name != 'Hot song':
             get_song_id_rawj = requests.get(url + services['search'] + song_name)
