@@ -16,6 +16,7 @@ from tts import baidu_tts
 from stt import baidu_stt
 sys.path.append('/home/pi/xiaolan/xiaolan/skills')
 from smarthome import hass
+from music import xlMusic
 
 def get_intent(text):
 
@@ -60,6 +61,7 @@ def get_intent(text):
         
 def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
     sm = hass()
+    m = xlMusic()
     if text!= None:
         if '闹钟' in text:
                 intent = 'clock'
@@ -126,18 +128,18 @@ def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
         elif '训练' in text:
                 intent= 'snowboytrain'
                 return intent
-            elif '播放' in text:
-        if '随机' in text or '音乐' in text:
-            music.main()
-        else:
-            songname = text[2:-1]
-            music.onesay(songname)
+        elif '播放' in text:
+            if '音乐' in text:
+                m.sui_ji(services, tok)
+            else:
+                songname = text[2:-1]
+                m.sou_suo(services, songname, tok)
         elif '我想听' in text:
-            if '随机' in text or '音乐' in text:
-                music.start()
+            if '音乐' in text:
+                m.start(tok)
             else:
                 songname = text[3:-1]
-                music.onesay(songname)
+                m.sou_suo(services, songname, tok)
         else:
                 tuling.start(text, tok)
     else:
