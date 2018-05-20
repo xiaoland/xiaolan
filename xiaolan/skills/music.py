@@ -88,7 +88,8 @@ class xlMusic(object):
         else:
             get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
             get_song_url_j = get_song_url_rawj.json()
-            song_url_f = get_song_url_j['data'][song_name_c]['url']
+            song_url_f = get_song_url_j['bitrate']['file_link']
+            song_url = (song_url_f.replace('\', ''))
             download = requests.get(song_url)
             speaker.play()
         
