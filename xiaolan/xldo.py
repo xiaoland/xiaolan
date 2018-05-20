@@ -24,7 +24,6 @@ from smarthome import hass
 import camera
 import snowboytrain
 import ts
-import onesay
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
 
