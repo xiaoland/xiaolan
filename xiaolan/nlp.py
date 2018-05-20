@@ -127,8 +127,20 @@ def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
         elif '训练' in text:
                 intent= 'snowboytrain'
                 return intent
+            elif '播放' in text:
+        if '随机' in text or '音乐' in text:
+            music.main()
         else:
-                onesay.start(text, tok)
+            songname = text[2:-1]
+            music.onesay(songname)
+        elif '我想听' in text:
+            if '随机' in text or '音乐' in text:
+                music.start()
+            else:
+                songname = text[3:-1]
+                music.onesay(songname)
+        else:
+                tuling.start(text, tok)
     else:
         intent = 'no'
         return intent
