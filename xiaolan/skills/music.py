@@ -34,10 +34,50 @@ class xlMusic(object):
         elif '搜索播放' in commands or '搜索' in commands:
             command = 'sou_suo'
             return command
-        else:
-            command = 'sui_ji'
+        elif '歌名' in commands or '这首歌叫什么' in commands:
+            command = 'song_name_q'
             return command
+        elif '退出' in commands:
+            command = 'exit'
+            return command
+        else:
+            command = 're'
+            return command
+    
+    def paly(self, song_name, tok):
         
+        bt = baidu_tts()
+        bs = baidu_stt(1, 2, 3, 4)
+        r = recorder()
+        
+        while song_name != None:
+            speaker.play()
+            bt.tts('请问还要听什么吗？可以输入指令，如，这首歌叫什么，或者，搜索歌曲', tok)
+            speaker.speak()
+            speaker.ding()
+            r.record()
+            speaker.dong()
+            commands = bs.stt('./voice.wav', tok)
+            command = m.command_choose(commands, tok)
+            if command == 'sui_ji':
+                m.sui_ji(services, tok)
+            elif command == 'sou_suo':
+                m.sou_suo(services, tok)
+            elif command == 'exit':
+                bt.tts('谢谢使用，下次再见', tok)
+                speaker.speak()
+                os.system('python /home/pi/xiaolan/xiaolan/xldo.py b')
+                break
+            elif command == 're':
+                bt.tts('对不起，我没有听清楚您说了什么？', tok)
+                speaker.speak()
+                m.main(tok)
+        else:
+            bt.tts('谢谢使用，下次再见', tok)
+            speaker.speak()
+            os.system('python /home/pi/xiaolan/xiaolan/xldo.py b')
+            break
+    
     def sui_ji(self, services, tok):
         
         bt = baidu_tts()
@@ -48,7 +88,7 @@ class xlMusic(object):
         url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
         song_name_c = random.uniform(0, 11)
         if song_name_c == 0:
-            song_name = '粉红色的回忆'
+            song_name = '皮皮虾我们走'
         elif song_name_c == 1:
             song_name = 'I hope you think of me'
         elif song_name_c == 2:
@@ -88,12 +128,16 @@ class xlMusic(object):
         else:
             get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
             get_song_url_j = get_song_url_rawj.json()
+            
+            song_name = get_song_url_j['songinfo']['title']
             song_url_f = get_song_url_j['bitrate']['file_link']
             song_url = (song_url_f.replace('\', ''))
+            
             download = requests.get(song_url)
             with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
                 code.write(download.content)
-            speaker.play()
+            
+            m.play(song_name, tok)
         
     def main(self, tok):
         
@@ -127,6 +171,12 @@ class xlMusic(object):
                 m.sui_ji(services, tok)
             elif command == 'sou_suo':
                 m.sou_suo(services, tok)
-            else:
-                m.sui_ji(services, tok)
+            elif command == 'exit':
+                bt.tts('谢谢使用，下次再见', tok)
+                speaker.speak()
+                os.system('python /home/pi/xiaolan/xiaolan/xldo.py b')
+            elif command == 're':
+                bt.tts('对不起，我没有听清楚您说了什么？', tok)
+                speaker.speak()
+                m.main(tok)
                 
