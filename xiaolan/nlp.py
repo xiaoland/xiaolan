@@ -77,6 +77,9 @@ def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
         elif '天气' in text:
                 intent = 'weather'
                 return intent
+        elif '重新说' in text or '重复' in text:
+                intent = 'respeaker'
+                return intent
         elif '翻译' in text:
                 intent = 'translate'
                 return intent
