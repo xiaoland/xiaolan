@@ -74,7 +74,7 @@ class xlMusic(object):
             bt.tts('对不起，发生了故障', tok)
             speaker.speak()
     
-    def sou_suo(self, services, tok):
+    def sou_suo(self, services, song_name, tok):
         
         bt = baidu_tts()
         bs = baidu_stt(1, 2, 3, 4)
@@ -83,38 +83,39 @@ class xlMusic(object):
         
         url = 'http://tingapi.ting.baidu.com/v1/restserver/ting?'
         
-        bt.tts('请问您要听什么歌?', tok)
-        speaker.speak()
-        speaker.ding()
-        r.record()
-        speaker.dong()
-        song_name = bs.stt('./voice.wav', tok)
-        
-        get_song_id_rawj = requests.get(url + services['search'] + song_name)
-        get_song_id_j = get_song_id_rawj.json()
-        try:
-            id = get_song_id_j['song'][song_name_c]['songid']
-        except KeyError:
-            try:
-                id = get_song_id_j['song'][0]['songid']
-            except KeyError:
-                bt.tts('对不起，播放错误')
-                speaker.speak()
-            else:
-                pass
+        if song_name == '' or song_name == None:
+            bt.tts('请问您要听什么歌?', tok)
+            speaker.speak()
+            speaker.ding()
+            r.record()
+            speaker.dong()
+            song_name = bs.stt('./voice.wav', tok)
         else:
-            get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
-            get_song_url_j = get_song_url_rawj.json()
-            
-            song_name = get_song_url_j['songinfo']['title']
-            song_url_f = get_song_url_j['bitrate']['file_link']
-            song_url = (song_url_f.replace('\', ''))
-            
-            download = requests.get(song_url)
-            with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
-                code.write(download.content)
-            
-            m.play(song_name, tok)
+            get_song_id_rawj = requests.get(url + services['search'] + song_name)
+            get_song_id_j = get_song_id_rawj.json()
+            try:
+                id = get_song_id_j['song'][song_name_c]['songid']
+            except KeyError:
+                try:
+                    id = get_song_id_j['song'][0]['songid']
+                except KeyError:
+                    bt.tts('对不起，播放错误')
+                    speaker.speak()
+                else:
+                    pass
+            else:
+                get_song_url_rawj = requests.get(url + services['musicurl_get'] + id)
+                get_song_url_j = get_song_url_rawj.json()
+                
+                song_name = get_song_url_j['songinfo']['title']
+                song_url_f = get_song_url_j['bitrate']['file_link']
+                song_url = (song_url_f.replace('\', ''))
+                
+                download = requests.get(song_url)
+                with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
+                    code.write(download.content)
+                
+                m.play(song_name, tok)
     
     def sui_ji(self, services, tok):
         
