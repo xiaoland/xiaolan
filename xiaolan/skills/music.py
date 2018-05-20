@@ -210,6 +210,7 @@ class xlMusic(object):
         speaker.ding()
         r.record()
         speaker.dong()
+        
         try:
             commands = bs.stt('./voice.wav', tok)
         except TypeError:
