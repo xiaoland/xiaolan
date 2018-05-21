@@ -54,14 +54,15 @@ class email(object):
         message['Subject'] = Header(subject, 'utf-8')
         
         try:
-            smtpObj = smtplib.SMTP('localhost')
+            smtpObj = smtplib.SMTP() 
+            smtpObj.connect(mail_host, mail_port)
+            smtpObj.login(mail_user,mail_pass)  
             smtpObj.sendmail(sender, receivers, message.as_string())
-            bt.tts('发送成功', tok)
+            bt.tts('邮件发送成功', tok)
             speaker.speak()
         except smtplib.SMTPException:
-            bt.tts('对不起，发送失败', tok)
+            bt.tts('无法发送邮件', tok)
             speaker.speak()
-    
     
     def main(self, tok):
         
