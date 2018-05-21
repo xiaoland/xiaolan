@@ -14,7 +14,7 @@
 - 所以唤醒词英文的会比较准确，所以使用了唤醒词blueberry，比以前的中文唤醒词要好得多，翻译过来就是蓝莓，也没有脱离主题
 - 但是snowboy的唤醒词是越多人训练则越准确，所以希望大家在使用小蓝的同时，打开下面的snowboy训练连接，只需要录制三次音频即可
 - 网址：https://snowboy.kitt.ai/hotword/20710 （记得录音时说blueberry）
-## 介绍以及本开源项目的所有请看：
+## 介绍本开源项目和WIKI请看：
 ### https://github.com/xiaoland/xiaolan-dev/wiki
 ![服务架构](https://github.com/xiaoland/xiaolan-dev/blob/master/%E5%B0%8F%E8%93%9D%E6%9C%8D%E5%8A%A1%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.PNG)
 
