@@ -1,4 +1,4 @@
-# xiaolan小蓝----中文交互式智能家居机器人
+# 小蓝----中文交互式智能家居机器人----在树莓派raspberrypi上运行
 ![Code主要语言](https://img.shields.io/badge/main_code-python-blue.svg)
 ![Version版本](https://img.shields.io/badge/last_version-V2.5.7-green.svg)
 ![build编写进度](https://img.shields.io/badge/first_ver-68%25-brightgreen.svg)
