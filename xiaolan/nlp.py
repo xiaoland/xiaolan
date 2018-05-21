@@ -117,8 +117,8 @@ def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
         elif '拍照' in text:
                 intent = 'camera'
                 return intent
-        elif '邮件' in text:
-                intent = 'email'
+        elif '邮件' in text or '邮件助手' in text:
+                intent = 'mail'
                 return intent
         elif '快递' in text:
                 intent = 'experss'
