@@ -20,6 +20,7 @@ import music
 import tuling
 import joke
 import news
+import mail
 from smarthome import hass
 import camera
 import snowboytrain
@@ -113,6 +114,8 @@ class skills(object):
             s.ts(tok)
         elif witch == 'respeaker':
             os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
+        elif witch == 'mail':
+            s.mail(tok)
         else:
             s.onesay(text, tok)
     
@@ -175,6 +178,10 @@ class skills(object):
     def onesay(self, text, tok):
         
         onesay.start(text, tok)
+        
+    def mail(self, tok):
+        
+        mail.start(tok)
 
 choses = sys.argv[1]
 if choses == 'b':
