@@ -1,7 +1,7 @@
 # xiaolan小蓝----中文交互式智能家居机器人
 ![Code主要语言](https://img.shields.io/badge/code-python-blue.svg)
 ![Version版本](https://img.shields.io/badge/version-dev-green.svg)
-![build编写进度](https://img.shields.io/badge/build-54%25-brightgreen.svg)
+![build编写进度](https://img.shields.io/badge/build-68%25-brightgreen.svg)
 ![QQ](https://img.shields.io/badge/QQ-1481605673-yellow.svg)
 
 
