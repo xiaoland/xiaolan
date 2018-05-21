@@ -26,6 +26,43 @@ class email(object):
         
         pass
         
+    def send(self, mail_host, mail_user, mail_pass, mail_port, sender, tok):
+        
+        bt = baidu_tts()
+        bs = baidu_stt(1, 2, 3, 4)
+        r = recorder()
+        e = email()
+        receivers = []
+        
+        bt.tts('请问您要给谁发送邮件呢？格式为，邮箱数字加邮箱服务商，如，一五二六七八九，QQ邮箱', tok)
+        speaker.speak()
+        speaker.ding()
+        r.tsrecord()
+        speaker.dong()
+        receivers[0] = bs.stt('./voice.wav', tok)
+        bt.tts('请问您要发送什么内容?', tok)
+        speaker.speak()
+        speaker.ding()
+        r.tsrecord()
+        speaker.dong()
+        messages = bs.stt('./voice.wav', tok)
+        
+        message = MIMEText(messages, 'plain', 'utf-8')
+        message['From'] = Header("小蓝邮件代发", 'utf-8')
+        message['To'] =  Header("You", 'utf-8') 
+        subject = '小蓝邮件代发'
+        message['Subject'] = Header(subject, 'utf-8')
+        
+        try:
+            smtpObj = smtplib.SMTP('localhost')
+            smtpObj.sendmail(sender, receivers, message.as_string())
+            bt.tts('发送成功', tok)
+            speaker.speak()
+        except smtplib.SMTPException:
+            bt.tts('对不起，发送失败', tok)
+            speaker.speak()
+    
+    
     def main(self, tok):
         
         bt = baidu_tts()
@@ -39,8 +76,16 @@ class email(object):
         mail_port = '465' #与邮箱服务商相通
         sender = 'xiaolan@hadream.com'
         receivers = []
-        message['From'] = Header("xiaolan@hadream", 'utf-8')   # 发送者
-        message['To'] =  Header("get", 'utf-8')        # 接收者
         
-        bt.tts('请问您要向谁发送邮件，请说数字和邮箱服务商', tok)
+        bt.tts('欢迎使用小蓝邮件助手，请问您有什么需要吗', tok)
         speaker.speak()
+        speaker.ding()
+        r.record()
+        speaker.dong()
+        commands = bs.stt('./voice.wav', tok)
+        command = e.command_choose(commands, tok)
+        if command == 'send':
+            e.send(mail_host, mail_user, mail_pass, mail_port, sender, tok)
+        else:
+            bt.tts('对不起，我们还暂时不支持该功能', tok)
+            speaker.speak()
