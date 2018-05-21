@@ -18,7 +18,7 @@
 ### https://github.com/xiaoland/xiaolan-dev/wiki
 ![服务架构](https://github.com/xiaoland/xiaolan-dev/blob/master/%E5%B0%8F%E8%93%9D%E6%9C%8D%E5%8A%A1%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.PNG)
 
-## 更新：
+## 更新：（有时间先后顺序）
 - 利用讯飞AIUI平台实现了语义理解（NLU）！
   - 已经完成云端的语义理解（NLU）
   - 对客户的指令理解更加准确
@@ -32,3 +32,5 @@
 - 加快tuling.py的相应速度
 - 删去不必要的元素
 - 开机只需请求一次百度token，大大提升速度
+- 添加百度音乐技能
+- 添加第三方邮箱邮件发送技能
