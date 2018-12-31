@@ -28,12 +28,13 @@ import ts
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
 
+
 def welcome():
 
     print('''
 
     #################*******###################
-    #         小蓝-中文智能家居对话机器人         #
+    #         小蓝-中文智能家居对话机器人       #
     #      (c)蓝之酱-1481605673@qq.com         #
     #   www.github.com/xiaoland/xiaolan-dev   #                                   
     #               欢迎使用!!!  :)            #              
@@ -45,10 +46,12 @@ def welcome():
     os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/welcome.mp3')
     os.system('pulseaudio --start')
 
+
 def awaken():
 
     os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
-    
+
+
 def convenstation():
     
     b = baidu_stt(1, 3, 2, '{')
@@ -62,10 +65,12 @@ def convenstation():
     intent = nlp.get_intent(text)
     s.getskills(intent, text, tok)
 
+
 def sconvenstation():
 
     speaker.speacilrecorder()
-        
+
+
 class skills(object):
     
     def __init__(self):
@@ -117,7 +122,7 @@ class skills(object):
         elif witch == 'mail':
             s.mail(tok)
         else:
-            s.onesay(text, tok)
+            s.tuling(text, tok)
     
     def clock(self, tok):
         clock.start(tok)
@@ -175,19 +180,15 @@ class skills(object):
         
         ts.start(tok)
         
-    def onesay(self, text, tok):
-        
-        onesay.start(text, tok)
-        
     def mail(self, tok):
         
         mail.start(tok)
 
-choses = sys.argv[1]
-if choses == 'b':
+
+if sys.argv[1] == 'b':
     welcome()
     awaken()
-elif choses == 'a':
+elif sys.argv[1] == 'a':
     convenstation()
 else:
     welcome()

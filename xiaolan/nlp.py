@@ -18,6 +18,7 @@ sys.path.append('/home/pi/xiaolan/xiaolan/skills')
 from smarthome import hass
 from music import xlMusic
 
+
 def get_intent(text):
 
         urlf = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic?text='
@@ -58,12 +59,13 @@ def get_intent(text):
                 return intent
         else:
                 do_intent(text)
-        
-def do_intent(text, tok):#自制的语义理解系统,欢迎大家补充
+
+
+def do_intent(text, tok):
     sm = hass()
     m = xlMusic()
     services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query=', 'hot': 'method=baidu.ting.song.getRecommandSongList&song_id=877578&num=12'}
-    if text!= None:
+    if text != None:
         if '闹钟' in text:
                 intent = 'clock'
                 return intent
