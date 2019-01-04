@@ -28,7 +28,7 @@ def kacha(): #拍照声
 
 def speak(): #说出的回话
     
-    os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
+    os.system('mplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
 
 
 def play(song_name): #音乐播放器
