@@ -12,7 +12,6 @@ from tts import baidu_tts
 from recorder import recorder
 import speaker
 import nlp
-from xiaolan.face_awaken.Face_awaken import FaceAwaken
 sys.path.append('/home/pi/xiaolan/xiaolan/skills/')
 import clock
 import xlonly
