@@ -8,7 +8,7 @@ import snowboydecoder
 
 def awaken():
 
-    detector = snowboydecoder.HotwordDetector("/home/pi/xiaolan/xiaolan/snowboy/blueberry.pmdl", sensitivity=0.5, audio_gain=1)
+    detector = snowboydecoder.HotwordDetector("/home/pi/xiaolan/xiaolan/snowboy/Alexa.pmdl", sensitivity=0.5, audio_gain=1)
     detector.start(detected_callback)
 
 def detected_callback():

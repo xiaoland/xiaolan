@@ -46,7 +46,10 @@ def get_intent(text):
         
         r = requests.post(url,
                           headers=headers)
-        json = r.json()
+        try:
+                json = r.json()
+        except:
+            return do_intent(text)
         try:
                 intent = json['data']['service']
         except KeyError:
@@ -61,7 +64,7 @@ def get_intent(text):
                 do_intent(text)
 
 
-def do_intent(text, tok):
+def do_intent(text, tok=""):
     sm = hass()
     m = xlMusic()
     services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query=', 'hot': 'method=baidu.ting.song.getRecommandSongList&song_id=877578&num=12'}
