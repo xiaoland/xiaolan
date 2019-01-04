@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/xiaolan/more/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/autostartxl" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/more/autostartxl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/install_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/more/install_all.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/nlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/train_f.wav" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/musiclib/train_f.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/train_s.wav" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/musiclib/train_s.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/train_t.wav" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/musiclib/train_t.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/unlock_root.sh" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/more/unlock_root.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/xiaolan-trouble_fix-download.sh" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/more/xiaolan-trouble_fix-download.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/skills/tuling.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/skills/tuling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xiaolan/xldo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/xldo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,48 +19,95 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="2" />
+          <entry key="PNG" value="2" />
+          <entry key="md" value="1" />
+          <entry key="py" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="2" />
+          <entry key="Image" value="2" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="24" />
+          <entry key="py" value="1186" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="24" />
+          <entry key="Python" value="1186" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaolan/nlp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+            <state relative-caret-position="1235">
+              <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xiaolan/skills/tuling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+              <folding>
+                <element signature="e#33#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="95" column="57" lean-forward="true" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
+                <marker date="1546568039080" expanded="true" signature="314:315" ph="..." />
+                <marker date="1546568039080" expanded="true" signature="1893:3680" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaolan/xldo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+            <state relative-caret-position="57">
+              <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+              <folding>
+                <element signature="e#34#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xiaolan/speaker.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="20" column="73" lean-forward="true" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+              <folding>
+                <element signature="e#32#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,7 +133,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/xiaolan/nlp.py" />
+        <option value="$PROJECT_DIR$/xiaolan/speaker.py" />
+        <option value="$PROJECT_DIR$/xiaolan/skills/tuling.py" />
         <option value="$PROJECT_DIR$/xiaolan/xldo.py" />
+        <option value="$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py" />
       </list>
     </option>
   </component>
@@ -107,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,14 +163,27 @@
               <item name="xiaolan-dev" type="462c0819:PsiDirectoryNode" />
               <item name="xiaolan" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="xiaolan-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xiaolan-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="xiaolan" type="462c0819:PsiDirectoryNode" />
+              <item name="face_awaken" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="xiaolan-dev" type="b2602c69:ProjectViewProjectNode" />
+              <item name="xiaolan-dev" type="462c0819:PsiDirectoryNode" />
+              <item name="xiaolan" type="462c0819:PsiDirectoryNode" />
+              <item name="more" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../xiaolan" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -163,8 +219,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18766756" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -175,7 +232,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -189,17 +246,66 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/小蓝服务思维导图.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/服务流程.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/nlp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="65" column="17" lean-forward="true" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        <state relative-caret-position="1235">
+          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaolan/skills/tuling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="e#33#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/xldo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+        <state relative-caret-position="57">
+          <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="e#34#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaolan/speaker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="20" column="73" lean-forward="true" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="73" />
+          <folding>
+            <element signature="e#32#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="95" column="57" lean-forward="true" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="57" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+            <marker date="1546568039080" expanded="true" signature="314:315" ph="..." />
+            <marker date="1546568039080" expanded="true" signature="1893:3680" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
