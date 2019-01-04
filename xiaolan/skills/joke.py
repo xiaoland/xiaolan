@@ -27,7 +27,7 @@ def main(tok):
     bs = baidu_stt(1, 'a', 2, '{')
     chose = random.randint(0, 9)
     
-    r = requests.get(url + "key=" + key + "&page=2&pagesize=10&sort=asc&time=1418745237")
+    r = requests.get(url + "key=" + key + "&page=10&pagesize=10&sort=asc&time=" + str(int(time.time())))
     
     json = r.json()
     
