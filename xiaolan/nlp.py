@@ -8,7 +8,6 @@ import os
 import json
 import requests
 import pygame
-import demjson
 import base64
 import hashlib
 from recorder import recorder

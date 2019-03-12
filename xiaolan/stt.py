@@ -8,7 +8,6 @@ import wave
 import pyaudio
 import time
 import os.path
-import demjson
 import base64
 import urllib
 import urllib2
