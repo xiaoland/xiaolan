@@ -117,13 +117,18 @@ class skills(object):
             s.snowboytrain(tok)
         elif witch == 'translate':
             s.ts(tok)
+        elif witch == "ycy":
+            s.ycy(text, tok)
         elif witch == 'respeaker':
             os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
         elif witch == 'mail':
             s.mail(tok)
         else:
             s.tuling(text, tok)
-    
+
+    def ycy(self, text, tok):
+        ycy.start(text, tok)
+
     def clock(self, tok):
         clock.start(tok)
         
