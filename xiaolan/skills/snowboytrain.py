@@ -4,7 +4,6 @@ import base64
 import requests
 import os
 import json
-import demjson
 import base64
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker

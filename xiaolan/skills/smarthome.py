@@ -4,7 +4,6 @@ import json
 import sys
 import os
 import requests
-import demjson
 import time
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt

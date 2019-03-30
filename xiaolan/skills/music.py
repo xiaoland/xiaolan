@@ -5,7 +5,6 @@ import sys
 import os
 import requests
 import json
-import demjson
 import random
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 import speaker
