@@ -141,8 +141,11 @@ def do_intent(text, tok=""):
             else:
                 songname = text[2:-1]
                 m.sou_suo(services, songname, tok)
-        elif "小蓝，你知道我们现在在哪里吗？" == text:
+        elif "你知道我们现在在哪里吗" in text:
             baidu_tts().tts("我们现在在《中国少年说》的舞台上，如果我没记错的话，你回深圳的飞机票还没有买吧？", tok)
+        elif "你要帮我买吗" in text:
+            baidu_tts().tts("我可没有你的账户，但是我可以帮你查一下从北京到深圳的航班哦", tok)
+            return "flight"
         elif '我想听' in text:
             if '音乐' in text:
                 m.sui_ji(services, tok)

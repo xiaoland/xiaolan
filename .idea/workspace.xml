@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/xiaolan-dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/xiaolan-dev.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xiaolan/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/nlp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xiaolan/skills/tuling.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/skills/tuling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xiaolan/xldo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/xldo.py" afterDir="false" />
@@ -19,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaolan/xldo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+            <state>
+              <caret selection-end-column="23" />
               <folding>
                 <element signature="e#34#44#0" expanded="true" />
               </folding>
@@ -29,12 +27,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/xiaolan/skills/tuling.py">
+        <entry file="file://$PROJECT_DIR$/xiaolan/skills/flight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state relative-caret-position="437">
+              <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
               <folding>
-                <element signature="e#33#43#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,8 +41,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaolan/nlp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+            <state relative-caret-position="357">
+              <caret line="147" column="26" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xiaolan/skills/tuling.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#33#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +83,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>onesay</find>
+      <find>print</find>
     </findStrings>
+    <replaceStrings>
+      <replace>baidu_tts().tts</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,8 +108,9 @@
         <option value="$PROJECT_DIR$/xiaolan/skills/snowboytrain.py" />
         <option value="$PROJECT_DIR$/xiaolan/skills/ts.py" />
         <option value="$PROJECT_DIR$/xiaolan/nlp.py" />
-        <option value="$PROJECT_DIR$/xiaolan/xldo.py" />
         <option value="$PROJECT_DIR$/xiaolan/skills/tuling.py" />
+        <option value="$PROJECT_DIR$/xiaolan/xldo.py" />
+        <option value="$PROJECT_DIR$/xiaolan/skills/flight.py" />
       </list>
     </option>
   </component>
@@ -323,16 +338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xiaolan/speaker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding>
-            <element signature="e#32#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/skills/ts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -355,27 +360,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/nlp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+        <state relative-caret-position="357">
+          <caret line="147" column="26" selection-start-line="147" selection-start-column="26" selection-end-line="147" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xiaolan/xldo.py">
+    <entry file="file://$PROJECT_DIR$/xiaolan/speaker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="39" column="4" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+        <state relative-caret-position="380">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
           <folding>
-            <element signature="e#34#44#0" expanded="true" />
+            <element signature="e#32#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/skills/tuling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state relative-caret-position="190">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#33#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaolan/xldo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="23" />
+          <folding>
+            <element signature="e#34#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaolan/skills/flight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

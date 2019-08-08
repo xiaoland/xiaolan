@@ -21,6 +21,7 @@ from smarthome import hass
 import camera
 import snowboytrain
 import ts
+import flight
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
 import snowboydecoder
 
@@ -37,7 +38,7 @@ def welcome():
     ###########################################
 
     ''')
-    
+
     print('Checking xiaolan...')
     baidu_tts().tts("大家好！我是小蓝同学！", baidu_tts().get_token())
     os.system('pulseaudio --start')
@@ -119,8 +120,13 @@ class skills(object):
             os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
         elif witch == 'mail':
             s.mail(tok)
+        elif witch == "flight":
+            s.flight(tok)
         else:
             s.tuling(text, tok)
+
+    def flight(self, tok):
+        flight.main(tok)
 
     def ycy(self, text, tok):
         ycy.start(text, tok)

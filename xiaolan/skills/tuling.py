@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
 '''图灵'''
 import sys
-import os
 import requests
 import json
-import urllib2
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
