@@ -14,8 +14,8 @@ def request_csairlines(dep, arr, date, cities_info_list, token):
 
     flight_list = {}
     url = "https://b2c.csair.com/portal/flight/direct/query"
-    dep_code = cities_info_list[dep][0]
-    arr_code = cities_info_list[arr][0]
+    dep_code = cities_info_list[dep.decode()][0]
+    arr_code = cities_info_list[arr.decode()][0]
     baidu_tts().tts("dep city code:", dep_code)
     baidu_tts().tts("arr city code:", arr_code)
     param = {
@@ -84,4 +84,4 @@ def main(token):
     for i in flight_num_list:
         dep_time = flight_list[i]["depTime"][0:2] + ":" + flight_list[i]["depTime"][2:4]
         arr_time = flight_list[i]["arrTime"][0:2] + ":" + flight_list[i]["arrTime"][2:4]
-        baidu_tts().tts(i + "，这趟航班的经济舱价格是" + flight_list[i]["cabin"][-1]["adultPrice"] + "，出发时间是" + dep_time + "，到达时间是" + arr_time, token)
+        baidu_tts().tts(i + "，这趟航班的经济舱价格是" + str(flight_list[i]["cabin"][-1]["adultPrice"]) + "，出发时间是" + str(dep_time) + "，到达时间是" + str(arr_time), token)
