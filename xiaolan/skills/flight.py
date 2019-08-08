@@ -2,6 +2,7 @@
 import requests
 import time
 import json
+import sys
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts

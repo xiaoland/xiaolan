@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/xiaolan/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/nlp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/tuling.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/skills/tuling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/xldo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/xldo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/skills/flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/skills/flight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/stt.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/stt.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +26,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaolan/skills/flight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+            <state relative-caret-position="76">
+              <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#24#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xiaolan/stt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+              <folding>
+                <element signature="e#32#42#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,7 +112,6 @@
         <option value="$PROJECT_DIR$/xiaolan/skills/weather.py" />
         <option value="$PROJECT_DIR$/xiaolan/speaker.py" />
         <option value="$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py" />
-        <option value="$PROJECT_DIR$/xiaolan/stt.py" />
         <option value="$PROJECT_DIR$/xiaolan/skills/ycy.py" />
         <option value="$PROJECT_DIR$/xiaolan/skills/smarthome.py" />
         <option value="$PROJECT_DIR$/xiaolan/skills/music.py" />
@@ -111,6 +122,7 @@
         <option value="$PROJECT_DIR$/xiaolan/skills/tuling.py" />
         <option value="$PROJECT_DIR$/xiaolan/xldo.py" />
         <option value="$PROJECT_DIR$/xiaolan/skills/flight.py" />
+        <option value="$PROJECT_DIR$/xiaolan/stt.py" />
       </list>
     </option>
   </component>
@@ -254,13 +266,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xiaolan/stt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/tts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -397,10 +402,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xiaolan/skills/flight.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="41" column="58" lean-forward="true" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+        <state relative-caret-position="76">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#24#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaolan/stt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="e#32#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

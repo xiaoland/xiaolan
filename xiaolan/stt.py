@@ -62,7 +62,7 @@ class baidu_stt(object):
                 "cuid": 'b0-10-41-92-84-4d',
                 "channel": 1}
         
-        data = demjson.encode(dataf)
+        data = json.dumps(dataf)
         
         r = requests.post('http://vop.baidu.com/server_api',
                           data=data,
