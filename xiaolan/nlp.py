@@ -16,6 +16,7 @@ from stt import baidu_stt
 sys.path.append('/home/pi/xiaolan/xiaolan/skills')
 from smarthome import hass
 from music import xlMusic
+import tuling
 
 
 def get_intent(text):
@@ -57,7 +58,7 @@ def get_intent(text):
         except TypeError:
                 intent = 'reintent'
                 return intent
-        if intent != None:
+        if intent is not None:
                 return intent
         else:
                 do_intent(text)
@@ -67,7 +68,8 @@ def do_intent(text, tok=""):
     sm = hass()
     m = xlMusic()
     services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query=', 'hot': 'method=baidu.ting.song.getRecommandSongList&song_id=877578&num=12'}
-    if text != None:
+    if text is not None:
+
         if '闹钟' in text:
                 intent = 'clock'
                 return intent
@@ -139,6 +141,8 @@ def do_intent(text, tok=""):
             else:
                 songname = text[2:-1]
                 m.sou_suo(services, songname, tok)
+        elif "小蓝，你知道我们现在在哪里吗？" == text:
+            baidu_tts().tts("我们现在在《中国少年说》的舞台上，如果我没记错的话，你回深圳的飞机票还没有买吧？", tok)
         elif '我想听' in text:
             if '音乐' in text:
                 m.sui_ji(services, tok)

@@ -19,7 +19,7 @@ def start(text, tok):
 
 def main(text, tok):
     
-    ak = 'c380ed8f2880443c84892ace36ba6bad'
+    ak = '869429e05ea142ef9e3784f8e7965d1c'
     ui = '373523'
     url = 'http://openapi.tuling123.com/openapi/api/v2'
     dataf = {
@@ -32,7 +32,7 @@ def main(text, tok):
                 "userInfo": {
                   "apiKey": ak,
                   "userId": ui
-              }
+                }
            }
     data = json.dumps(dataf)
     talkback = requests.post(url, data=data)

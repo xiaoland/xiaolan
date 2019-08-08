@@ -3,10 +3,6 @@
 
 import sys
 import os
-import pyaudio
-import pygame
-import requests
-import json
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
@@ -42,8 +38,8 @@ def welcome():
 
     ''')
     
-    print('Check xiaolan')
-    os.system('mplayer /home/pi/xiaolan/xiaolan/musiclib/welcome.mp3')
+    print('Checking xiaolan...')
+    baidu_tts().tts("大家好！我是小蓝同学！", baidu_tts().get_token())
     os.system('pulseaudio --start')
 
 
