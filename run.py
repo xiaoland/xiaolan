@@ -13,6 +13,7 @@ class XiaolanInit():
 
         self.setting = json.load(open("./data/json/setting.json", "r", encoding="utf-8"))
         self.log = XiaolanLog()
+        self.tts = BaiduTts(self.log, self.setting)
 
     def run(self):
 
@@ -33,4 +34,5 @@ class XiaolanInit():
         self.log.add_log("Xiaolan start! ", 1)
         self.log.add_log("Self checking...", 1)
 
+        self.tts.start("你好呀，主人！~ 这里是小蓝")
 
