@@ -66,15 +66,19 @@ class XiaolanLog():
         :return:
         """
         log = "[" + self.logLevelList[level] + "] " + self.get_formatted_time() + " " + content
+
         if is_period:
             log = log + " ."
         if is_print:
             print(log)
+
         try:
             log_file = open(self.get_log_file_path(), "a")
             log_file.write('\r\n' + log)
             log_file.close()
         except IOError:
-            return 1
+            print("[WARNING] " + self.get_formatted_time() + " Can't write into the log file!")
         else:
+            if level > 3:
+                raise Exception("")
             return 0
