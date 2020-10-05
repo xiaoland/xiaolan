@@ -2,17 +2,12 @@
 
 import os
 import sys
-import requests
-import json
 import cv2
 import time
-import PIL.Image
-import dlib
 import numpy as np
 sys.path.append('/home/pi/xiaolan/xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
-import speaker
 from recorder import recorder
 
 
