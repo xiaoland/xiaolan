@@ -5,8 +5,10 @@
 
 from skills.clock import XiaolanSkillClock
 from skills.tuling import XiaolanSkillTuling
+from skills.hass import XiaolanSkillHass
 
-class XiaolanSkills():
+
+class XiaolanSkillsManager():
 
     def __init__(self, log, setting):
 
