@@ -105,10 +105,12 @@ class XiaolanNlu():
         :return:
         """
         intent = None
+        slot = None
 
         for keyword in data.keys():
             if keyword in text:
                 intent = data[keyword]
-                return intent
+                slot = text[len(keyword)-1:]
+                return intent, slot
 
-        return intent
+        return intent, slot
