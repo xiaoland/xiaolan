@@ -90,6 +90,6 @@ class XiaolanInit():
                 return
             else:
                 if intent[0] == "call_skill":
-                    self.skills.skill_skills_list[intent[1]](self.log, self.setting, text)
+                    self.skills.skill_skills_list[intent[1]](self.log, self.setting, text).start()
                 else:
-                    self.skills.intent_skills_list[intent[0]](self.log, self.setting, text)
+                    self.skills.intent_skills_list[intent[0]](self.log, self.setting, text).start()
