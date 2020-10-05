@@ -12,6 +12,7 @@ from player import XiaolanPlayer
 
 
 class BaiduTts():
+
     def __init__(self, log, setting):
         
         self.log = log
@@ -46,6 +47,7 @@ class BaiduTts():
             return token
         except requests.exceptions.HTTPError:
             self.log.add_log("BaiduTTS: Getting token http error! Status code: " + str(r.status_code), 3)
+            return ""
 
     def put_data(self, data):
 
