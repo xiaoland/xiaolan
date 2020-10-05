@@ -4,7 +4,7 @@ import sys
 import requests
 import time
 import random
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
 from xiaolan import speaker

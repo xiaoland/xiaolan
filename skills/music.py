@@ -4,7 +4,7 @@ import sys
 import os
 import requests
 import random
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from xiaolan import speaker
 from recorder import recorder
 from stt import baidu_stt
@@ -61,7 +61,7 @@ class xlMusic(object):
             elif command == 'exit':
                 bt.tts('谢谢使用，下次再见', tok)
                 speaker.speak()
-                os.system('python /home/pi/xiaolan/xiaolan/xldo.py b')
+                os.system('python /home/pi/old_xiaolan/old_xiaolan/xldo.py b')
                 break
             elif command == 're':
                 bt.tts('对不起，我没有听清楚您说了什么？', tok)
@@ -109,7 +109,7 @@ class xlMusic(object):
                 song_url = (song_url_f.replace('\', '''))
                 
                 download = requests.get(song_url)
-                with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
+                with open("/home/pi/old_xiaolan/old_xiaolan/musiclib/music.mp3", "wb") as code:
                     code.write(download.content)
                 
                 m.play(song_name, tok)
@@ -184,7 +184,7 @@ class xlMusic(object):
             song_url = (song_url_f.replace('\', '''))
             
             download = requests.get(song_url)
-            with open("/home/pi/xiaolan/xiaolan/musiclib/music.mp3", "wb") as code:
+            with open("/home/pi/old_xiaolan/old_xiaolan/musiclib/music.mp3", "wb") as code:
                 code.write(download.content)
             
             m.play(song_name, tok)
@@ -225,7 +225,7 @@ class xlMusic(object):
             elif command == 'exit':
                 bt.tts('谢谢使用，下次再见', tok)
                 speaker.speak()
-                os.system('python /home/pi/xiaolan/xiaolan/xldo.py b')
+                os.system('python /home/pi/old_xiaolan/old_xiaolan/xldo.py b')
             elif command == 're':
                 bt.tts('对不起，我没有听清楚您说了什么？', tok)
                 speaker.speak()

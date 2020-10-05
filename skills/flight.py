@@ -2,7 +2,7 @@
 import requests
 import json
 import sys
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from tts import baidu_tts
 
 

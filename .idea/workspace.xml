@@ -2,9 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/face_awaken/Face_awaken.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/face_awaken/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/more/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/more/haarcascade_frontalface_default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/ding.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/dong.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/train_f.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/train_s.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/train_t.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/冲鸭冲鸭.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/招财进宝.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/毒液前来.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/跟着我一起.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/speaker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/xldo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/demo/run_sample.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/demo/sample" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/doc/SDK30_DevelGuide_Linux.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/libs/appKey.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/libs/libusc.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/libs/tts_sdk.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/sample/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/sample/sample.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/old_xiaolan/zhi_sheng_yun_voice_service/testfile/test1_16k.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nlu.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/flight.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skills/hass.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/hass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/joke.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/joke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/music.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/raspberrypi-gpio.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/raspberrypi-gpio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/remote.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/smarthome.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/smarthome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/snowboytrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/snowboytrain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/ts.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/ts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/weather.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/xlonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/xlonly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/ycy.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/ycy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tts.py" beforeDir="false" afterPath="$PROJECT_DIR$/tts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/base.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/face.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/imagecensor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/imageclassify.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/imagesearch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/kg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/nlp.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/ocr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/aip/speech.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/baiduaip/bin/aip_client" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/face_awaken/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/more/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/more/autostartxl" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/autostartxl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/more/haarcascade_frontalface_default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/more/install_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/install_all.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/more/unlock_root.sh" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/unlock_root.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/more/xiaolan-trouble_fix-download.sh" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/xiaolan-trouble_fix-download.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/ding.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/dong.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/kacha.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/audio/kacha.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/speacilrecorder.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/audio/speacilrecorder.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/train_f.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/train_s.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/train_t.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/welcome.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/audio/welcome.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/冲鸭冲鸭.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/招财进宝.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/毒液前来.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/musiclib/跟着我一起.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/speaker.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/xldo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/demo/run_sample.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/demo/sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/doc/SDK30_DevelGuide_Linux.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/libs/appKey.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/libs/libusc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/libs/libusc.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/libs/tts_sdk.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/sample/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/sample/sample.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/xiaolan/zhi_sheng_yun_voice_service/testfile/test1_16k.wav" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +136,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Hadream\CODING\Mix\xiaolan\data\audio" />
+      <recent name="D:\Hadream\CODING\Mix\xiaolan\data\shell" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan\xiaolan" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan\snowboy\hotword" />
-      <recent name="D:\Hadream\工作结果\编程\Python\xiaolan-dev\xiaolan\snowboy" />
-      <recent name="D:\Hadream\工作结果\编程\Python\xiaolan-dev\xiaolan\musiclib" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Hadream\CODING\Mix\xiaolan\data\audio" />

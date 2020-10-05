@@ -2,7 +2,7 @@
 '''小蓝技能——父母私人助理，孝顺好帮手'''
 import sys
 
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
 import recorder

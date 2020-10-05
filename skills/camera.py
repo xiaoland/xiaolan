@@ -3,7 +3,7 @@
 import sys
 import os
 
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from xiaolan import speaker
 
 
@@ -15,7 +15,7 @@ class usbCamera(object):
 		pass
 	def takePhoto(self, tok):
 	
-		os.system('fswebcam  -r 1280x720 --no-banner /home/pi/xiaolan/xiaolan/img/img.jpg')
+		os.system('fswebcam  -r 1280x720 --no-banner /home/pi/old_xiaolan/old_xiaolan/img/img.jpg')
 		speaker.kacha()
 def init():
 	global conn,cursor

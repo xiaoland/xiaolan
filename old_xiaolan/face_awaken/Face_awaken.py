@@ -5,7 +5,7 @@ import sys
 import cv2
 import time
 import numpy as np
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
@@ -15,8 +15,8 @@ class FaceAwaken(object):
 
     def __init__(self, token):
 
-        self.face_dir = "/home/pi/xiaolan/xiaolan/face_awaken/face_dir/"
-        self.face_train_date = "/home/pi/xiaolan/xiaolan/more/haarcascade_frontalface_default.xml"
+        self.face_dir = "/home/pi/old_xiaolan/old_xiaolan/face_awaken/face_dir/"
+        self.face_train_date = "/home/pi/old_xiaolan/old_xiaolan/more/haarcascade_frontalface_default.xml"
 
     def face_sign_in(self):
 

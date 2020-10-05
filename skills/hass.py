@@ -1,6 +1,6 @@
 # coding=utf-8
 # author: Lan_zhijiang
-# description: xiaolan skill: hass
+# description: old_xiaolan skill: hass
 # date: 2020/10/5
 
 import requests

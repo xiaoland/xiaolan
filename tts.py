@@ -1,6 +1,6 @@
 # coding=utf-8
 # author: Lan_zhijiang
-# description: xiaolan's tts classes
+# description: old_xiaolan's tts classes
 # date: 2020/10/1
 
 import requests

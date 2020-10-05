@@ -8,7 +8,7 @@ from tts import baidu_tts
 from recorder import recorder
 from xiaolan import speaker
 import nlu
-sys.path.append('/home/pi/xiaolan/xiaolan/skills/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/skills/')
 import clock
 import xlonly
 import weather
@@ -22,7 +22,7 @@ import camera
 import snowboytrain
 import ts
 import flight
-sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/snowboy/')
 
 
 def welcome():
@@ -32,20 +32,20 @@ def welcome():
     #################*******###################
     #         小蓝-中文智能家居对话机器人       #
     #      (c)蓝之酱-1481605673@qq.com         #
-    #   www.github.com/xiaoland/xiaolan-dev   #                                   
+    #   www.github.com/xiaoland/old_xiaolan-dev   #                                   
     #               欢迎使用!!!  :)            #              
     ###########################################
 
     ''')
 
-    print('Checking xiaolan...')
+    print('Checking old_xiaolan...')
     baidu_tts().tts("大家好！我是小蓝同学！", baidu_tts().get_token())
     os.system('pulseaudio --start')
 
 
 def awaken():
 
-    os.system('python /home/pi/xiaolan/xiaolan/snowboy.py')
+    os.system('python /home/pi/old_xiaolan/old_xiaolan/snowboy.py')
 
 
 def convenstation():
@@ -116,7 +116,7 @@ class skills(object):
         elif witch == "ycy":
             s.ycy(text, tok)
         elif witch == 'respeaker':
-            os.system('omxplayer /home/pi/xiaolan/xiaolan/musiclib/say.mp3')
+            os.system('omxplayer /home/pi/old_xiaolan/old_xiaolan/musiclib/say.mp3')
         elif witch == 'mail':
             s.mail(tok)
         elif witch == "flight":

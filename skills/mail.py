@@ -4,7 +4,7 @@ import sys
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from xiaolan import speaker
 from recorder import recorder
 from stt import baidu_stt
@@ -70,7 +70,7 @@ class email(object):
         mail_user = '' #邮箱账户
         mail_pass = '' #邮箱密码
         mail_port = '465' #与邮箱服务商相通
-        sender = 'xiaolan@hadream.com'
+        sender = 'old_xiaolan@hadream.com'
         receivers = []
         
         bt.tts('欢迎使用小蓝邮件助手，请问您有什么需要吗', tok)

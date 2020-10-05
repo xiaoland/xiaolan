@@ -1,6 +1,6 @@
 # coding=utf-8
 # author: Lan_zhijiang
-# description: xiaolan's nlu engine
+# description: old_xiaolan's nlu engine
 # date: 2020/10/3
 
 import time

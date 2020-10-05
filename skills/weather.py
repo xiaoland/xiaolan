@@ -3,7 +3,7 @@
 import sys
 import requests
 import random
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from tts import baidu_tts
 from xiaolan import speaker
 

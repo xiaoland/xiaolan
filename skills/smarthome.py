@@ -4,7 +4,7 @@ import json
 import sys
 import requests
 
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder

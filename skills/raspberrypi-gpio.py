@@ -1,7 +1,7 @@
 import sys
 import RPi.GPIO as gpio
 
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from xiaolan import speaker
 from stt import baidu_stt
 from tts import baidu_tts

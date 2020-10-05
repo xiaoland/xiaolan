@@ -1,6 +1,6 @@
 # coding=utf-8
 # author: Lan_zhijiang
-# description: xiaolan's startup
+# description: old_xiaolan's startup
 # date: 2020/10/1
 
 import pyaudio

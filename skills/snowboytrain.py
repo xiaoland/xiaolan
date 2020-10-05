@@ -2,7 +2,7 @@
 import sys
 import requests
 import base64
-sys.path.append('/home/pi/xiaolan/xiaolan/')
+sys.path.append('/home/pi/old_xiaolan/old_xiaolan/')
 from xiaolan import speaker
 from tts import baidu_tts
 from recorder import recorder
@@ -53,10 +53,10 @@ def main(tok):
     speaker.ding()
     r.train_t_record()
     speaker.dong()
-    wav1 = "/home/pi/xiaolan/xiaolan/train_f.wav"
-    wav2 = "/home/pi/xiaolan/xiaolan/train_s.wav"
-    wav3 = "/home/pi/xiaolan/xiaolan/train_t.wav"
-    out = "/home/pi/xiaolan/xiaolan/snowboy/blueberry.pmdl"
+    wav1 = "/home/pi/old_xiaolan/old_xiaolan/train_f.wav"
+    wav2 = "/home/pi/old_xiaolan/old_xiaolan/train_s.wav"
+    wav3 = "/home/pi/old_xiaolan/old_xiaolan/train_t.wav"
+    out = "/home/pi/old_xiaolan/old_xiaolan/snowboy/blueberry.pmdl"
     data = {
         "name": hotword_name,
         "language": language,
