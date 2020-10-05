@@ -1,0 +1,21 @@
+{
+  "apiSettings": {
+    "tts": {
+      "appKey": "",
+      "secretKey": ""
+    },
+    "stt": {
+      "appKey": "",
+      "secretKey": ""
+    }
+  },
+  "snowboySettings": {
+    "hotword": "./snowboy/hotword/Alexa.pmdl"
+  },
+  "recordSettings": {
+    "chunk": 1024,
+    "rate": 160000,
+    "channel": 1,
+    "outputPath": "./data/audio/record.wav"
+  }
+}
