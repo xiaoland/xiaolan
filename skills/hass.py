@@ -80,12 +80,12 @@ class XiaolanSkillHass():
 
         text = self.stt.start()
 
-        intent =  self.nlu.skill_nlu(text, self.nlu_intent_dict)
+        intent, slot =  self.nlu.skill_nlu(text, self.nlu_intent_dict)
         if intent is None:
             self.log.add_log("XiaolanSkillHass: Intent is none, quit", 1)
             self.tts.start("不好意思，我没明白，退出咯~")
-            return None
-        return intent, text
+            return None, None, None
+        return intent, text, slot
 
     def main(self):
 
@@ -95,7 +95,7 @@ class XiaolanSkillHass():
         """
         self.tts.start("有何贵干呐？敬请吩咐。若不明白如何操作，请查阅本技能的wiki")
 
-        intent, text = self.conversation()
+        intent, text, slot = self.conversation()
         if intent is None:
             return
 
@@ -105,13 +105,20 @@ class XiaolanSkillHass():
             self.update_data()
             self.tts.start("所有数据已更新")
         elif intent == "get_state":
-            friendly_name = text[2:]
+            friendly_name = slot
             state = self.get_state(self.friendly_name_dict[friendly_name])
             self.tts.start(friendly_name + "的状态是" + state["state"].replace("_", " "))
+        else:
+            service = self.intent_service_list[intent]
+            service_path = self.domain_services[service]
+            param = {
+                "entity_id": self.friendly_name_dict[slot]
+            }
+            self.call_service_v2(service_path, param)
 
         self.tts.start("还要继续吗？")
 
-        intent, text = self.conversation()
+        intent, text, slot = self.conversation()
         if intent is None:
             return
         if intent == "yes":
@@ -196,7 +203,8 @@ class XiaolanSkillHass():
         if r is not None:
             res = r.json()
             for event in res:
-                self.domain_services[event["domain"]] = event["services"]
+                for service in event["services"]:
+                    self.domain_services[service] = event["domain"] + "/" + service
 
     def get_entity_list(self):
 
@@ -252,4 +260,30 @@ class XiaolanSkillHass():
                          "post", param)
         if r is not None:
             res = r.json()
+            for event in res:
+                self.entity_dict[event["entity_id"]] = {
+                    "attr": event["attributes"],
+                    "state": event["state"]
+                }
+            return res
+
+    def call_service_v2(self, service_path, param):
+
+        """
+        呼叫某个服务
+        :param service_path: 服务路径
+        :param param: 服务参数
+        :return:
+        """
+        self.log.add_log("XiaolanSkillHass: Call " + service_path+ " with " +
+                         str(param), 1)
+        r = self.request(self.hass_addr + "/api/services/" + service_path,
+                         "post", param)
+        if r is not None:
+            res = r.json()
+            for event in res:
+                self.entity_dict[event["entity_id"]] = {
+                    "attr": event["attributes"],
+                    "state": event["state"]
+                }
             return res
