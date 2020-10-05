@@ -2,64 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/audio/ding.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/audio/dong.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/json/setting.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/json/tuling_request_template.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/skill_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/demo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/resources/common.res" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/resources/ding.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/resources/dong.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/snowboydecoder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/snowboydetect.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snowboy/version" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/skills/hass.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlu.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tts.py" beforeDir="false" afterPath="$PROJECT_DIR$/tts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/face_awaken/Face_awaken.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/recorder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/clock.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/clock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/flight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/joke.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/joke.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/mail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/music.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/music.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/raspberrypi-gpio.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/raspberrypi-gpio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/remote.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/remote.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/smarthome.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/smarthome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/snowboytrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/snowboytrain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/ts.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/ts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/tuling.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/tuling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/weather.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/xlonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/xlonly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/skills/ycy.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/ycy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/Alexa.pmdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/_snowboydetect.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/blue.pmdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/blueberry.pmdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/lanmei.pmdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/resources/common.res" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/resources/ding.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/resources/dong.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/resources/snowboy.umdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/snowboy.pmdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/snowboy.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/snowboy2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/snowboydecoder.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/snowboydetect.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/snowboy/xiaolanxiaolan.pmdl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/speaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/speaker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/stt.py" beforeDir="false" afterPath="$PROJECT_DIR$/stt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xiaolan/xldo.py" beforeDir="false" afterPath="$PROJECT_DIR$/xiaolan/xldo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skill_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/skill_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/clock.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/clock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/tuling.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/tuling.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
