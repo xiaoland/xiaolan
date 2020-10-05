@@ -1,8 +1,7 @@
 import snowboydecoder
 import sys
 import signal
-import speaker
-
+from xiaolan import speaker
 
 interrupted = False
 

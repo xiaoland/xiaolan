@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
-# 音响控制器
-import sys
+# coding=utf-8
+# author: Lan_zhijiang
+# description: File Player
+# date: 2020/10/1
+
 import os
-import logging
-import pygame
-import hyper
 
 
 def ding(): #开始录制指令提示音

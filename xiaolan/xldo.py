@@ -6,8 +6,8 @@ import os
 from stt import baidu_stt
 from tts import baidu_tts
 from recorder import recorder
-import speaker
-import nlp
+from xiaolan import speaker
+import nlu
 sys.path.append('/home/pi/xiaolan/xiaolan/skills/')
 import clock
 import xlonly
@@ -23,7 +23,6 @@ import snowboytrain
 import ts
 import flight
 sys.path.append('/home/pi/xiaolan/xiaolan/snowboy/')
-import snowboydecoder
 
 
 def welcome():
@@ -59,7 +58,7 @@ def convenstation():
     speaker.dong()  
     tok = b.get_token()
     text = b.stt('./voice.wav', tok)
-    intent = nlp.get_intent(text)
+    intent = nlu.get_intent(text)
     s.getskills(intent, text, tok)
 
 
@@ -108,7 +107,7 @@ class skills(object):
         elif witch == 'no':
             sconvenstation()
         elif witch == 'reintent':
-            intent = nlp.do_intent(text, tok)
+            intent = nlu.do_intent(text, tok)
             s.getskills(intent, text, tok)
         elif witch == 'snowboytrain':
             s.snowboytrain(tok)
