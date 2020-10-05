@@ -4,11 +4,10 @@
 # date: 2020/10/3
 
 import time
-import os
 import requests
 import base64
 import hashlib
-from skill_manager import XiaolanSkills
+from skill_manager import XiaolanSkillsManager
 
 
 class XiaolanNlu():
@@ -19,7 +18,7 @@ class XiaolanNlu():
         self.setting = setting
 
         self.nlu_settings = self.setting["apiSettings"]["nlu"]
-        self.xiaolan_skills = XiaolanSkills(log, setting)
+        self.xiaolan_skills = XiaolanSkillsManager(log, setting)
 
     def get_intent(self, text):
 
@@ -97,97 +96,19 @@ class XiaolanNlu():
         returns.append("talk")
         return returns
 
+    def skill_nlu(self, text, data):
 
-def do_intent(text, tok=""):
-    sm = hass()
-    m = xlMusic()
-    services = {'musicurl_get': 'method=baidu.ting.song.play&songid=', 'search': 'method=baidu.ting.search.catalogSug&query=', 'hot': 'method=baidu.ting.song.getRecommandSongList&song_id=877578&num=12'}
-    if text is not None:
+        """
+        技能专用nlu
+        :param text: 要处理的文本
+        :param data: 对应识别典
+        :return:
+        """
+        intent = None
 
-        if '闹钟' in text:
-                intent = 'clock'
+        for keyword in data.keys():
+            if keyword in text:
+                intent = data[keyword]
                 return intent
-        elif '打开' in text:
-                cortolthings = text[6:-2]
-                print cortolthings
-                cortolmode = 'turn_on'
-                sm.cortol(cortolthings, cortolmode, tok)
-        elif '关闭' in text:
-                cortolthings = text[6:-2]
-                cortolmode = 'turn_off'
-                sm.cortol(cortolthings, cortolmode, tok)
-        elif '天气' in text:
-                intent = 'weather'
-                return intent
-        elif '重新说' in text or '重复' in text:
-                intent = 'respeaker'
-                return intent
-        elif '翻译' in text:
-                intent = 'translate'
-                return intent
-        elif '搜索' in text:
-                intent = 'ser'
-                return intent
-        elif '闲聊' in text:
-                intent = 'tuling'
-                return intent
-        elif '关机' in text:
-                print ('SHUTDOWING...')
-                os.system('sudo poweroff')
-        elif '重启' in text:
-                print ('REBOOTING...')
-                os.system('sudo reboot')
-        elif '怎么走' in text:
-                intent = 'map'
-                return intent
-        elif '酒店' in text:
-                intent = 'hotel'
-                return intent
-        elif '旅游' in text:
-                intent = 'travel'
-                return intent
-        elif '做游戏' in text:
-                intent = 'minigame'
-                return intent
-        elif '新闻' in text:
-                intent = 'news'
-                return intent
-        elif '傻逼' in text:
-                speaker.falu()
-        elif '拍照' in text:
-                intent = 'camera'
-                return intent
-        elif '邮件' in text or '邮件助手' in text:
-                intent = 'mail'
-                return intent
-        elif '快递' in text:
-                intent = 'experss'
-                return intent
-        elif '笑话' in text:
-                intent = 'joke'
-                return intent
-        elif '训练' in text:
-                intent= 'snowboytrain'
-                return intent
-        elif '播放' in text:
-            if '音乐' in text:
-                m.sui_ji(services, tok)
-            else:
-                songname = text[2:-1]
-                m.sou_suo(services, songname, tok)
-        elif "你知道我们现在在哪里" in text:
-            baidu_tts().tts("我们现在在《中国少年说》的舞台上，如果我没记错的话，你回深圳的飞机票还没有买吧？", tok)
-        elif "你要帮我买" in text:
-            baidu_tts().tts("我可没有你的账户，但是我可以帮你查一下从北京到深圳的航班哦", tok)
-            return "flight"
-        elif '我想听' in text:
-            if '音乐' in text:
-                m.sui_ji(services, tok)
-            else:
-                songname = text[3:-1]
-                m.sou_suo(services, songname, tok)
-        else:
-                tuling.start(text, tok)
-    else:
-        intent = 'no'
+
         return intent
