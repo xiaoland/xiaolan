@@ -90,7 +90,7 @@ class XiaolanNlu():
                 returns.append(intent)
 
                 if intent == "call_skill":
-                    returns.append(self.xiaolan_skills.name_skill_list[text[2:len(text)]])
+                    returns.append(self.xiaolan_skills.name_skill_list[text[2:]])
                 return returns
 
         returns.append("talk")
