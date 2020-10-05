@@ -5,7 +5,6 @@
 
 from tts import BaiduTts
 from stt import BaiduStt
-from recorder import XiaolanRecorder
 from player import XiaolanPlayer
 from recorder import XiaolanRecorder
 
@@ -17,8 +16,6 @@ class XiaolanSkillClock():
         self.log = log
         self.setting = setting
         self.text = text
-
-        self.start()
 
     def start(self):
 

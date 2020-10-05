@@ -19,10 +19,8 @@ class XiaolanSkillTuling():
         self.player = XiaolanPlayer(log, setting)
         self.text = text
 
-        self.tuling_api_key = self.setting["apiSettings"]["tuling"]["apiKey"][0] # 869429e05ea142ef9e3784f8e7965d1c
-        self.tuling_user_id = self.setting["apiSettings"]["tuling"]["userId"] # "167031"
-
-        self.start()
+        self.tuling_api_key = self.setting["skillSettings"]["tuling"]["apiKey"][0] # 869429e05ea142ef9e3784f8e7965d1c
+        self.tuling_user_id = self.setting["skillSettings"]["tuling"]["userId"] # "167031"
 
     def start(self, api_key=None):
 
