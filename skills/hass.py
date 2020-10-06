@@ -53,7 +53,8 @@ class XiaolanSkillHass():
             "获取": "get_state",
             "是": "yes",
             "否": "no",
-            "不": "no"
+            "不": "no",
+            "退出": "quit"
         }
 
     def start(self):
@@ -84,7 +85,9 @@ class XiaolanSkillHass():
         if intent is None:
             self.log.add_log("XiaolanSkillHass: Intent is none, quit", 1)
             self.tts.start("不好意思，我没明白，退出咯~")
-            return None, None, None
+            intent, text, slot = None, None, None
+        self.log.add_log("XiaolanSkillHass: Intent: " + intent + " Text: " + text
+                         + " Slot: " + slot, 1)
         return intent, text, slot
 
     def main(self):
@@ -108,6 +111,9 @@ class XiaolanSkillHass():
             friendly_name = slot
             state = self.get_state(self.friendly_name_dict[friendly_name])
             self.tts.start(friendly_name + "的状态是" + state["state"].replace("_", " "))
+        elif intent == "quit":
+            self.tts.start("好的，我走啦，下次再见~")
+            return
         else:
             service = self.intent_service_list[intent]
             service_path = self.domain_services[service]
