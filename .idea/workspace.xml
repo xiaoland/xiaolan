@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/snowboy/snowboy.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snowboy/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snowboy/demo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/snowboy/snowboydecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboydecoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snowboy/snowboydetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboydetect.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +38,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -48,16 +53,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Hadream\CODING\Mix\xiaolan\data\audio" />
+      <recent name="D:\Hadream\工作结果\编程\Python\xiaolan-dev\xiaolan\snowboy\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Hadream\CODING\Mix\xiaolan\snowboy" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan\data\audio" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan\data\shell" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan" />
       <recent name="D:\Hadream\CODING\Mix\xiaolan\xiaolan" />
-      <recent name="D:\Hadream\CODING\Mix\xiaolan\snowboy\hotword" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Hadream\CODING\Mix\xiaolan\data\audio" />
-      <recent name="D:\Hadream\工作结果\编程\Python\xiaolan-dev\xiaolan\snowboy\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Python.snowboy (1)">
@@ -125,7 +130,7 @@
       <workItem from="1601528189611" duration="1875000" />
       <workItem from="1601535053556" duration="3640000" />
       <workItem from="1601538815677" duration="3654000" />
-      <workItem from="1601950253382" duration="7830000" />
+      <workItem from="1601950253382" duration="9973000" />
     </task>
     <servers />
   </component>
@@ -140,6 +145,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2190" y="-125" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601734366141">
