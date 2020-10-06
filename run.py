@@ -10,7 +10,7 @@ from log import XiaolanLog
 from recorder import XiaolanRecorder
 from player import XiaolanPlayer
 from nlu import XiaolanNlu
-from skill_manager import XiaolanSkills
+from skill_manager import XiaolanSkillsManager
 from tts import BaiduTts
 from stt import BaiduStt
 
@@ -27,7 +27,7 @@ class XiaolanInit():
         self.nlu = XiaolanNlu(self.log, self.setting)
         self.player = XiaolanPlayer(self.log, self.setting)
         self.recorder = XiaolanRecorder(self.log, self.setting)
-        self.skills = XiaolanSkills(self.log, self.setting)
+        self.skills = XiaolanSkillsManager(self.log, self.setting)
         self.snowboy = XiaolanSnowboy(self.log, self.setting)
 
     def run(self):
@@ -49,7 +49,8 @@ class XiaolanInit():
         self.log.add_log("Xiaolan start! ", 1)
         self.log.add_log("Self checking...", 1)
 
-        self.player.welcome()
+        self.log.add_log("XiaolanInit: Play the welcome speech(online tts)", 1)
+        self.tts.start("你好啊，主人~这里是小蓝哦！")
 
         self.log.add_log("Start pulseaudio", 1)
         os.system("pulseaudio --start")
@@ -80,13 +81,14 @@ class XiaolanInit():
 
         text = self.stt.start()
         if text is None:
-            self.log.add_log("XiaolanInit: text result null", 3)
-            self.player.text_none()
+            self.log.add_log("XiaolanInit: Text is none, play text_none(online tts)", 1)
+            self.tts.start("抱歉，我好像没听清")
             return
         else:
             intent = self.nlu.get_intent(text)
             if intent[0] is None:
-                self.player.intent_none()
+                self.log.add_log("XiaolanInit: Intent is none, play intent_none(online tts)", 1)
+                self.tts.start("我不是很明白你的意思")
                 return
             else:
                 if intent[0] == "call_skill":
