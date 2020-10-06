@@ -88,6 +88,19 @@ class XiaolanSkillMusicPlayer(object):
                 self.main()
             else:
                 self.play(result)
+        else:
+            pass
+            # NOT FINISHED
+
+        self.tts.start("还要继续吗？")
+
+        intent, text, slot = self.conversation()
+        if intent is None:
+            return
+        if intent == "yes":
+            self.main()
+        else:
+            self.tts.start("好的，我走啦，下次再见~")
 
     def play(self, data):
 
