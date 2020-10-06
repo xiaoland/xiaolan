@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skill_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/skill_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/skills/hass.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/hass.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/skills/music.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/music.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +125,7 @@
       <workItem from="1601528189611" duration="1875000" />
       <workItem from="1601535053556" duration="3640000" />
       <workItem from="1601538815677" duration="3654000" />
-      <workItem from="1601950253382" duration="6400000" />
+      <workItem from="1601950253382" duration="6533000" />
     </task>
     <servers />
   </component>
