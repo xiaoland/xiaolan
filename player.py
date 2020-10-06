@@ -6,6 +6,7 @@
 import pyaudio
 import queue
 import wave
+import os
 from tts import BaiduTts
 
 
@@ -55,33 +56,6 @@ class XiaolanPlayer():
         stream.close()
 
         self.p.terminate()
-
-    def welcome(self):
-
-        """
-        播放欢迎语（在线合成）
-        :return:
-        """
-        self.log.add_log("XiaolanPlayer: Play the welcome speech(online tts)", 1)
-        self.tts.start("你好啊，主人~这里是小蓝哦！")
-
-    def text_none(self):
-
-        """
-        当stt结果为none时的播放
-        :return:
-        """
-        self.log.add_log("XiaolanPlayer: Text is none, play text_none(online tts)", 1)
-        self.tts.start("抱歉，我好像没听清")
-
-    def intent_none(self):
-
-        """
-        当intent结果为none时的播放
-        :return:
-        """
-        self.log.add_log("XiaolanPlayer: Intent is none, play intent_none(online tts)", 1)
-        self.tts.start("我不是很明白你的意思")
 
     def play(self, fp):
 
@@ -139,3 +113,17 @@ class XiaolanPlayer():
         """
         self.log.add_log("XiaolanPlayer: Now playing dong.wav", 1)
         self.play(r"./data/audio/dong.wav")
+
+    def format_converter(self, fp, ori, goal):
+
+        """
+        音频文件格式转换器
+        :param fp: 文件路径
+        :param ori: 原格式
+        :param goal: 目标格式
+        :return:
+        """
+        self.log.add_log("XiaolanPlayer: Convert " + fp + " to " + goal, 1)
+        soundpcm = os.getcwd() + fp.replace(ori, goal)
+        cmd = 'ffmpeg -y -i ' + os.getcwd() + fp + ' -acodec pcm_u16 ' + soundpcm + ' '
+        os.system(cmd)
