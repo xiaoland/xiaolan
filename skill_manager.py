@@ -6,6 +6,7 @@
 from skills.clock import XiaolanSkillClock
 from skills.tuling import XiaolanSkillTuling
 from skills.hass import XiaolanSkillHass
+from skills.music import XiaolanSkillMusicPlayer
 
 
 class XiaolanSkillsManager():
@@ -45,5 +46,5 @@ class XiaolanSkillsManager():
         self.skill_skills_list = {
             "hass": XiaolanSkillHass,
             "kugou_music": XiaolanSkillMusicPlayer,
-            "flight_searcher": XiaolanSkillFlightSearcher
+            # "flight_searcher": XiaolanSkillFlightSearcher
         }
