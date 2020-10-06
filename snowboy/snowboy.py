@@ -3,7 +3,7 @@
 # description: snowboy engine
 # date: 2020/10/3
 
-import snowboydecoder
+import snowboy.snowboydecoder
 
 
 class XiaolanSnowboy():
@@ -20,7 +20,7 @@ class XiaolanSnowboy():
         :param callback: 回调函数
         :return:
         """
-        detector = snowboydecoder.HotwordDetector(self.setting["snowboySettings"]["hotwordPath"],
+        detector = snowboy.snowboydecoder.HotwordDetector(self.setting["snowboySettings"]["hotwordPath"],
                                                   sensitivity=0.5,
                                                   audio_gain=1)
         detector.start(callback)
