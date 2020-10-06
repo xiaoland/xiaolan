@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="" />
+    <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skill_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/skill_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/hass.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/hass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/music.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/music.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,6 +130,7 @@
       <workItem from="1601528189611" duration="1875000" />
       <workItem from="1601535053556" duration="3640000" />
       <workItem from="1601538815677" duration="3654000" />
+      <workItem from="1601950253382" duration="6400000" />
     </task>
     <servers />
   </component>
@@ -156,9 +164,9 @@
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
     <state x="2261" y="42" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601781832565" />
-    <state x="2123" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601911684615">
+    <state x="2123" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601954663239">
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
-    <state x="2123" y="-376" width="672" height="678" key="search.everywhere.popup/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601911684615" />
+    <state x="2123" y="-376" width="672" height="678" key="search.everywhere.popup/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601954663239" />
   </component>
 </project>
