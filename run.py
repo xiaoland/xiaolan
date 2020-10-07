@@ -95,3 +95,8 @@ class XiaolanInit():
                     self.skills.skill_skills_list[intent[1]](self.log, self.setting, text).start()
                 else:
                     self.skills.intent_skills_list[intent[0]](self.log, self.setting, text).start()
+
+
+if __name__ == "__main__":
+    init = XiaolanInit()
+    init.run()
