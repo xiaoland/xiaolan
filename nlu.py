@@ -30,9 +30,9 @@ class XiaolanNlu():
         self.log.add_log("XiaolanNlu: Getting intent with ifly nlu engine")
 
         url = 'http://api.xfyun.cn/v1/aiui/v1/text_semantic?text='
-        app_id = self.nlu_settings["appId"]  # '5ace1bbb'
-        api_key = self.nlu_settings["appKey"]  # '9e1b8f6028b14b969cdec166eca127ea'
-        lastmdl = self.nlu_settings["lastMdl"]  # 'eyJ1c2VyaWQiOiIxMyIsInNjZW5lIjoibWFpbiJ9'
+        app_id = self.nlu_settings["appId"]  # ''
+        api_key = self.nlu_settings["appKey"]  # ''
+        lastmdl = self.nlu_settings["lastMdl"]  # ''
 
         time_stamp = str(int(time.time()))
 
