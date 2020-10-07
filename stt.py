@@ -29,9 +29,6 @@ class BaiduStt():
         获取token
         :return:
         """
-        AK = '87oa8ZdtoVLSuVwV4YPqaeD3'
-        SK = 'wi8G8UEa1tkgAKZbKsUHaZk8V6p4NxvL'
-
         url = 'http://openapi.baidu.com/oauth/2.0/token'
         param = {
             'grant_type': 'client_credentials',
