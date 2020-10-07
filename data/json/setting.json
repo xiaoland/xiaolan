@@ -12,6 +12,9 @@
   "snowboySettings": {
     "hotword": "./snowboy/hotword/Alexa.pmdl"
   },
+  "playerSettings": {
+    "readChunk": 1024
+  },
   "recordSettings": {
     "chunk": 1024,
     "rate": 160000,

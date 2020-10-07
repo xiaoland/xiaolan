@@ -17,7 +17,7 @@ class BaiduTts():
         
         self.log = log
         self.setting = setting
-        self.read_chunk = setting["player"]["readChunk"]
+        self.read_chunk = setting["playerSettings"]["readChunk"]
         self.player = XiaolanPlayer(log, setting)
         self.token = ""
 
