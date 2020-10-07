@@ -22,7 +22,7 @@ class XiaolanLog():
         获取log文件路径
         :return:
         """
-        basic_path = "./data_folder/log/cloud/"
+        basic_path = "./data/log/"
         log_file_name = self.get_date() + ".txt"
         if os.path.exists(basic_path + log_file_name) is False:
             create_log_file = open(basic_path + log_file_name, "w")
@@ -55,7 +55,7 @@ class XiaolanLog():
         """
         return time.strftime("%H:%M:%S")
 
-    def add_log(self, level, content, is_print=True, is_period=True):
+    def add_log(self, content, level, is_print=True, is_period=True):
 
         """
         添加log
