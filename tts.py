@@ -32,9 +32,6 @@ class BaiduTts():
         获取token
         :return:
         """
-        AK = 'M9jz0511Yfbb15d1BshqtC5g'
-        SK = 'Z73I2jvytEa8QydGnNlP3oOKfudIlvgE'
-
         param = {'grant_type': 'client_credentials',
                  'client_id': self.app_key,
                  'client_secret': self.secret_key}
@@ -96,7 +93,7 @@ class BaiduTts():
         if r.status_code == 200:
             r.raw.decode_content = True
             if is_play:
-                put_data_t = threading.Thread(target=self.put_data, args=(data,))
+                put_data_t = threading.Thread(target=self.put_data, args=(r.raw,))
                 stream_out_t = threading.Thread(target=self.player.stream_output, args=())
                 put_data_t.start()
                 stream_out_t.start()
