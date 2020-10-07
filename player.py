@@ -7,7 +7,6 @@ import pyaudio
 import queue
 import wave
 import os
-from tts import BaiduTts
 
 
 class XiaolanPlayer():
@@ -16,7 +15,6 @@ class XiaolanPlayer():
 
         self.log = log
         self.setting = setting
-        self.tts = BaiduTts(log, setting)
 
         self.p = pyaudio.PyAudio()
 
@@ -32,7 +30,7 @@ class XiaolanPlayer():
         self.log.add_log("Player: Receive data from tts, put in", 0, is_print=False)
         self.output_queue.put(data)
 
-    def stream_output(self):
+    def stream_output(self, data):
 
         """
         流式输出音频
