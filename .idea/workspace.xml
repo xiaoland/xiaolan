@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/snowboy/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snowboy/demo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/snowboy/snowboydecoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboydecoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snowboy/snowboydetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboydetect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data/audio" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -130,7 +130,7 @@
       <workItem from="1601528189611" duration="1875000" />
       <workItem from="1601535053556" duration="3640000" />
       <workItem from="1601538815677" duration="3654000" />
-      <workItem from="1601950253382" duration="9973000" />
+      <workItem from="1601950253382" duration="14809000" />
     </task>
     <servers />
   </component>
@@ -150,23 +150,43 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2052" y="-213" key="#Deployment" timestamp="1602040061422">
+      <screen x="1920" y="-811" width="1080" height="1880" />
+    </state>
+    <state x="2052" y="-213" key="#Deployment/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602040061422" />
+    <state x="2116" y="-177" key="#Options" timestamp="1602040187937">
+      <screen x="1920" y="-811" width="1080" height="1880" />
+    </state>
+    <state x="2116" y="-177" key="#Options/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602040187937" />
+    <state x="2036" y="-226" key="#SSH_Configurations" timestamp="1602000659238">
+      <screen x="1920" y="-811" width="1080" height="1880" />
+    </state>
+    <state x="2036" y="-226" key="#SSH_Configurations/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602000659238" />
     <state x="2190" y="-125" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601734366141">
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
     <state x="2190" y="-125" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601734366141" />
-    <state x="2240" y="-117" key="FileChooserDialogImpl" timestamp="1601731041719">
+    <state x="2012" y="-719" width="896" height="1696" key="DirDiffDialog" timestamp="1602062097279">
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
-    <state x="2240" y="-117" key="FileChooserDialogImpl/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601731041719" />
-    <state x="1942" y="-304" key="SettingsEditor" timestamp="1601618375473">
+    <state x="2012" y="-719" width="896" height="1696" key="DirDiffDialog/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602062097279" />
+    <state x="2240" y="-117" key="FileChooserDialogImpl" timestamp="1602039833852">
+      <screen x="1920" y="-811" width="1080" height="1880" />
+    </state>
+    <state x="2240" y="-117" key="FileChooserDialogImpl/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602039833852" />
+    <state x="1942" y="-304" key="SettingsEditor" timestamp="1602061914991">
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
     <state x="186" y="120" key="SettingsEditor/0.40.1368.872@0.40.1368.872" timestamp="1601537181720" />
-    <state x="1942" y="-304" key="SettingsEditor/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601618375473" />
+    <state x="1942" y="-304" key="SettingsEditor/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602061914991" />
     <state x="2261" y="42" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601781832565">
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
     <state x="2261" y="42" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1601781832565" />
+    <state x="2340" y="-141" key="ftp.server.browser" timestamp="1602040060202">
+      <screen x="1920" y="-811" width="1080" height="1880" />
+    </state>
+    <state x="2340" y="-141" key="ftp.server.browser/0.40.1536.824/1920.-811.1080.1880@1920.-811.1080.1880" timestamp="1602040060202" />
     <state x="2123" y="-376" width="672" height="678" key="search.everywhere.popup" timestamp="1601954663239">
       <screen x="1920" y="-811" width="1080" height="1880" />
     </state>
