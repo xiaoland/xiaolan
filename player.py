@@ -30,11 +30,10 @@ class XiaolanPlayer():
         self.log.add_log("Player: Receive data from tts, put in", 0, is_print=False)
         self.output_queue.put(data)
 
-    def stream_output(self, data):
+    def stream_output(self):
 
         """
         流式输出音频
-        :param data: 二进制音频数据
         :return:
         """
         self.log.add_log("Player: Stream output start", 1)
