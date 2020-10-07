@@ -3,11 +3,6 @@
 # description: To saving the keyword skill class
 # date: 2020/10/4
 
-from skills.clock import XiaolanSkillClock
-from skills.tuling import XiaolanSkillTuling
-from skills.hass import XiaolanSkillHass
-from skills.music import XiaolanSkillMusicPlayer
-
 
 class XiaolanSkillsManager():
 
@@ -15,6 +10,11 @@ class XiaolanSkillsManager():
 
         self.log = log
         self.setting = setting
+
+        from skills.clock import XiaolanSkillClock
+        from skills.tuling import XiaolanSkillTuling
+        from skills.hass import XiaolanSkillHass
+        from skills.music import XiaolanSkillMusicPlayer
 
         self.keyword_intent_list ={
             "闹钟": "clock",
