@@ -15,7 +15,7 @@
 # 注意！本版本以后的小蓝都还不能正常运行...（简直了...越写越大，一个人不行啊，这布局太大了）
 
 ## 鸣谢
-<a href="https://github.com/xiaoland/xiaolan/graphs/contributors">
+- 来自chenyuguo哥哥的snowboy技术支持
 
 ## 唤醒词问题：
 - 由于本机器人的语音唤醒引擎是snowboy的
