@@ -15,7 +15,8 @@
     }
   },
   "snowboySettings": {
-    "hotword": "./snowboy/hotword/Alexa.pmdl"
+    "hotword": "./snowboy/hotword/Alexa.pmdl",
+    "sensitivity": 0.5
   },
   "playerSettings": {
     "readChunk": 1024

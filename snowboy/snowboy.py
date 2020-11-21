@@ -20,8 +20,8 @@ class XiaolanSnowboy():
         :param callback: 回调函数
         :return:
         """
-        detector = snowboy.snowboydecoder.HotwordDetector(self.setting["snowboySettings"]["hotwordPath"],
-                                                  sensitivity=0.5,
+        detector = snowboy.snowboydecoder.HotwordDetector(self.setting["snowboySettings"]["hotword"],
+                                                  sensitivity=self.setting["snowboySettings"]["sensitivity"],
                                                   audio_gain=1)
         detector.start(callback)
 
