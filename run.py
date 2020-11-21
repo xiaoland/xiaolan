@@ -41,7 +41,7 @@ class XiaolanInit():
             ########################################
                   小蓝-中文智能家居语音交互机器人
               (c)Lan_zhijiang all rights reserved
-             http://github.com/xiaoland/xiaolan-dev
+              http://github.com/xiaoland/xiaolan
                 E-mail: lanzhijiang@foxmail.com
             ########################################
         
