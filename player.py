@@ -1,6 +1,6 @@
 # coding=utf-8
 # author: Lan_zhijiang
-# description: old_xiaolan's startup
+# description: replace the speaker to play audio
 # date: 2020/10/1
 
 import pyaudio
