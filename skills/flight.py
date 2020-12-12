@@ -101,13 +101,16 @@ class XiaolanSkillFlightSearcher:
         self.player.dong()
         date = "20190811"
 
-        baidu_tts().tts("Staring confirm info", token)
+        self.log.add_log("Skill-FlightSearcher: Confirming info...", 1)
 
-        baidu_tts().tts("Information confirm completed", token)
-        baidu_tts().tts("Searching for the flight...please wait...", token)
-        flight_list = request_csairlines(dep, arr, date, cities_info_list, token)
+        self.log.add_log.tts("Information confirm completed", 1)
+        self.log.add_log("Searching for the flight...please wait...", 1)
+        flight_list = self.request_csairlines(dep, arr, date, cities_info_list, 1)
         flight_num_list = list(flight_list.keys())
         for i in flight_num_list:
             dep_time = flight_list[i]["depTime"][0:2] + ":" + flight_list[i]["depTime"][2:4]
             arr_time = flight_list[i]["arrTime"][0:2] + ":" + flight_list[i]["arrTime"][2:4]
-            baidu_tts().tts(i + "，这趟航班的经济舱价格是" + str(flight_list[i]["cabin"][-1]["adultPrice"]) + "，出发时间是" + str(dep_time) + "，到达时间是" + str(arr_time), token)
+            self.tts.start(i + "，这趟航班的经济舱价格是" + 
+                    str(flight_list[i]["cabin"][-1]["adultPrice"]) + 
+                    "，出发时间是" + str(dep_time) + 
+                    "，到达时间是" + str(arr_time))
