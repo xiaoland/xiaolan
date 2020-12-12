@@ -1,12 +1,13 @@
 # coding=utf-8
 # author: Lan_zhijiang
-# description: old_xiaolan's tts classes
+# description: tts class
 # date: 2020/10/1
 
 import requests
-import shutil
+import urllib.request
 import urllib.parse
 import threading
+import time
 
 from player import XiaolanPlayer
 
@@ -59,7 +60,7 @@ class BaiduTts():
         end = self.read_chunk-1
 
         c_data = data[start:end]
-        while c_data != "":
+        while c_data != b'':
             self.log.add_log("BaiduTts: Send chunk to player's queue", 0, is_print=False)
             self.player.put(c_data)
             start = end + 1
@@ -67,6 +68,7 @@ class BaiduTts():
             c_data = data[start:end]
 
         for i in range(0, 2):
+            time.sleep(0.05)
             self.player.put('')
 
     def start(self, text, is_play=True):
@@ -77,28 +79,39 @@ class BaiduTts():
         :param is_play: 是否立即播放
         :return:
         """
+        text = urllib.parse.quote_plus(text)
         data = {
             'tex': text,
             'lan': 'zh',
             'tok': self.token,
             'ctp': 1,
-            'cuid': 'b0-10-41-92-84-4d',
+            'cuid': 'xiaolan-client',
             'per': 4,
-            'cue': 6
+            'aue': 6
         }
-        r = requests.post('http://tsn.baidu.com/text2audio',
-                          data=data,
-                          headers={'content-type': 'application/json'}, stream=True)
 
-        if r.status_code == 200:
-            r.raw.decode_content = True
+        data = urllib.parse.urlencode(data)
+        req = urllib.request.Request('http://tsn.baidu.com/text2audio', 
+                              data.encode('utf-8'))
+
+        f = urllib.request.urlopen(req)
+        result_str = f.read()
+
+        headers = dict((name.lower(), value) for name, value in f.headers.items())
+
+        if "audio" in headers["content-type"]:
+            print("BaiduTts: tts requested success")
             if is_play:
-                put_data_t = threading.Thread(target=self.put_data, args=(r.raw,))
+                put_data_t = threading.Thread(target=self.put_data, args=(result_str,))
                 stream_out_t = threading.Thread(target=self.player.stream_output, args=())
                 put_data_t.start()
                 stream_out_t.start()
             else:
-                with open("./data/audio/say.wav", "wb") as f:
-                    shutil.copyfileobj(r.raw, f)
+                with open("./data/audio/say.wav", "wb+") as f:
+                    f.write(result_str)
+                self.player.say()
+                return True
         else:
-            self.log.add_log("BaiduTTS: Tts network error! Status code: " + str(r.status_code), 3)
+            self.log.add_log("BaiduTTS: Tts network error! Respnse: ", 3)
+            print(result_str)
+            return False
