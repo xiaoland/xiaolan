@@ -16,8 +16,6 @@ class XiaolanPlayer():
         self.log = log
         self.setting = setting
 
-        self.p = pyaudio.PyAudio()
-
         self.output_queue = queue.Queue(8)
 
     def put(self, data):
@@ -37,9 +35,10 @@ class XiaolanPlayer():
         :return:
         """
         self.log.add_log("Player: Stream output start", 1)
+        p = pyaudio.PyAudio()
 
-        stream = self.p.open(
-            format=self.p.get_format_from_width(2),
+        stream = p.open(
+            format=p.get_format_from_width(2),
             channels=1,
             rate=160000,
             output=True)
@@ -52,7 +51,7 @@ class XiaolanPlayer():
         stream.stop_stream()
         stream.close()
 
-        self.p.terminate()
+        p.terminate()
 
     def play(self, fp):
 
@@ -66,9 +65,11 @@ class XiaolanPlayer():
         except wave.Error:
             self.log.add_log("XiaolanPlayer: Cannot open the file", 3)
             return
+        
+        p = pyaudio.PyAudio()
 
-        stream = self.p.open(
-            format=self.p.get_format_from_width(wf.getsampwidth()),
+        stream = p.open(
+            format=p.get_format_from_width(wf.getsampwidth()),
             channels=wf.getnchannels(),
             rate=wf.getframerate(),
             output=True
@@ -81,7 +82,7 @@ class XiaolanPlayer():
 
         stream.stop_stream()
         stream.close()
-        self.p.terminate()
+        p.terminate()
 
 
     def say(self):
