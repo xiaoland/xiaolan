@@ -2,7 +2,58 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4af0ab62-b672-4357-8ce0-9f99bc0c7ade" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/xiaolan-dev.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/xiaolan-dev.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/json/setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/json/setting_backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/setting_backup.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/json/tuling_request_template.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/json/tuling_request_template.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shell/autostartxl" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/autostartxl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shell/install_all.sh" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/install_all.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shell/unlock_root.sh" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/unlock_root.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/shell/xiaolan-trouble_fix-download.sh" beforeDir="false" afterPath="$PROJECT_DIR$/data/shell/xiaolan-trouble_fix-download.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nlu.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/face_awaken/Face_awaken.py" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/face_awaken/Face_awaken.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/more/haarcascade_frontalface_default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/more/haarcascade_frontalface_default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/musiclib/train_f.wav" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/train_f.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/musiclib/train_s.wav" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/train_s.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/musiclib/train_t.wav" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/musiclib/train_t.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/speaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/speaker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/old_xiaolan/xldo.py" beforeDir="false" afterPath="$PROJECT_DIR$/old_xiaolan/xldo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recorder.py" beforeDir="false" afterPath="$PROJECT_DIR$/recorder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skill_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/skill_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/camera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/clock.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/clock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/flight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/hass.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/hass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/joke.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/joke.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/music.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/music.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/news.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/raspberrypi-gpio.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/raspberrypi-gpio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/smarthome.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/smarthome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/snowboytrain.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/snowboytrain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/ts.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/ts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/tuling.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/tuling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/weather.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/weather.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/xlonly.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/xlonly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skills/ycy.py" beforeDir="false" afterPath="$PROJECT_DIR$/skills/ycy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snowboy/snowboy.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snowboy/snowboydetect.py" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/snowboydetect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snowboy/version" beforeDir="false" afterPath="$PROJECT_DIR$/snowboy/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stt.py" beforeDir="false" afterPath="$PROJECT_DIR$/stt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tts.py" beforeDir="false" afterPath="$PROJECT_DIR$/tts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +91,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GettingThingsDone" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -134,6 +185,8 @@
       <workItem from="1604731998738" duration="1195000" />
       <workItem from="1604756972208" duration="578000" />
       <workItem from="1605373397948" duration="6646000" />
+      <workItem from="1608352611888" duration="666000" />
+      <workItem from="1608898794778" duration="578000" />
     </task>
     <servers />
   </component>
