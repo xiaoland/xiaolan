@@ -1,11 +1,17 @@
+# NOTICE
 *你好！*
-*    小蓝现已正式停止维护并开启新的项目：[HadreamAssistant-运行在树莓派/Linux上的高度自定义语音助手，助您办公，实现自己的语音应用](https://github.com/HadreamOrg/HadreamAssistant)*
-*    HadreamAssistant继承了小蓝的全部特性并进行了诸多改进。且已经于2021.12.28之前进行了生产测试，被部署在办公室的HA出色地完成了它的任务*
-*    其简单明了的代码和高度自定义的设计，都是为了您自己的语音机器人而诞生的，快来使用HA，提交issues，参与开发吧！*
+
+*小蓝现已正式停止维护并开启新的项目：[HadreamAssistant-运行在树莓派/Linux上的高度自定义语音助手，助您办公，实现自己的语音应用](https://github.com/HadreamOrg/HadreamAssistant)*
+
+*HadreamAssistant继承了小蓝的全部特性并进行了诸多改进。且已经于2021.12.28之前进行了生产测试，被部署在办公室的HA出色地完成了它的任务*
+
+*其简单明了的代码和高度自定义的设计，都是为了您自己的语音机器人而诞生的，快来使用HA，提交issues，参与开发吧！*
     
 *Lanzhijiang
 2021/12/18*
                                                                                                                                            
+
+
 
 
 # 小蓝--中文语音交互智能家居机器人(在linux系统上运行)
